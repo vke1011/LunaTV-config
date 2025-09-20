@@ -18,7 +18,7 @@ https://raw.githubusercontent.com/hafrey1/LunaTV-config/main/LunaTV-config.txt
 
 ## API 健康报告（每日自动检测API状态）
 
-## API 状态（最近更新：2025-09-20 20:24 CST）
+## API 状态（最近更新：2025-09-21 00:14 CST）
 
 - 总 API 数量：76
 - 成功 API 数量：75
@@ -52,7 +52,7 @@ https://raw.githubusercontent.com/hafrey1/LunaTV-config/main/LunaTV-config.txt
 | ✅ | TV-非凡影视 | https://cj.ffzyapi.com/api.php/provide/vod | 30 | 0 | 100.0% | 0 |  |
 | ✅ | TV-暴风资源 | https://bfzyapi.com/api.php/provide/vod | 30 | 0 | 100.0% | 0 |  |
 | ✅ | TV-最大资源 | https://api.zuidapi.com/api.php/provide/vod | 30 | 0 | 100.0% | 0 |  |
-| ✅ | TV-最大点播 | https://zuidazy.me/api.php/provide/vod | 24 | 0 | 100.0% | 0 |  |
+| ✅ | TV-最大点播 | https://zuidazy.me/api.php/provide/vod | 25 | 0 | 100.0% | 0 |  |
 | ✅ | TV-樱花资源 | https://m3u8.apiyhzy.com/api.php/provide/vod | 30 | 0 | 100.0% | 0 |  |
 | ✅ | TV-无尽资源 | https://api.wujinapi.me/api.php/provide/vod | 30 | 0 | 100.0% | 0 |  |
 | ✅ | TV-无尽资源1 | https://api.wujinapi.com/api.php/provide/vod | 30 | 0 | 100.0% | 0 |  |
@@ -101,10 +101,10 @@ https://raw.githubusercontent.com/hafrey1/LunaTV-config/main/LunaTV-config.txt
 | ✅ | AV-色猫资源 | https://caiji.semaozy.net/inc/apijson_vod.php | 30 | 0 | 100.0% | 0 |  |
 | ✅ | AV-辣椒资源 | https://apilj.com/api.php/provide/vod | 30 | 0 | 100.0% | 0 |  |
 | ✅ | AV-鲨鱼资源 | https://shayuapi.com/api.php/provide/vod | 30 | 0 | 100.0% | 0 |  |
-| ✅ | AV-滴滴资源 | https://api.ddapi.cc/api.php/provide/vod | 18 | 0 | 100.0% | 0 |  |
-| ✅ | AV-大地资源 | https://dadiapi.com/feifei2 | 19 | 0 | 100.0% | 0 |  |
-| ✅ | AV-最色资源 | https://api.zuiseapi.com/api.php/provide/vod | 19 | 0 | 100.0% | 0 |  |
-| ✅ | AV-豆豆资源 | https://api.douapi.cc/api.php/provide/vod | 19 | 0 | 100.0% | 0 |  |
+| ✅ | AV-滴滴资源 | https://api.ddapi.cc/api.php/provide/vod | 19 | 0 | 100.0% | 0 |  |
+| ✅ | AV-大地资源 | https://dadiapi.com/feifei2 | 20 | 0 | 100.0% | 0 |  |
+| ✅ | AV-最色资源 | https://api.zuiseapi.com/api.php/provide/vod | 20 | 0 | 100.0% | 0 |  |
+| ✅ | AV-豆豆资源 | https://api.douapi.cc/api.php/provide/vod | 20 | 0 | 100.0% | 0 |  |
 | ✅ | AV-丝袜资源 | https://siwazyw.tv/api.php/provide/vod | 30 | 0 | 100.0% | 0 |  |
 <!-- API_TABLE_END -->
 
