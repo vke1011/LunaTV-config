@@ -1,5 +1,8 @@
 ## 自用LunaTV-config视频源随缘更新
 
+Luna TV 配置编辑器（自用）
+https://free-diy.github.io/LunaTV-config
+
 👉 [纯净源链接](https://raw.githubusercontent.com/free-diy/LunaTV-config/main/jinhuang.txt)
                                                                                       
 ```bash
@@ -112,6 +115,7 @@ https://raw.githubusercontent.com/free-diy/LunaTV-config/main/LunaTV-config.txt
 | ✅ | TV-U酷资源 | https://api.ukuapi.com/api.php/provide/vod | 43 | 15 | 74.1% | 0 |
 | 🚨 | TV-魔爪资源 | https://mozhuazy.com/api.php/provide/vod | 0 | 57 | 0.0% | 57 |
 <!-- API_TABLE_END -->
+
 
 
 
