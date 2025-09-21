@@ -1,22 +1,19 @@
 ## 自用LunaTV-config视频源随缘更新
 
-Luna TV 配置编辑器（自用）
-https://hafrey1.github.io/LunaTV-config
-
-👉 [无黄源链接](https://raw.githubusercontent.com/hafrey1/LunaTV-config/main/jinhuang.txt)
+👉 [纯净源链接](https://raw.githubusercontent.com/free-diy/LunaTV-config/main/jinhuang.txt)
                                                                                       
 ```bash
-https://raw.githubusercontent.com/hafrey1/LunaTV-config/main/jinhuang.txt
+https://raw.githubusercontent.com/free-diy/LunaTV-config/main/jinhuang.txt
 ```
 
-👉 [完整源链接](https://raw.githubusercontent.com/hafrey1/LunaTV-config/main/LunaTV-config.txt)
+👉 [完整源链接](https://raw.githubusercontent.com/free-diy/LunaTV-config/main/LunaTV-config.txt)
                                                                                      
 ```bash
-https://raw.githubusercontent.com/hafrey1/LunaTV-config/main/LunaTV-config.txt
+https://raw.githubusercontent.com/free-diy/LunaTV-config/main/LunaTV-config.txt
 ```
 ## 更新内容
 - 📄 **Luna-TV配置编辑器**： 专业的JSON配置文件编辑器，专为本项目而设计。
-- 📄 **添加is_adult参数**： 标记成人内容源，KatelyaTV可用点击链接，然后选择“另存为...”来下载文件：[链接](https://raw.githubusercontent.com/hafrey1/LunaTV-config/main/LunaTV-config.txt)
+- 📄 **添加is_adult参数**： 标记成人内容源，KatelyaTV可用点击链接，然后选择“另存为...”来下载文件：[链接](https://raw.githubusercontent.com/free-diy/LunaTV-config/main/LunaTV-config.txt)
 - 📄 **自动检测API状态**： 每隔4小时自动检测API状态，并生成最近100次检测报告！可根据API测试结果自行禁用可用率不高的源！
 
 ## API 健康报告（每日自动检测API状态）
@@ -115,6 +112,7 @@ https://raw.githubusercontent.com/hafrey1/LunaTV-config/main/LunaTV-config.txt
 | ✅ | TV-U酷资源 | https://api.ukuapi.com/api.php/provide/vod | 43 | 15 | 74.1% | 0 |
 | 🚨 | TV-魔爪资源 | https://mozhuazy.com/api.php/provide/vod | 0 | 57 | 0.0% | 57 |
 <!-- API_TABLE_END -->
+
 
 
 
