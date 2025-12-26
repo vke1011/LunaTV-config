@@ -1,13 +1,15 @@
 # 源接口健康检测报告
 
-最近更新时间：2025-12-26 01:19 CST
+
+
+最近更新时间：2025-12-26 01:25 CST
+
 
 **总源数:** 78 | **检测关键词:** 你好
 
 | 状态 | 资源名称 | 地址 | API | 搜索功能 | 成功次数 | 失败次数 | 成功率 | 最近7天趋势 |
 |------|---------|-----|-----|---------|---------:|--------:|-------:|--------------|
-| 🚨 | 🔞souavZY | [Link](https://api.souavzy.vip) | [Link](https://api.souavzy.vip/api.php/provide/vod) | ❌ | 14 | 16 | 46.7% | ❌❌❌❌❌❌❌ |
-| ❌ | 🔞黄色仓库 | [Link](https://hsckzy.xyz) | [Link](https://hsckzy.xyz/api.php/provide/vod) | ❌ | 29 | 1 | 96.7% | ✅✅✅✅✅✅❌ |
+
 | ✅ | 🎬-爱奇艺- | [Link](https://iqiyizyapi.com) | [Link](https://iqiyizyapi.com/api.php/provide/vod) | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬豆瓣资源 | [Link](https://dbzy.tv) | [Link](https://caiji.dbzy5.com/api.php/provide/vod) | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬天涯影视 | [Link](https://tyyszy.com) | [Link](https://tyyszy.com/api.php/provide/vod) | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
@@ -64,16 +66,20 @@
 | ✅ | 🔞乐播资源 | [Link](https://lbapi9.com) | [Link](https://lbapi9.com/api.php/provide/vod) | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞奶香资源 | [Link](https://Naixxzy.com) | [Link](https://Naixxzy.com/api.php/provide/vod) | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞森林资源 | [Link](https://slapibf.com) | [Link](https://beiyong.slapibf.com/api.php/provide/vod) | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
-| ✅ | 🔞辣椒资源 | [Link](https://apilj.com) | [Link](https://apilj.com/api.php/provide/vod) | ✅ | 27 | 3 | 90.0% | ✅✅✅❌❌❌✅ |
+
+| ✅ | 🔞辣椒资源 | [Link](https://apilj.com) | [Link](https://pz.168188.dpdns.org/?url=https://apilj.com/api.php/provide/vod) | ✅ | 2 | 0 | 100.0% | -----✅✅ |
 | ✅ | 🔞鲨鱼资源 | [Link](https://shayuapi.com) | [Link](https://shayuapi.com/api.php/provide/vod) | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞-幸资源- | [Link](https://xzytv.com) | [Link](https://xzybb2.com/api.php/provide/vod) | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞豆豆资源 | [Link](https://doudouzy.com) | [Link](https://api.douapi.cc/api.php/provide/vod) | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
-| ✅ | 🔞滴滴资源 | [Link](https://didizy.com) | [Link](https://api.ddapi.cc/api.php/provide/vod) | ✅ | 26 | 4 | 86.7% | ✅✅✅✅✅✅✅ |
+| ✅ | 🔞滴滴资源 | [Link](https://didizy.com) | [Link](https://api.ddapi.cc/api.php/provide/vod) | ✅ | 28 | 2 | 93.3% | ✅✅✅✅✅✅✅ |
+
 | ✅ | 🔞黑料资源 | [Link](https://heiliaozy.cc) | [Link](https://www.heiliaozyapi.com/api.php/provide/vod) | ✅ | 29 | 1 | 96.7% | ✅✅✅✅❌✅✅ |
 | ✅ | 🔞百万资源 | [Link](https://api.bwzym3u8.com) | [Link](https://api.bwzyz.com/api.php/provide/vod) | ✅ | 27 | 3 | 90.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞桃花资源 | [Link](https://thzy8.me) | [Link](https://thzy1.me/api.php/provide/vod) | ✅ | 28 | 2 | 93.3% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞精品资源 | [Link](https://www.jingpinx.com) | [Link](https://www.jingpinx.com/api.php/provide/vod) | ✅ | 28 | 2 | 93.3% | ✅✅✅✅✅✅✅ |
-| ✅ | 🔞 CK-资源 | [Link](https://ckzy.me) | [Link](https://ckzy.me/api.php/provide/vod) | ✅ | 27 | 3 | 90.0% | ✅✅✅✅✅✅✅ |
+
+| ✅ | 🔞 CK-资源 | [Link](https://ckzy.me) | [Link](https://ckzy.me/api.php/provide/vod) | ✅ | 28 | 2 | 93.3% | ✅✅✅✅✅✅✅ |
+| ✅ | 🔞souavZY | souavzyw.com | [Link](https://api.souavzyw.net/api.php/provide/vod) | ✅ | 2 | 0 | 100.0% | -----✅✅ |
 | ✅ | 🔞细胞资源 | [Link](https://www.xxibaozyw.com) | [Link](https://www.xxibaozyw.com/api.php/provide/vod) | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞香蕉资源 | [Link](https://www.xiangjiaozyw.com) | [Link](https://www.xiangjiaozyw.com/api.php/provide/vod) | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞-美少女- | [Link](https://www.msnii.com) | [Link](https://www.msnii.com/api/json.php) | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
@@ -8435,7 +8441,7 @@
         "api": "https://360zyzz.com/api.php/provide/vod",
         "disabled": false,
         "success": true,
-        "searchStatus": "❌"
+        "searchStatus": "✅"
       },
       {
         "name": "🎬极速资源",
@@ -9944,8 +9950,8 @@
         "name": "🔞 CK-资源",
         "api": "https://ckzy.me/api.php/provide/vod",
         "disabled": false,
-        "success": false,
-        "searchStatus": "❌"
+        "success": true,
+        "searchStatus": "✅"
       },
       {
         "name": "🔞细胞资源",
@@ -15944,10 +15950,10 @@
       },
       {
         "name": "🔞辣椒资源",
-        "api": "https://apilj.com/api.php/provide/vod",
+        "api": "https://pz.168188.dpdns.org/?url=https://apilj.com/api.php/provide/vod",
         "disabled": false,
-        "success": false,
-        "searchStatus": "❌"
+        "success": true,
+        "searchStatus": "✅"
       },
       {
         "name": "🔞鲨鱼资源",
@@ -16014,10 +16020,10 @@
       },
       {
         "name": "🔞souavZY",
-        "api": "https://api.souavzy.vip/api.php/provide/vod",
+        "api": "https://api.souavzyw.net/api.php/provide/vod",
         "disabled": false,
-        "success": false,
-        "searchStatus": "❌"
+        "success": true,
+        "searchStatus": "✅"
       },
       {
         "name": "🔞细胞资源",
@@ -16496,7 +16502,7 @@
       },
       {
         "name": "🔞辣椒资源",
-        "api": "https://apilj.com/api.php/provide/vod",
+        "api": "https://pz.168188.dpdns.org/?url=https://apilj.com/api.php/provide/vod",
         "disabled": false,
         "success": true,
         "searchStatus": "✅"
@@ -16566,10 +16572,10 @@
       },
       {
         "name": "🔞souavZY",
-        "api": "https://api.souavzy.vip/api.php/provide/vod",
+        "api": "https://api.souavzyw.net/api.php/provide/vod",
         "disabled": false,
-        "success": false,
-        "searchStatus": "❌"
+        "success": true,
+        "searchStatus": "✅"
       },
       {
         "name": "🔞细胞资源",
