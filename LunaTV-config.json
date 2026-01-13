@@ -85,7 +85,7 @@
       "name": "🎬新浪资源",
       "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
       "detail": "https://xinlangapi.com"
-    },
+    }，
     "api.wwzy.tv": {
       "name": "🎬旺旺资源",
       "api": "https://api.wwzy.tv/api.php/provide/vod",
@@ -163,7 +163,7 @@
       "name": "🎬量子影视",
       "api": "https://cj.lziapi.com/api.php/provide/vod",
       "detail": "https://lzizy.net"
-    }，
+    },
     "zuidazy.co": {
       "_comment": "备用",
       "name": "🎬最大点播",
