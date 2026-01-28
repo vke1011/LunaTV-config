@@ -13,7 +13,7 @@
     },
     "tyyszy.com": {
       "name": "🎬天涯影视",
-      "api": "https://tyyszy.com/api.php/provide/vod",
+      "api": "https://tyyszyapi.com/api.php/provide/vod",
       "detail": "https://tyyszy.com"
     },
     "mtzy.me": {
