@@ -115,7 +115,7 @@
       "name": "🎬U酷影视",
       "api": "https://api.ukuapi88.com/api.php/provide/vod",
       "detail": "https://www.ukuzy.com"
-    },
+    }，
     "api.guangsuapi.com": {
       "name": "🎬光速资源",
       "api": "https://api.guangsuapi.com/api.php/provide/vod",
@@ -193,7 +193,7 @@
       "name": "🎬虎牙资源",
       "api": "https://www.huyaapi.com/api.php/provide/vod",
       "detail": "https://www.huyaapi.com"
-    },
+    }，
     "yayazy3.com": {
       "_comment": "暂不支持搜索",
       "name": "🎬鸭鸭资源",
@@ -211,7 +211,7 @@
       "name": "🎬快车资源",
       "api": "https://caiji.kuaichezy.org/api.php/provide/vod",
       "detail": "https://kuaichezy.com"
-    }，
+    },
     "shandianzy.com": {
       "_comment": "暂不支持搜索",
       "name": "🎬闪电资源",
