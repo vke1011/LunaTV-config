@@ -88,7 +88,7 @@
     },
     "xinlangapi.com": {
       "name": "🎬新浪资源",
-      "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
+      "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod"，
       "detail": "https://xinlangapi.com"
     },
     "api.wwzy.tv": {
@@ -193,7 +193,7 @@
       "name": "🎬虎牙资源",
       "api": "https://www.huyaapi.com/api.php/provide/vod",
       "detail": "https://www.huyaapi.com"
-    }，
+    },
     "yayazy3.com": {
       "_comment": "暂不支持搜索",
       "name": "🎬鸭鸭资源",
