@@ -1,6 +1,16 @@
 {
   "cache_time": 7200,
   "api_site": {
+    "www.ryzyw.com": {
+      "name": "🎬如意资源",
+      "api": "https://cj.rycjapi.com/api.php/provide/vod",
+      "detail": "https://www.ryzyw.com"
+    },
+    "bfzy.tv": {
+      "name": "🎬暴风资源",
+      "api": "https://bfzyapi.com/api.php/provide/vod",
+      "detail": "https://bfzy.tv"
+    },
     "iqiyizyapi.com": {
       "name": "🎬-爱奇艺-",
       "api": "https://iqiyizyapi.com/api.php/provide/vod",
@@ -66,11 +76,6 @@
       "api": "https://api.ffzyapi.com/api.php/provide/vod",
       "detail": "https://cj.ffzyapi.com"
     },
-    "bfzy.tv": {
-      "name": "🎬暴风资源",
-      "api": "https://bfzyapi.com/api.php/provide/vod",
-      "detail": "https://bfzy.tv"
-    },
     "zuida.xyz": {
       "name": "🎬最大资源",
       "api": "https://api.zuidapi.com/api.php/provide/vod",
@@ -125,11 +130,6 @@
       "name": "🎬魔都动漫",
       "api": "https://caiji.moduapi.cc/api.php/provide/vod",
       "detail": "https://caiji.moduapi.cc"
-    },
-    "www.ryzyw.com": {
-      "name": "🎬如意资源",
-      "api": "https://cj.rycjapi.com/api.php/provide/vod",
-      "detail": "https://www.ryzyw.com"
     },
     "www.haohuazy.com": {
       "name": "🎬豪华资源",
