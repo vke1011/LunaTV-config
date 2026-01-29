@@ -72,10 +72,10 @@
       "detail": "https://cj.ffzyapi.com"
     },
     "zuida.xyz": {
-      "name": "🎬最大资源"，
+      "name": "🎬最大资源",
       "api": "https://api.zuidapi.com/api.php/provide/vod",
       "detail": "https://zuida.xyz"
-    }，
+    },
     "wujinzy.me": {
       "name": "🎬无尽资源",
       "api": "https://api.wujinapi.me/api.php/provide/vod",
