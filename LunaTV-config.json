@@ -7,11 +7,11 @@
       "detail": "https://www.ryzyw.com"
     },
     "bfzy.tv": {
-      "name": "🎬暴风资源",
+      "name": "🎬暴风资源"，
       "api": "https://bfzyapi.com/api.php/provide/vod",
       "detail": "https://bfzy.tv"
     },
-      "iqiyizyapi.com": {
+    "iqiyizyapi.com": {
       "name": "🎬-爱奇艺-",
       "api": "https://iqiyizyapi.com/api.php/provide/vod",
       "detail": "https://iqiyizyapi.com"
@@ -20,11 +20,6 @@
       "name": "🎬豆瓣资源",
       "api": "https://caiji.dbzy5.com/api.php/provide/vod",
       "detail": "https://dbzy.tv"
-    },
-    "tyyszy.com": {
-      "name": "🎬天涯影视",
-      "api": "https://tyyszyapi.com/api.php/provide/vod",
-      "detail": "https://tyyszy.com"
     },
     "mtzy.me": {
       "name": "🎬茅台资源",
@@ -77,10 +72,10 @@
       "detail": "https://cj.ffzyapi.com"
     },
     "zuida.xyz": {
-      "name": "🎬最大资源",
+      "name": "🎬最大资源"，
       "api": "https://api.zuidapi.com/api.php/provide/vod",
       "detail": "https://zuida.xyz"
-    },
+    }，
     "wujinzy.me": {
       "name": "🎬无尽资源",
       "api": "https://api.wujinapi.me/api.php/provide/vod",
@@ -353,7 +348,7 @@
     "souavzyw.com": {
       "name": "🔞souavZY",
       "api": "https://api.souavzyw.net/api.php/provide/vod",
-      "detail": "souavzyw.com"
+      "detail": "https://api.souavzyw.net"
     },
     "www.xxibaozyw.com": {
       "_comment": "无搜索结果",
