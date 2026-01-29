@@ -21,11 +21,6 @@
       "api": "https://caiji.dbzy5.com/api.php/provide/vod",
       "detail": "https://dbzy.tv"
     },
-    "tyyszy.com": {
-      "name": "🎬天涯影视",
-      "api": "https://tyyszyapi.com/api.php/provide/vod",
-      "detail": "https://tyyszy.com"
-    },
     "mtzy.me": {
       "name": "🎬茅台资源",
       "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
