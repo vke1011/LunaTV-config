@@ -61,7 +61,7 @@ const JSON_ERROR_TRANSLATIONS = {
     'Unexpected token': '意外的标记',
     'Unexpected end of JSON input': 'JSON输入意外结束',
     'Expected property name': '预期属性名称',
-    'Expected': '预期'，
+    'Expected': '预期',
     'or': '或',
     'after': '在...之后',
     'before': '在...之前',
