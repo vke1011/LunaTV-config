@@ -50,7 +50,7 @@ let isTokenVisible = false;
 
 // GitHub配置
 const GITHUB_CONFIG = {
-    owner: 'hafrey1',
+    owner: 'vke1011',
     repo: 'LunaTV-config',
     path: 'LunaTV-config.json',
     branch: 'main'
@@ -61,7 +61,7 @@ const JSON_ERROR_TRANSLATIONS = {
     'Unexpected token': '意外的标记',
     'Unexpected end of JSON input': 'JSON输入意外结束',
     'Expected property name': '预期属性名称',
-    'Expected': '预期',
+    'Expected': '预期'，
     'or': '或',
     'after': '在...之后',
     'before': '在...之前',
@@ -79,7 +79,7 @@ const JSON_ERROR_TRANSLATIONS = {
 class Utils {
     static decodeBase64Unicode(str) {
         try {
-            const bytes = Uint8Array.from(atob(str.replace(/\s/g, '')), c => c.charCodeAt(0));
+            const bytes = Uint8Array.from(atob(str.替换(/\s/g, '')), c => c.charCodeAt(0));
             return new TextDecoder('utf-8').decode(bytes);
         } catch (error) {
             console.error('UTF-8解码失败:', error);
