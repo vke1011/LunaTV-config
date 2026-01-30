@@ -7,7 +7,7 @@ https://vke1011.github.io/LunaTV-config
 
 --- 
 
-##  MoonTV/LunaTV配置
+<!-- ##  MoonTV/LunaTV配置
 订阅使用：复制下面链接  
 
 👉 Base58编码订阅链接[精简版🎬源链接](https://raw.githubusercontent.com/vke1011/LunaTV-config/refs/heads/main/jin18.txt)    （推荐使用自己部署的代理）精简版禁18源
@@ -27,7 +27,7 @@ https://raw.githubusercontent.com/vke1011/LunaTV-config/refs/heads/main/jingjian
 https://raw.githubusercontent.com/vke1011/LunaTV-config/refs/heads/main/LunaTV-config.txt
 ```
 
---- 
+--- -->
 
 # 🌐 CORSAPI（API 代理 & JSON 订阅器）
 
@@ -532,6 +532,7 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
 
 ## ⭐ Star History
 [![Star History](https://starchart.cc/hafrey1/LunaTV-config.svg?variant=light)](https://starchart.cc/hafrey1/LunaTV-config)
+
 
 
 
