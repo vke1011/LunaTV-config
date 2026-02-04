@@ -527,11 +527,12 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
 
 
 ## ⭐ Star History
-[![Star History](https://starchart.cc/hafrey1/LunaTV-config.svg?variant=light)](https://starchart.cc/hafrey1/LunaTV-config)
+[![Star History](https://starchart.cc/hafrey1/LunaTV-config.svg?variant=light)](https://starchart.cc/hafrey1/LunaTV-config) -->
 
 
 
--->
+
+
 
 
 
