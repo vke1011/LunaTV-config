@@ -1,6 +1,3 @@
-# 原项目来自
-https://github.com/hafrey1/LunaTV-config
-
 
 # MoonTV/LunaTV 配置编辑器
 https://vke1011.github.io/LunaTV-config
@@ -27,8 +24,7 @@ https://raw.githubusercontent.com/vke1011/LunaTV-config/refs/heads/main/jingjian
 https://raw.githubusercontent.com/vke1011/LunaTV-config/refs/heads/main/LunaTV-config.txt
 ```
 
---- -->
-
+---
 # 🌐 CORSAPI（API 代理 & JSON 订阅器）
 
 这是一个基于 **Cloudflare Workers** 的中转代理 + JSON 配置前缀替换工具。
@@ -534,6 +530,8 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
 [![Star History](https://starchart.cc/hafrey1/LunaTV-config.svg?variant=light)](https://starchart.cc/hafrey1/LunaTV-config)
 
 
+
+-->
 
 
 
