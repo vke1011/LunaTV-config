@@ -7,7 +7,6 @@
       "detail": "https://iqiyizyapi.com"
     },
     "dbzy.tv": {
-      "_comment": "有伦理片",
       "name": "🎬豆瓣资源",
       "api": "https://caiji.dbzy5.com/api.php/provide/vod",
       "detail": "https://dbzy.tv"
@@ -37,10 +36,10 @@
       "api": "https://api.maoyanapi.top/api.php/provide/vod",
       "detail": "https://www.maoyanzy.com"
     },
-    "cj.lzcaiji.com": {
+    "lzizy.com": {
       "name": "🎬量子资源",
       "api": "https://cj.lzcaiji.com/api.php/provide/vod",
-      "detail": "https://cj.lzcaiji.com"
+      "detail": "https://lzizy.com"
     },
     "360zy.com": {
       "name": "🎬360 资源",
@@ -108,6 +107,7 @@
       "detail": "https://www.ukuzy.com"
     },
     "api.guangsuapi.com": {
+      "_comment": "暂不支持搜索",
       "name": "🎬光速资源",
       "api": "https://api.guangsuapi.com/api.php/provide/vod",
       "detail": "https://api.guangsuapi.com"
@@ -117,17 +117,13 @@
       "api": "https://www.hongniuzy2.com/api.php/provide/vod",
       "detail": "https://www.hongniuzy.com"
     },
-    "caiji.moduapi.cc": {
-      "name": "🎬魔都动漫",
-      "api": "https://caiji.moduapi.cc/api.php/provide/vod",
-      "detail": "https://caiji.moduapi.cc"
-    },
     "www.ryzyw.com": {
       "name": "🎬如意资源",
       "api": "https://cj.rycjapi.com/api.php/provide/vod",
       "detail": "https://www.ryzyw.com"
     },
     "www.haohuazy.com": {
+      "_comment": "暂不支持搜索",
       "name": "🎬豪华资源",
       "api": "https://hhzyapi.com/api.php/provide/vod",
       "detail": "https://www.haohuazy.com"
@@ -143,28 +139,9 @@
       "detail": "https://lovedan.net"
     },
     "zy.jinchancaiji.com": {
-      "_comment": "无搜索结果",
       "name": "🎬金蝉影视",
       "api": "https://zy.jinchancaiji.com/api.php/provide/vod",
       "detail": "https://zy.jinchancaiji.com"
-    },
-    "lzizy.net": {
-      "_comment": "备用",
-      "name": "🎬量子影视",
-      "api": "https://cj.lziapi.com/api.php/provide/vod",
-      "detail": "https://lzizy.net"
-    },
-    "zuidazy.co": {
-      "_comment": "备用",
-      "name": "🎬最大点播",
-      "api": "https://zuidazy.me/api.php/provide/vod",
-      "detail": "https://zuidazy.co"
-    },
-    "wujinzy.com": {
-      "_comment": "备用",
-      "name": "🎬无尽影视",
-      "api": "https://api.wujinapi.com/api.php/provide/vod",
-      "detail": "https://wujinzy.com"
     },
     "wwzy.tv": {
       "_comment": "备用",
@@ -173,13 +150,11 @@
       "detail": "https://wwzy.tv"
     },
     "1080zyk4.com": {
-      "_comment": "无法搜索",
       "name": "🎬优质资源",
       "api": "https://api.yzzy-api.com/inc/apijson.php",
       "detail": "https://1080zyk4.com"
     },
     "www.huyaapi.com": {
-      "_comment": "污染搜索结果",
       "name": "🎬虎牙资源",
       "api": "https://www.huyaapi.com/api.php/provide/vod",
       "detail": "https://www.huyaapi.com"
@@ -244,11 +219,6 @@
       "api": "https://apilsbzy1.com/api.php/provide/vod",
       "detail": "https://apilsbzy1.com"
     },
-    "www.yyzywcj.com": {
-      "name": "🔞优优资源",
-      "api": "https://www.yyzywcj.com/api.php/provide/vod",
-      "detail": "https://www.yyzywcj.com"
-    },
     "xiaojizy.live": {
       "name": "🔞小鸡资源",
       "api": "https://api.xiaojizy.live/provide/vod",
@@ -295,7 +265,6 @@
       "detail": "https://shayuapi.com"
     },
     "doudouzy.com": {
-      "_comment": " 不稳定 ",
       "name": "🔞豆豆资源",
       "api": "https://api.douapi.cc/api.php/provide/vod",
       "detail": "https://doudouzy.com"
@@ -326,7 +295,6 @@
       "detail": "https://www.jingpinx.com"
     },
     "ckzy.me": {
-      "_comment": "无搜索结果",
       "name": "🔞 CK-资源",
       "api": "https://ckzy.me/api.php/provide/vod",
       "detail": "https://ckzy.me"
@@ -337,40 +305,35 @@
       "detail": "https://api.souavzyw.net"
     },
     "www.xxibaozyw.com": {
-      "_comment": "无搜索结果",
       "name": "🔞细胞资源",
       "api": "https://www.xxibaozyw.com/api.php/provide/vod",
       "detail": "https://www.xxibaozyw.com"
     },
     "xiangjiaozyw.com": {
-      "_comment": "无搜索结果",
       "name": "🔞香蕉资源",
       "api": "https://www.xiangjiaozyw.com/api.php/provide/vod",
       "detail": "https://www.xiangjiaozyw.com"
     },
     "www.msnii.com": {
-      "_comment": "无法搜索",
       "name": "🔞-美少女-",
       "api": "https://www.msnii.com/api/json.php",
       "detail": "https://www.msnii.com"
     },
     "www.pgxdy.com": {
-      "_comment": "无法搜索",
       "name": "🔞-黄AVZY",
       "api": "https://www.pgxdy.com/api/json.php",
       "detail": "https://www.pgxdy.com"
     },
     "www.kxgav.com": {
-      "_comment": "无法搜索",
       "name": "🔞白嫖资源",
       "api": "https://www.kxgav.com/api/json.php",
       "detail": "https://www.kxgav.com"
     },
-    "xingba111.com": {
+    "sex8zy2.com": {
       "_comment": "403 Forbidden",
       "name": "🔞杏吧资源",
       "api": "https://xingba222.com/api.php/provide/vod",
-      "detail": "https://xingba111.com"
+      "detail": "https://sex8zy2.com"
     },
     "dadizy11.com": {
       "_comment": "污染搜索结果",
@@ -379,13 +342,11 @@
       "detail": "https://dadizy11.com"
     },
     "semaozy1.com": {
-      "_comment": "无法搜索",
       "name": "🔞色猫资源",
       "api": "https://caiji.semaozy.net/inc/apijson_vod.php/provide/vod",
       "detail": "https://semaozy1.com"
     },
     "aosikazy.com": {
-      "_comment": "禁止搜索结果",
       "name": "🔞-奥斯卡-",
       "api": "https://aosikazy.com/api.php/provide/vod",
       "detail": "https://aosikazy.com"
