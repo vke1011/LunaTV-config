@@ -1,6 +1,6 @@
 name: JSON Build, API Check & Encoding
 
-on:
+于:
   schedule:
     - cron: "0 17 * * *"  # 每天北京时间凌晨1点运行 (UTC 17点)
   push:
@@ -10,7 +10,7 @@ on:
     inputs:
       api_name:
         description: '搜索关键字'
-        default: 你好
+        默认: 我的
 
 jobs:
   build-check-encode:
@@ -86,7 +86,7 @@ jobs:
       # 6️⃣ 运行 API 检查脚本
       - name: Run API check
         run: |
-          API_NAME="${{ github.event.inputs.api_name || '你好' }}"
+          API_NAME="${{ github.event.inputs.api_name || '我的' }}"
           echo "检查 API: $API_NAME"
           node check_api.js "$API_NAME"
 
