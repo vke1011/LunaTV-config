@@ -1,6 +1,6 @@
 name: JSON Build, API Check & Encoding
 
-于:
+on:
   schedule:
     - cron: "0 17 * * *"  # 每天北京时间凌晨1点运行 (UTC 17点)
   push:
@@ -10,7 +10,7 @@ name: JSON Build, API Check & Encoding
     inputs:
       api_name:
         description: '搜索关键字'
-        默认: 我的
+        default: 我的
 
 jobs:
   build-check-encode:
@@ -113,5 +113,4 @@ jobs:
 
           # 推送到远程 main
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
-
 
