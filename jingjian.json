@@ -281,11 +281,6 @@
       "api": "https://www.kxgav.com/api/json.php",
       "detail": "https://www.kxgav.com"
     },
-    "semaozy1.com": {
-      "name": "🔞色猫资源",
-      "api": "https://caiji.semaozy.net/inc/apijson_vod.php/provide/vod",
-      "detail": "https://semaozy1.com"
-    },
     "aosikazy.com": {
       "name": "🔞-奥斯卡-",
       "api": "https://aosikazy.com/api.php/provide/vod",
