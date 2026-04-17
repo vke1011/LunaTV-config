@@ -258,10 +258,10 @@
       "api": "https://api.douapi.cc/api.php/provide/vod",
       "detail": "https://doudouzy.com"
     },
-    "www.didizy1.com": {
+    "didiziyuan.com": {
       "name": "🔞滴滴资源",
-      "api": "https://www.didizy1.com/api.php/provide/vod",
-      "detail": "https://www.didizy1.com"
+      "api": "https://didiziyuan.com/api.php/provide/vod",
+      "detail": "https://didiziyuan.com"
     },
     "heiliaozy.cc": {
       "name": "🔞黑料资源",
@@ -302,21 +302,6 @@
       "name": "🔞香蕉资源",
       "api": "https://www.xiangjiaozyw.com/api.php/provide/vod",
       "detail": "https://www.xiangjiaozyw.com"
-    },
-    "www.msnii.com": {
-      "name": "🔞-美少女-",
-      "api": "https://www.msnii.com/api/json.php",
-      "detail": "https://www.msnii.com"
-    },
-    "www.pgxdy.com": {
-      "name": "🔞-黄AVZY",
-      "api": "https://www.pgxdy.com/api/json.php",
-      "detail": "https://www.pgxdy.com"
-    },
-    "www.kxgav.com": {
-      "name": "🔞白嫖资源",
-      "api": "https://www.kxgav.com/api/json.php",
-      "detail": "https://www.kxgav.com"
     },
     "sex8zy2.com": {
       "_comment": "403 Forbidden",
