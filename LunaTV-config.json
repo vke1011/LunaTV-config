@@ -178,7 +178,7 @@
     },
     "hsckzy888.com": {
       "name": "🔞黄色仓库",
-      "api": " https://hsckzy888.com/api.php/provide/vod",
+      "api": " https://hsckzy888.com/api.php/provide/vod/at/json/?ac=videolist&wd=",
       "detail": "https://hsckzy888.com"
     },
     "apidanaizi.com": {
