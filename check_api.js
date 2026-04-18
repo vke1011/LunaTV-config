@@ -241,7 +241,7 @@ const queueRun = (tasks, limit) => {
   for (const s of sorted) {
     const detailLink = s.detail.startsWith("http") ? `[Link](${s.detail})` : s.detail;
     const apiLink = `[Link](${s.api})`;
-    const proxyBadge = s.viaProxy ? "🔀" : "-";
+    const proxyBadge = s.viaProxy ? "🔀" : "🌐";
     md += `| ${s.status} | ${s.name} | ${detailLink} | ${apiLink} | ${proxyBadge} | ${s.searchStatus} | ${s.ok} | ${s.fail} | ${s.successRate} | ${s.trend} |\n`;
   }
 
