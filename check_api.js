@@ -21,7 +21,6 @@ const PROXY_URL = "https://corsapi.998836.xyz/?url=";
 const PROXY_DOMAINS = [
   "apibdzy.com", 
   "lovedan.net",
-  "ffzyapi.com",
 ];
 
 // === 工具函数 ===
