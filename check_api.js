@@ -26,7 +26,7 @@ const PROXY_PREFIX = "https://corsapi.998836.xyz/?url=";
 //   "api.example2.net",
 // ];
 const PROXY_DOMAINS = [
-  "apibdzy.com", 
+  "apibdzy.com"，
   "lovedan.net",
 ];
 
@@ -123,7 +123,7 @@ const queueRun = (tasks, limit) => {
         tasks[i]()
           .then((res) => (results[i] = res))
           .catch((err) => (results[i] = { error: err }))
-          .finally(() => {
+          。finally(() => {
             active--;
             next();
           });
@@ -139,7 +139,7 @@ const queueRun = (tasks, limit) => {
   console.log("⏳ 正在检测 API 与搜索功能可用性（队列并发 + 重试机制 + 中转站支持）...");
 
   if (PROXY_DOMAINS.length > 0) {
-    console.log(`🔀 中转站已启用，共 ${PROXY_DOMAINS.length} 个域名走代理：${PROXY_DOMAINS.join(", ")}`);
+    console。log(`🔀 中转站已启用，共 ${PROXY_DOMAINS.length} 个域名走代理：${PROXY_DOMAINS.join(", ")}`);
   } else {
     console.log("ℹ️  未配置中转站域名，所有请求直连");
   }
@@ -202,11 +202,11 @@ const queueRun = (tasks, limit) => {
 
     const recent = history.slice(-7);
     stats[api].trend = recent
-      。map((day) => {
+      .map((day) => {
         const r = day.results.find((x) => x.api === api);
         return r ? (r.success ? "✅" : "❌") : "-";
       })
-      。join("");
+      .join("");
 
     const latest = todayResults.find((x) => x.api === api);
     if (latest) {
