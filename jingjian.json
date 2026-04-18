@@ -146,6 +146,11 @@
       "api": "https://www.seacms.org/api.php/provide/vod",
       "detail": "https://www.seacms.org"
     },
+    "yjzy.me": {
+      "name": "🎬影剧资源",
+      "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
+      "detail": "https://yjzy.me"
+    },
     "91md.me": {
       "name": "🔞麻豆视频",
       "api": "https://91md.me/api.php/provide/vod",
