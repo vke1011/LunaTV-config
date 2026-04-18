@@ -15,6 +15,28 @@ const CONCURRENT_LIMIT = 10; // 并发限制
 const MAX_RETRY = 3;        // 请求最大重试次数
 const RETRY_DELAY_MS = 500; // 重试间隔(ms)
 
+// === 中转站配置 ===
+const PROXY_URL = "https://corsapi.998836.xyz/?url=";
+// 👇 你可以在这里添加需要走中转站的域名关键词
+const PROXY_DOMAINS = [
+  "apibdzy.com", 
+  "lovedan.net"
+];
+
+// === 工具函数 ===
+const delay = ms => new Promise(r => setTimeout(r, ms));
+
+/**
+ * 自动判定并添加中转前缀
+ */
+const getFinalUrl = (url) => {
+  const needsProxy = PROXY_DOMAINS.some(domain => url.includes(domain));
+  if (needsProxy && !url.startsWith(PROXY_URL)) {
+    return `${PROXY_URL}${encodeURIComponent(url)}`;
+  }
+  return url;
+};
+
 // === 加载配置 ===
 if (!fs.existsSync(CONFIG_PATH)) {
   console.error("❌ 配置文件不存在:", CONFIG_PATH);
@@ -47,12 +69,14 @@ const now = new Date(Date.now() + 8 * 60 * 60 * 1000)
   .slice(0, 16) + " CST";
 
 // === 工具函数（带重试） ===
-const delay = ms => new Promise(r => setTimeout(r, ms));
-
 const safeGet = async (url) => {
+  const finalUrl = getFinalUrl(url); // 应用中转逻辑
   for (let attempt = 1; attempt <= MAX_RETRY; attempt++) {
     try {
-      const res = await axios.get(url, { timeout: TIMEOUT_MS });
+      const res = await axios.get(finalUrl, { 
+        timeout: TIMEOUT_MS,
+        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' }
+      });
       return res.status === 200;
     } catch {
       if (attempt < MAX_RETRY) await delay(RETRY_DELAY_MS);
@@ -62,14 +86,24 @@ const safeGet = async (url) => {
 };
 
 const testSearch = async (api, keyword) => {
+  const finalApi = getFinalUrl(api); // 应用中转逻辑
   for (let attempt = 1; attempt <= MAX_RETRY; attempt++) {
     try {
-      const url = `${api}?wd=${encodeURIComponent(keyword)}`;
-      const res = await axios.get(url, { timeout: TIMEOUT_MS });
+      // 自动判定连接符 ? 或 &
+      const connector = finalApi.includes('?') ? '&' : '?';
+      const url = `${finalApi}${connector}wd=${encodeURIComponent(keyword)}`;
+      
+      const res = await axios.get(url, { 
+        timeout: TIMEOUT_MS,
+        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' }
+      });
+
       if (res.status !== 200 || !res.data || typeof res.data !== "object") return "❌";
-      const list = res.data.list || [];
+      
+      const list = res.data.list || res.data.data || [];
       if (!list.length) return "无结果";
-      return list.some(item => JSON.stringify(item).includes(keyword)) ? "✅" : "不匹配";
+      
+      return JSON.stringify(list).includes(keyword) ? "✅" : "不匹配";
     } catch {
       if (attempt < MAX_RETRY) await delay(RETRY_DELAY_MS);
       else return "❌";
@@ -105,13 +139,14 @@ const queueRun = (tasks, limit) => {
 
 // === 主逻辑 ===
 (async () => {
-  console.log("⏳ 正在检测 API 与搜索功能可用性（队列并发 + 重试机制）...");
+  console.log("⏳ 正在检测 API 与搜索功能可用性（自动中转模式）...");
 
   const tasks = apiEntries.map(({ name, api, disabled }) => async () => {
     if (disabled) return { name, api, disabled, success: false, searchStatus: "无法搜索" };
 
     const ok = await safeGet(api);
     const searchStatus = ENABLE_SEARCH_TEST ? await testSearch(api, SEARCH_KEYWORD) : "-";
+    // 记录原始 API 地址用于后续匹配历史记录
     return { name, api, disabled, success: ok, searchStatus };
   });
 
@@ -129,7 +164,7 @@ const queueRun = (tasks, limit) => {
   // === 统计和生成报告 ===
   const stats = {};
   for (const { name, api, detail, disabled } of apiEntries) {
-    stats[api] = { name, api, detail, disabled, ok: 0, fail: 0, fail_streak: 0, trend: "", searchStatus: "-", status: "❌" };
+    stats[api] = { name, api, detail, disabled, ok: 0, fail: 0, trend: "", searchStatus: "-", status: "❌" };
 
     for (const day of history) {
       const rec = day.results.find((x) => x.api === api);
@@ -183,7 +218,6 @@ const queueRun = (tasks, limit) => {
   md += `\n<details>\n<summary>📜 点击展开查看历史检测数据 (JSON)</summary>\n\n`;
   md += "```json\n" + JSON.stringify(history, null, 2) + "\n```\n";
   md += `</details>\n`;
-
 
   fs.writeFileSync(REPORT_PATH, md, "utf-8");
   console.log("📄 报告已生成:", REPORT_PATH);
