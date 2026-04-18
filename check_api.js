@@ -20,7 +20,7 @@ const PROXY_URL = "https://corsapi.998836.xyz/?url=";
 // 👇 你可以在这里添加需要走中转站的域名关键词
 const PROXY_DOMAINS = [
   "apibdzy.com", 
-  "lovedan.net"
+  "lovedan.net",
   "dyttzyapi.com"
 ];
 
