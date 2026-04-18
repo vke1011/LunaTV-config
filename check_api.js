@@ -11,31 +11,37 @@ const WARN_STREAK = 3;
 const ENABLE_SEARCH_TEST = true;
 const SEARCH_KEYWORD = process.argv[2] || "斗罗大陆";
 const TIMEOUT_MS = 10000;
-const CONCURRENT_LIMIT = 10; // 并发限制
-const MAX_RETRY = 3;        // 请求最大重试次数
-const RETRY_DELAY_MS = 500; // 重试间隔(ms)
+const CONCURRENT_LIMIT = 10;
+const MAX_RETRY = 3;
+const RETRY_DELAY_MS = 500;
 
 // === 中转站配置 ===
-const PROXY_URL = "https://corsapi.998836.xyz/?url=";
-// 👇 你可以在这里添加需要走中转站的域名关键词
+// 中转站前缀，请求时拼接在目标 URL 前面
+const PROXY_PREFIX = "https://corsapi.998836.xyz/?url=";
+
+// 需要走中转站的域名列表（在这里添加你的域名）
+// 示例：
+// const PROXY_DOMAINS = [
+//   "example1.com",
+//   "api.example2.net",
+// ];
 const PROXY_DOMAINS = [
   "apibdzy.com", 
   "lovedan.net",
 ];
 
-// === 工具函数 ===
-const delay = ms => new Promise(r => setTimeout(r, ms));
-
-/**
- * 自动判定并添加中转前缀
- */
-const getFinalUrl = (url) => {
-  const needsProxy = PROXY_DOMAINS.some(domain => url.includes(domain));
-  if (needsProxy && !url.startsWith(PROXY_URL)) {
-    return `${PROXY_URL}${encodeURIComponent(url)}`;
+// === 判断某个 URL 是否需要走中转站 ===
+const needsProxy = (url) => {
+  try {
+    const hostname = new URL(url).hostname;
+    return PROXY_DOMAINS.some((domain) => hostname === domain || hostname.endsWith("." + domain));
+  } catch {
+    return false;
   }
-  return url;
 };
+
+// 根据是否需要中转站，返回最终请求 URL
+const resolveUrl = (url) => (needsProxy(url) ? `${PROXY_PREFIX}${encodeURIComponent(url)}` : url);
 
 // === 加载配置 ===
 if (!fs.existsSync(CONFIG_PATH)) {
@@ -63,47 +69,39 @@ if (fs.existsSync(REPORT_PATH)) {
 }
 
 // === 当前 CST 时间 ===
-const now = new Date(Date.now() + 8 * 60 * 60 * 1000)
-  .toISOString()
-  .replace("T", " ")
-  .slice(0, 16) + " CST";
+const now =
+  new Date(Date.now() + 8 * 60 * 60 * 1000)
+    .toISOString()
+    .replace("T", " ")
+    .slice(0, 16) + " CST";
 
-// === 工具函数（带重试） ===
+// === 工具函数（带重试 + 中转站支持） ===
+const delay = (ms) => new Promise((r) => setTimeout(r, ms));
+
 const safeGet = async (url) => {
-  const finalUrl = getFinalUrl(url); // 应用中转逻辑
+  const finalUrl = resolveUrl(url);
+  const viaProxy = finalUrl !== url;
   for (let attempt = 1; attempt <= MAX_RETRY; attempt++) {
     try {
-      const res = await axios.get(finalUrl, { 
-        timeout: TIMEOUT_MS,
-        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' }
-      });
-      return res.status === 200;
+      const res = await axios.get(finalUrl, { timeout: TIMEOUT_MS });
+      return { success: res.status === 200, viaProxy };
     } catch {
       if (attempt < MAX_RETRY) await delay(RETRY_DELAY_MS);
-      else return false;
+      else return { success: false, viaProxy };
     }
   }
 };
 
 const testSearch = async (api, keyword) => {
-  const finalApi = getFinalUrl(api); // 应用中转逻辑
+  const rawUrl = `${api}?wd=${encodeURIComponent(keyword)}`;
+  const finalUrl = resolveUrl(rawUrl);
   for (let attempt = 1; attempt <= MAX_RETRY; attempt++) {
     try {
-      // 自动判定连接符 ? 或 &
-      const connector = finalApi.includes('?') ? '&' : '?';
-      const url = `${finalApi}${connector}wd=${encodeURIComponent(keyword)}`;
-      
-      const res = await axios.get(url, { 
-        timeout: TIMEOUT_MS,
-        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' }
-      });
-
+      const res = await axios.get(finalUrl, { timeout: TIMEOUT_MS });
       if (res.status !== 200 || !res.data || typeof res.data !== "object") return "❌";
-      
-      const list = res.data.list || res.data.data || [];
+      const list = res.data.list || [];
       if (!list.length) return "无结果";
-      
-      return JSON.stringify(list).includes(keyword) ? "✅" : "不匹配";
+      return list.some((item) => JSON.stringify(item).includes(keyword)) ? "✅" : "不匹配";
     } catch {
       if (attempt < MAX_RETRY) await delay(RETRY_DELAY_MS);
       else return "❌";
@@ -117,37 +115,43 @@ const queueRun = (tasks, limit) => {
   let active = 0;
   const results = [];
 
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     const next = () => {
       while (active < limit && index < tasks.length) {
         const i = index++;
         active++;
-        tasks[i]().then(res => results[i] = res)
-                  .catch(err => results[i] = { error: err })
-                  .finally(() => {
-                    active--;
-                    next();
-                  });
+        tasks[i]()
+          .then((res) => (results[i] = res))
+          .catch((err) => (results[i] = { error: err }))
+          .finally(() => {
+            active--;
+            next();
+          });
       }
-
       if (index >= tasks.length && active === 0) resolve(results);
     };
-
     next();
   });
 };
 
 // === 主逻辑 ===
 (async () => {
-  console.log("⏳ 正在检测 API 与搜索功能可用性（自动中转模式）...");
+  console.log("⏳ 正在检测 API 与搜索功能可用性（队列并发 + 重试机制 + 中转站支持）...");
+
+  if (PROXY_DOMAINS.length > 0) {
+    console.log(`🔀 中转站已启用，共 ${PROXY_DOMAINS.length} 个域名走代理：${PROXY_DOMAINS.join(", ")}`);
+  } else {
+    console.log("ℹ️  未配置中转站域名，所有请求直连");
+  }
 
   const tasks = apiEntries.map(({ name, api, disabled }) => async () => {
-    if (disabled) return { name, api, disabled, success: false, searchStatus: "无法搜索" };
+    if (disabled) {
+      return { name, api, disabled, success: false, viaProxy: false, searchStatus: "无法搜索" };
+    }
 
-    const ok = await safeGet(api);
+    const { success, viaProxy } = await safeGet(api);
     const searchStatus = ENABLE_SEARCH_TEST ? await testSearch(api, SEARCH_KEYWORD) : "-";
-    // 记录原始 API 地址用于后续匹配历史记录
-    return { name, api, disabled, success: ok, searchStatus };
+    return { name, api, disabled, success, viaProxy, searchStatus };
   });
 
   const todayResults = await queueRun(tasks, CONCURRENT_LIMIT);
@@ -164,7 +168,19 @@ const queueRun = (tasks, limit) => {
   // === 统计和生成报告 ===
   const stats = {};
   for (const { name, api, detail, disabled } of apiEntries) {
-    stats[api] = { name, api, detail, disabled, ok: 0, fail: 0, fail_streak: 0, trend: "", searchStatus: "-", status: "❌" };
+    stats[api] = {
+      name,
+      api,
+      detail,
+      disabled,
+      ok: 0,
+      fail: 0,
+      fail_streak: 0,
+      trend: "",
+      searchStatus: "-",
+      status: "❌",
+      viaProxy: false,
+    };
 
     for (const day of history) {
       const rec = day.results.find((x) => x.api === api);
@@ -180,17 +196,23 @@ const queueRun = (tasks, limit) => {
       if (rec.success) break;
       streak++;
     }
+
     const total = stats[api].ok + stats[api].fail;
     stats[api].successRate = total > 0 ? ((stats[api].ok / total) * 100).toFixed(1) + "%" : "-";
 
     const recent = history.slice(-7);
-    stats[api].trend = recent.map(day => {
-      const r = day.results.find(x => x.api === api);
-      return r ? (r.success ? "✅" : "❌") : "-";
-    }).join("");
+    stats[api].trend = recent
+      。map((day) => {
+        const r = day.results.find((x) => x.api === api);
+        return r ? (r.success ? "✅" : "❌") : "-";
+      })
+      。join("");
 
-    const latest = todayResults.find(x => x.api === api);
-    if (latest) stats[api].searchStatus = latest.searchStatus;
+    const latest = todayResults.find((x) => x.api === api);
+    if (latest) {
+      stats[api].searchStatus = latest.searchStatus;
+      stats[api].viaProxy = latest.viaProxy || false;
+    }
 
     if (disabled) stats[api].status = "🚫";
     else if (streak >= WARN_STREAK) stats[api].status = "🚨";
@@ -200,9 +222,16 @@ const queueRun = (tasks, limit) => {
   // === 生成 Markdown 报告 ===
   let md = `# 源接口健康检测报告\n\n`;
   md += `最近更新时间：${now}\n\n`;
-  md += `**总源数:** ${apiEntries.length} | **检测关键词:** ${SEARCH_KEYWORD}\n\n`;
-  md += "| 状态 | 资源名称 | 地址 | API | 搜索功能 | 成功次数 | 失败次数 | 成功率 | 最近7天趋势 |\n";
-  md += "|------|---------|-----|-----|---------|---------:|--------:|-------:|--------------|\n";
+  md += `**总源数:** ${apiEntries.length} | **检测关键词:** ${SEARCH_KEYWORD}`;
+
+  if (PROXY_DOMAINS.length > 0) {
+    md += ` | **中转站:** \`${PROXY_PREFIX}\` (${PROXY_DOMAINS.length} 个域名)\n\n`;
+  } else {
+    md += `\n\n`;
+  }
+
+  md += "| 状态 | 资源名称 | 地址 | API | 中转 | 搜索功能 | 成功次数 | 失败次数 | 成功率 | 最近7天趋势 |\n";
+  md += "|------|---------|-----|-----|:----:|---------|---------:|--------:|-------:|--------------|\n";
 
   const sorted = Object.values(stats).sort((a, b) => {
     const order = { "🚨": 1, "❌": 2, "✅": 3, "🚫": 4 };
@@ -212,7 +241,8 @@ const queueRun = (tasks, limit) => {
   for (const s of sorted) {
     const detailLink = s.detail.startsWith("http") ? `[Link](${s.detail})` : s.detail;
     const apiLink = `[Link](${s.api})`;
-    md += `| ${s.status} | ${s.name} | ${detailLink} | ${apiLink} | ${s.searchStatus} | ${s.ok} | ${s.fail} | ${s.successRate} | ${s.trend} |\n`;
+    const proxyBadge = s.viaProxy ? "🔀" : "-";
+    md += `| ${s.status} | ${s.name} | ${detailLink} | ${apiLink} | ${proxyBadge} | ${s.searchStatus} | ${s.ok} | ${s.fail} | ${s.successRate} | ${s.trend} |\n`;
   }
 
   md += `\n<details>\n<summary>📜 点击展开查看历史检测数据 (JSON)</summary>\n\n`;
