@@ -15,16 +15,18 @@ const CONCURRENT_LIMIT = 10;
 const MAX_RETRY = 3;
 const RETRY_DELAY_MS = 500;
 
+// === 请求头（模拟浏览器，避免被视频源拒绝） ===
+const REQUEST_HEADERS = {
+  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+  "Accept": "application/json, text/plain, */*",
+  "Accept-Language": "zh-CN,zh;q=0.9",
+};
+
 // === 中转站配置 ===
 // 中转站前缀，请求时拼接在目标 URL 前面
 const PROXY_PREFIX = "https://corsapi.998836.xyz/?url=";
 
 // 需要走中转站的域名列表（在这里添加你的域名）
-// 示例：
-// const PROXY_DOMAINS = [
-//   "example1.com",
-//   "api.example2.net",
-// ];
 const PROXY_DOMAINS = [
   "apibdzy.com",
   "lovedan.net",
@@ -83,7 +85,10 @@ const safeGet = async (url) => {
   const viaProxy = finalUrl !== url;
   for (let attempt = 1; attempt <= MAX_RETRY; attempt++) {
     try {
-      const res = await axios.get(finalUrl, { timeout: TIMEOUT_MS });
+      const res = await axios.get(finalUrl, {
+        timeout: TIMEOUT_MS,
+        headers: { ...REQUEST_HEADERS, Referer: url },
+      });
       return { success: res.status === 200, viaProxy };
     } catch {
       if (attempt < MAX_RETRY) await delay(RETRY_DELAY_MS);
@@ -97,7 +102,10 @@ const testSearch = async (api, keyword) => {
   const finalUrl = resolveUrl(rawUrl);
   for (let attempt = 1; attempt <= MAX_RETRY; attempt++) {
     try {
-      const res = await axios.get(finalUrl, { timeout: TIMEOUT_MS });
+      const res = await axios.get(finalUrl, {
+        timeout: TIMEOUT_MS,
+        headers: { ...REQUEST_HEADERS, Referer: api },
+      });
       if (res.status !== 200 || !res.data || typeof res.data !== "object") return "❌";
       const list = res.data.list || [];
       if (!list.length) return "无结果";
