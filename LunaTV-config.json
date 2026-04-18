@@ -1,6 +1,11 @@
 {
   "cache_time": 7200,
   "api_site": {
+    "www.ryzyw.com": {
+      "name": "🎬如意资源",
+      "api": "https://cj.rycjapi.com/api.php/provide/vod",
+      "detail": "https://www.ryzyw.com"
+    },          
     "iqiyizyapi.com": {
       "name": "🎬-爱奇艺-",
       "api": "https://iqiyizyapi.com/api.php/provide/vod",
@@ -117,11 +122,6 @@
       "api": "https://www.hongniuzy2.com/api.php/provide/vod",
       "detail": "https://www.hongniuzy.com"
     },
-    "www.ryzyw.com": {
-      "name": "🎬如意资源",
-      "api": "https://cj.rycjapi.com/api.php/provide/vod",
-      "detail": "https://www.ryzyw.com"
-    },
     "www.haohuazy.com": {
       "_comment": "暂不支持搜索",
       "name": "🎬豪华资源",
@@ -183,10 +183,10 @@
       "api": "https://m3u8.apiyhzy.com/api.php/provide/vod",
       "detail": "https://yhzy.cc"
     },
-    "www.hongniuzy.com": {
-      "name": "🎬红牛资源",
-      "api": "https://www.hongniuzy2.com/api.php/provide/vod",
-      "detail": "https://www.hongniuzy.com" 
+    "www.seacms.org": {
+      "name": "🎬花旗资源",
+      "api": "https://www.seacms.org/api.php/provide/vod",
+      "detail": "https://www.seacms.org"
     },
     "91md.me": {
       "name": "🔞麻豆视频",
