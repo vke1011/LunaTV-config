@@ -81,7 +81,10 @@ const mediumAvailability = rowsWithData.filter(row => row.availability >= 50 && 
 const lowAvailability = rowsWithData.filter(row => row.availability < 50 && !row.status.includes('🚫')).length;
 
 // 计算平均可用率
-const averageAvailability = totalApis > 0 ? (rowsWithData.reduce((sum, row) => sum + row.availability, 0) / totalApis).toFixed(1) : 0;
+const activeRows = rowsWithData.filter(row => !row.status.includes('🚫'));
+const averageAvailability = activeRows.length > 0 
+  ? (activeRows.reduce((sum, row) => sum + row.availability, 0) / activeRows.length).toFixed(1) 
+  : 0;
 
 // 获取当前 CST 时间
 const now = new Date(Date.now() + 8 * 60 * 60 * 1000)
