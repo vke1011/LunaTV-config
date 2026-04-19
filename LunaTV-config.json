@@ -270,7 +270,8 @@
     "aosikazy6.com": {
       "name": "🔞-奥斯卡-",
       "api": "https://aosikazy6.com/api.php/provide/vod",
-      "detail": "https://aosikazy6.com"
+      "detail": "https://aosikazy6.com",
+      "disabled": true
     }
   }
 }
