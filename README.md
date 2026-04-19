@@ -37,7 +37,7 @@ https://raw.githubusercontent.com/hafrey1/LunaTV-config/refs/heads/main/LunaTV-c
 
 --- 
 
-# 🌐 CORSAPI（API 代理 & JSON 订阅器）
+# 🔀 CORSAPI（API 代理 & JSON 订阅器）
 
 这是一个基于 **Cloudflare Workers** 的中转代理 + JSON 配置前缀替换工具。
 
@@ -90,7 +90,7 @@ https://<你的域名>/?url=https://ikunzyapi.com/api.php/provide/vod/
   
 #   
 
-🌐 部署到 Cloudflare Workers
+🔀 部署到 Cloudflare Workers
 
 1. 登录 [Cloudflare Dashboard](https://dash.cloudflare.com)。
 2. 进入 Workers & Pages → 创建应用程序（Create Application） → Workers → 从 Hello World! 开始 → 项目命名 → 部署 → 编辑代码。
@@ -317,7 +317,7 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
 - 📄 **Luna-TV配置编辑器**：专业的 JSON 配置文件可视化编辑器。  
 - 🔍 **自动检测API状态**：每 1 小时检测一次 API 可用性，并记录最近 100 次测试报告。  
 - 🧩 **源名称前添加图标**：源名称前添加图标，方便区分。  
-- 🌐 **被墙资源自动中转**：为受限 API 提供 CF Worker 中转能力。  
+- 🔀 **被墙资源自动中转**：为受限 API 提供 CF Worker 中转能力。  
 - 📄 **添加_comment参数**：为异常源添加_comment参数以方便维护,不影响正常使用!(2025.12.06)
 
 ---   
