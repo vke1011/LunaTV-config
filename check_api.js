@@ -213,7 +213,7 @@ const queueRun = (tasks, limit) => {
     stats[api].trend = recent
       .map((day) => {
         const r = day.results.find((x) => x.api === api);
-        return r ? (r.success ? "✅" : "❌") : "-";
+        return r ? (r.disabled ? "🚫" : r.success ? "✅" : "❌") : "-";
       })
       .join("");
 
