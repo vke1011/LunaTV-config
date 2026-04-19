@@ -43,9 +43,7 @@ jobs:
               | with_entries(select(.value._comment | not))
               | with_entries(select(.value.disabled | not))
             )
-          }' jingjian.json > jin18.json
-          EOF
-          jq -f filter.jq LunaTV-config.json > jingjian.json
+          }' LunaTV-config.json > jingjian.json
 
       - name: Validate jingjian.json
         run: jq empty jingjian.json
