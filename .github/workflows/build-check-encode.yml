@@ -36,15 +36,14 @@ jobs:
       # 3️⃣ JSON 处理：生成 jingjian.json
       - name: Generate jingjian.json (strip _comment)
         run: |
-          cat > filter.jq <<'EOF'
-          {
+          jq '{
             cache_time: .cache_time,
             api_site: (
               .api_site
               | with_entries(select(.value._comment | not))
-              | with_entries(select(.value.disabled != true))
+              | with_entries(select(.value.disabled | not))
             )
-          }
+          }' jingjian.json > jin18.json
           EOF
           jq -f filter.jq LunaTV-config.json > jingjian.json
 
