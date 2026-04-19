@@ -40,7 +40,7 @@ jobs:
             cache_time: .cache_time,
             api_site: (
               .api_site
-              | with_entries(select(.value._comment | not))
+              | with_entries(select(.value._comment | not) and (.value.disabled | not)))
             )
           }' LunaTV-config.json > jingjian.json
 
