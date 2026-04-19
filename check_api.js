@@ -154,7 +154,7 @@ const queueRun = (tasks, limit) => {
 
   const tasks = apiEntries.map(({ name, api, disabled }) => async () => {
     if (disabled) {
-      return { name, api, disabled, success: false, viaProxy: false, searchStatus: "无法搜索" };
+      return { name, api, disabled, success: null, viaProxy: false, searchStatus: "无法搜索" };
     }
 
     const { success, viaProxy } = await safeGet(api);
@@ -193,6 +193,7 @@ const queueRun = (tasks, limit) => {
     for (const day of history) {
       const rec = day.results.find((x) => x.api === api);
       if (!rec) continue;
+      if (rec.disabled) continue;
       if (rec.success) stats[api].ok++;
       else stats[api].fail++;
     }
