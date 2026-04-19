@@ -147,7 +147,7 @@ const queueRun = (tasks, limit) => {
   console.log("⏳ 正在检测 API 与搜索功能可用性（队列并发 + 重试机制 + 中转站支持）...");
 
   if (PROXY_DOMAINS.length > 0) {
-    console.log(`🔀 中转站已启用，共 ${PROXY_DOMAINS.length} 个域名走代理：${PROXY_DOMAINS.join(", ")}`);
+    console.log(`🔄 中转站已启用，共 ${PROXY_DOMAINS.length} 个域名走代理：${PROXY_DOMAINS.join(", ")}`);
   } else {
     console.log("ℹ️  未配置中转站域名，所有请求直连");
   }
@@ -249,7 +249,7 @@ const queueRun = (tasks, limit) => {
   for (const s of sorted) {
     const detailLink = s.detail.startsWith("http") ? `[Link](${s.detail})` : s.detail;
     const apiLink = `[Link](${s.api})`;
-    const proxyBadge = s.viaProxy ? "🔀" : "🌐";
+    const proxyBadge = s.viaProxy ? "🔄" : "🌐";
     md += `| ${s.status} | ${s.name} | ${detailLink} | ${apiLink} | ${proxyBadge} | ${s.searchStatus} | ${s.ok} | ${s.fail} | ${s.successRate} | ${s.trend} |\n`;
   }
 
