@@ -35,7 +35,6 @@ const rowsWithData = rows.map(line => {
     const successCount = parseInt(cols[7]) || 0; // 成功次数
     const failCount = parseInt(cols[8]) || 0; // 失败次数
     const availabilityStr = cols[9]; // 可用率列
-    const consecutiveFailDays = parseInt(cols[9]) || 0; // 连续失败天数
 
     // 提取可用率数字（去掉%符号）
     const availabilityMatch = availabilityStr.match(/(\d+\.?\d*)%/);
@@ -75,10 +74,10 @@ const successApis = rowsWithData.filter(row => row.isSuccess).length;
 const failApis = totalApis - successApis;
 
 // 按可用率区间分类
-const perfectApis = rowsWithData.filter(row => row.availability === 100).length;
-const highAvailability = rowsWithData.filter(row => row.availability >= 80 && row.availability < 100).length;
-const mediumAvailability = rowsWithData.filter(row => row.availability >= 50 && row.availability < 80).length;
-const lowAvailability = rowsWithData.filter(row => row.availability < 50).length;
+const perfectApis = rowsWithData.filter(row => row.availability === 100 && !row.status.includes('🚫')).length;
+const highAvailability = rowsWithData.filter(row => row.availability >= 80 && row.availability < 100 && !row.status.includes('🚫')).length;
+const mediumAvailability = rowsWithData.filter(row => row.availability >= 50 && row.availability < 80 && !row.status.includes('🚫')).length;
+const lowAvailability = rowsWithData.filter(row => row.availability < 50 && !row.status.includes('🚫')).length;
 
 // 计算平均可用率
 const averageAvailability = totalApis > 0 ? (rowsWithData.reduce((sum, row) => sum + row.availability, 0) / totalApis).toFixed(1) : 0;
