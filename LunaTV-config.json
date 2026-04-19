@@ -259,14 +259,13 @@
     "www.xxibaozyw.com": {
       "name": "🔞细胞资源",
       "api": "https://www.xxibaozyw.com/api.php/provide/vod",
-      "detail": "https://www.xxibaozyw.com",
-      "disabled": true
+      "detail": "https://www.xxibaozyw.com"
     },
     "xiangjiaozyw.com": {
       "name": "🔞香蕉资源",
       "api": "https://www.xiangjiaozyw.com/api.php/provide/vod",
-      "detail": "https://www.xiangjiaozyw.com"
-
+      "detail": "https://www.xiangjiaozyw.com",
+      "disabled": true
     },
     "aosikazy6.com": {
       "name": "🔞-奥斯卡-",
