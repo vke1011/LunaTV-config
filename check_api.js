@@ -193,7 +193,6 @@ const queueRun = (tasks, limit) => {
     for (const day of history) {
       const rec = day.results.find((x) => x.api === api);
       if (!rec) continue;
-      if (rec.disabled) continue;
       if (rec.success) stats[api].ok++;
       else stats[api].fail++;
     }
