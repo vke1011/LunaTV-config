@@ -32,10 +32,10 @@ const rowsWithData = rows.map(line => {
     const status = cols[1]; // 状态列
     const apiName = cols[2]; // API名称列
     const apiAddress = cols[4]; // API地址列
-    const successCount = parseInt(cols[6]) || 0; // 成功次数
-    const failCount = parseInt(cols[7]) || 0; // 失败次数
-    const availabilityStr = cols[8]; // 可用率列
-    const consecutiveFailDays = parseInt(cols[8]) || 0; // 连续失败天数
+    const successCount = parseInt(cols[7]) || 0; // 成功次数
+    const failCount = parseInt(cols[8]) || 0; // 失败次数
+    const availabilityStr = cols[9]; // 可用率列
+    const consecutiveFailDays = parseInt(cols[9]) || 0; // 连续失败天数
 
     // 提取可用率数字（去掉%符号）
     const availabilityMatch = availabilityStr.match(/(\d+\.?\d*)%/);
