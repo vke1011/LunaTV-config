@@ -89,7 +89,13 @@ const safeGet = async (url) => {
         timeout: TIMEOUT_MS,
         headers: { ...REQUEST_HEADERS, Referer: url },
       });
-      return { success: res.status === 200, viaProxy };
+      const isValid =
+        res.status === 200 &&
+        res.data &&
+        typeof res.data === "object" &&
+        Object.keys(res.data).length > 0;
+
+      return { success: isValid, viaProxy };
     } catch {
       if (attempt < MAX_RETRY) await delay(RETRY_DELAY_MS);
       else return { success: false, viaProxy };
