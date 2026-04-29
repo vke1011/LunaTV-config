@@ -342,11 +342,11 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
   
 # API 健康报告（每日自动检测API状态）
 
-## API 状态（最近更新：2026-04-29 13:54 CST）
+## API 状态（最近更新：2026-04-30 02:10 CST）
 
 - 总 API 数量：54
-- 成功 API 数量：52
-- 失败 API 数量：2
+- 成功 API 数量：53
+- 失败 API 数量：1
 - 平均可用率：98.6%
 - 完美可用率（100%）：45 个
 - 高可用率（80%-99%）：8 个
@@ -388,7 +388,7 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
 | ✅ | 🔞-奥斯卡- | [Link](https://aosikazy6.com) | [Link](https://aosikazy6.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞155-资源 | [Link](https://155zy2.com) | [Link](https://155api.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞jkun资源 | [Link](https://jkunzyapi.com) | [Link](https://jkunzyapi.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
-| ✅ | 🔞优优资源 | [Link](https://www.yytv4.cc) | [Link](https://www.yytv4.cc/api.php/provide/vod) | 🌐 | ✅ | 7 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
+| ✅ | 🔞优优资源 | [Link](https://www.yytv4.cc) | [Link](https://www.yytv4.cc/api.php/provide/vod) | 🌐 | ✅ | 8 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞奶香资源 | [Link](https://Naixxzy.com) | [Link](https://Naixxzy.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞小鸡资源 | [Link](https://xjzy1.xyz) | [Link](https://api.xjzyapi.xyz/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞桃花资源 | [Link](https://thzy1.me) | [Link](https://thzy1.me/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
@@ -409,9 +409,9 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
 | ✅ | 🔞souavZY | [Link](https://souavzyw.com) | [Link](https://souavzyw.com/api.php/provide/vod) | 🌐 | ✅ | 29 | 1 | 96.7% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞森林资源 | [Link](https://senlinzy1.com) | [Link](https://beiyong.slapibf.com/api.php/provide/vod) | 🌐 | ✅ | 29 | 1 | 96.7% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞百万资源 | [Link](https://api.bwzyz.com) | [Link](https://api.bwzyz.com/api.php/provide/vod) | 🌐 | ✅ | 29 | 1 | 96.7% | ✅✅✅✅✅✅✅ |
-| ❌ | 🔞鲨鱼资源 | [Link](https://shayuzy.com) | [Link](https://shayuzy.com/api.php/provide/vod) | 🌐 | ❌ | 29 | 1 | 96.7% | ✅✅✅✅✅✅❌ |
+| ✅ | 🔞鲨鱼资源 | [Link](https://shayuzy.com) | [Link](https://shayuzy.com/api.php/provide/vod) | 🌐 | ✅ | 29 | 1 | 96.7% | ✅✅✅✅✅❌✅ |
 | ✅ | 🔞乐播资源 | [Link](https://lebozy.com) | [Link](https://lbapi9.com/api.php/provide/vod) | 🌐 | ✅ | 28 | 2 | 93.3% | ✅✅✅✅✅✅✅ |
-| 🚨 | 🎬金蝉影视 | [Link](https://zy.jinchancaiji.com) | [Link](https://zy.jinchancaiji.com/api.php/provide/vod) | 🌐 | ❌ | 17 | 13 | 56.7% | ❌❌❌❌❌❌❌ |
+| 🚨 | 🎬金蝉影视 | [Link](https://zy.jinchancaiji.com) | [Link](https://zy.jinchancaiji.com/api.php/provide/vod) | 🌐 | ❌ | 16 | 14 | 53.3% | ❌❌❌❌❌❌❌ |
 <!-- API_TABLE_END -->
 
 ---
