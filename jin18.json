@@ -145,6 +145,11 @@
       "name": "🎬影剧资源",
       "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
       "detail": "https://yjzy.me"
+    },
+    "www.taopianzy.com": {
+      "name": "🎬淘片资源",
+      "api": "https://taopianapi.com/cjapi/mc10/vod/json",
+      "detail": "https://www.taopianzy.com"
     }
   }
 }
