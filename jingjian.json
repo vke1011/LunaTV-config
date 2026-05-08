@@ -27,7 +27,7 @@
       "detail": "https://wolongzyw.com"
     },
     "ikunzy.com": {
-      "name": "🎬iKun资源",
+      "name": "🎬爱坤资源",
       "api": "https://ikunzyapi.com/api.php/provide/vod",
       "detail": "https://ikunzy.com"
     },
@@ -125,11 +125,6 @@
       "name": "🎬艾旦影视",
       "api": "https://lovedan.net/api.php/provide/vod",
       "detail": "https://lovedan.net"
-    },
-    "zy.jinchancaiji.com": {
-      "name": "🎬金蝉影视",
-      "api": "https://zy.jinchancaiji.com/api.php/provide/vod",
-      "detail": "https://zy.jinchancaiji.com"
     },
     "1080zyk4.com": {
       "name": "🎬优质资源",
