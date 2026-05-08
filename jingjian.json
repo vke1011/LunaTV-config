@@ -7,7 +7,7 @@
       "detail": "https://www.ryzyw.com"
     },
     "iqiyizyapi.com": {
-      "name": "🎬-爱奇艺-",
+      "name": "🎬爱奇艺资源",
       "api": "https://iqiyizyapi.com/api.php/provide/vod",
       "detail": "https://iqiyizyapi.com"
     },
@@ -117,7 +117,7 @@
       "detail": "https://www.hongniuzy.com"
     },
     "bdzy1.com": {
-      "name": "🎬百度云zy",
+      "name": "🎬百度云资源",
       "api": "https://api.apibdzy.com/api.php/provide/vod",
       "detail": "https://bdzy1.com"
     },
