@@ -1,12 +1,12 @@
 # 源接口健康检测报告
 
-最近更新时间：2026-05-09 14:52 CST
+最近更新时间：2026-05-09 15:31 CST
 
 **总源数:** 53 | **检测关键词:** 我的 | **中转站:** `https://corsapi.998836.xyz/?url=` (2 个域名)
 
 | 状态 | 资源名称 | 地址 | API | 连接 | 搜索 | 成功 | 失败 | 成功率 | 最近7天趋势 |
 |------|---------|-----|-----|:----:|---------|---------:|--------:|-------:|--------------|
-| ❌ | 🎬猫眼 | [Link](https://www.maoyanzy.com) | [Link](https://api.maoyanapi.top/api.php/provide/vod) | 🌐 | ❌ | 27 | 3 | 90.0% | ✅✅✅✅✅❌❌ |
+| 🚨 | 🎬猫眼 | [Link](https://www.maoyanzy.com) | [Link](https://api.maoyanapi.top/api.php/provide/vod) | 🌐 | ❌ | 26 | 4 | 86.7% | ✅✅✅✅❌❌❌ |
 | ✅ | 🎬如意 | [Link](https://www.ryzyw.com) | [Link](https://cj.rycjapi.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬爱奇艺 | [Link](https://iqiyizyapi.com) | [Link](https://iqiyizyapi.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬豆瓣 | [Link](https://dbzy.tv) | [Link](https://caiji.dbzy5.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
@@ -22,7 +22,7 @@
 | ✅ | 🎬暴风 | [Link](https://bfzy.tv) | [Link](https://bfzyapi.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬最大 | [Link](https://zuida.xyz) | [Link](https://api.zuidapi.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬无尽 | [Link](https://wujinzy.com) | [Link](https://api.wujinapi.me/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
-| ✅ | 🎬新浪 | [Link](https://xinlangapi.com) | [Link](https://api.xinlangapi.com/xinlangapi.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
+| ✅ | 🎬新浪 | [Link](https://xinlangzy.com) | [Link](https://api.xinlangapi.com/xinlangapi.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬旺旺 | [Link](https://api.wwzy.tv) | [Link](https://api.wwzy.tv/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬速播 | [Link](https://www.subozy.com) | [Link](https://subocaiji.com/api.php/provide/vod) | 🌐 | ✅ | 29 | 1 | 96.7% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬金鹰 | [Link](https://jinyingzy.com) | [Link](https://jyzyapi.com/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
@@ -32,7 +32,7 @@
 | ✅ | 🎬百度云 | [Link](https://bdzy1.com) | [Link](https://api.apibdzy.com/api.php/provide/vod) | 🔄 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬艾旦 | [Link](https://lovedan.net) | [Link](https://lovedan.net/api.php/provide/vod) | 🔄 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬优质 | [Link](https://1080zyk4.com) | [Link](https://api.yzzy-api.com/inc/apijson.php) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
-| ✅ | 🎬虎牙 | [Link](https://www.huyaapi.com) | [Link](https://www.huyaapi.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
+| ✅ | 🎬虎牙 | [Link](https://huyazy.com) | [Link](https://www.huyaapi.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬花旗 | [Link](https://www.seacms.org) | [Link](https://www.seacms.org/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞麻豆 | [Link](https://91md.me) | [Link](https://91md.me/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞155 | [Link](https://155zy2.com) | [Link](https://155api.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
@@ -44,7 +44,7 @@
 | ✅ | 🔞大奶子 | [Link](https://apidanaizi.com) | [Link](https://apidanaizi.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞jkun | [Link](https://jkunzyapi.com) | [Link](https://jkunzyapi.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞乐播 | [Link](https://lebozy.com) | [Link](https://lbapi9.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
-| ✅ | 🔞奶香 | [Link](https://Naixxzy.com) | [Link](https://Naixxzy.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
+| ✅ | 🔞奶香香 | [Link](https://Naixxzy.com) | [Link](https://Naixxzy.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞森林 | [Link](https://senlinzy1.com) | [Link](https://beiyong.slapibf.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞辣椒 | [Link](https://apilj.com) | [Link](https://apilj.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞鲨鱼 | [Link](https://shayuzy.com) | [Link](https://shayuzy.com/api.php/provide/vod) | 🌐 | ✅ | 27 | 3 | 90.0% | ✅✅✅✅✅✅✅ |
@@ -57,7 +57,7 @@
 | ✅ | 🔞 CK | [Link](https://ckzy.me) | [Link](https://ckzy.me/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞搜AV | [Link](https://souavzyw.com) | [Link](https://souavzyw.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞细胞 | [Link](https://www.xxibaozyw.com) | [Link](https://www.xxibaozyw.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
-| ✅ | 🔞香蕉 | [Link](https://www.xiangjiaozyw.com) | [Link](https://www.xiangjiaozyw.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
+| ✅ | 🔞香蕉 | [Link](https://xiangjiaozyw.com) | [Link](https://www.xiangjiaozyw.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞奥斯卡 | [Link](https://aosikazy6.com) | [Link](https://aosikazy6.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 
 <details>
@@ -65,452 +65,6 @@
 
 ```json
 [
-  {
-    "date": "2026-04-27",
-    "keyword": "我的",
-    "results": [
-      {
-        "name": "🎬如意资源",
-        "api": "https://cj.rycjapi.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬-爱奇艺-",
-        "api": "https://iqiyizyapi.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬豆瓣资源",
-        "api": "https://caiji.dbzy5.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬茅台资源",
-        "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬卧龙资源",
-        "api": "https://wolongzyw.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬iKun资源",
-        "api": "https://ikunzyapi.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬电影天堂",
-        "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "❌"
-      },
-      {
-        "name": "🎬猫眼资源",
-        "api": "https://api.maoyanapi.top/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬量子资源",
-        "api": "https://cj.lzcaiji.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬360 资源",
-        "api": "https://360zyzz.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬极速资源",
-        "api": "https://jszyapi.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬魔都资源",
-        "api": "https://www.mdzyapi.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬非凡资源",
-        "api": "https://api.ffzyapi.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "❌"
-      },
-      {
-        "name": "🎬暴风资源",
-        "api": "https://bfzyapi.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬最大资源",
-        "api": "https://api.zuidapi.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬无尽资源",
-        "api": "https://api.wujinapi.me/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬新浪资源",
-        "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬旺旺资源",
-        "api": "https://api.wwzy.tv/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬速播资源",
-        "api": "https://subocaiji.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬金鹰点播",
-        "api": "https://jyzyapi.com/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬飘零资源",
-        "api": "https://p2100.net/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬U酷影视",
-        "api": "https://api.ukuapi88.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬红牛资源",
-        "api": "https://www.hongniuzy2.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬百度云zy",
-        "api": "https://api.apibdzy.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": true,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬艾旦影视",
-        "api": "https://lovedan.net/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": true,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬金蝉影视",
-        "api": "https://zy.jinchancaiji.com/api.php/provide/vod",
-        "disabled": false,
-        "success": false,
-        "viaProxy": false,
-        "searchStatus": "❌"
-      },
-      {
-        "name": "🎬优质资源",
-        "api": "https://api.yzzy-api.com/inc/apijson.php",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬虎牙资源",
-        "api": "https://www.huyaapi.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬花旗资源",
-        "api": "https://www.seacms.org/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🎬影剧资源",
-        "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🔞麻豆视频",
-        "api": "https://91md.me/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🔞155-资源",
-        "api": "https://155api.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🔞玉兔资源",
-        "api": "https://apiyutu.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🔞番号资源",
-        "api": "http://fhapi9.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🔞优优资源",
-        "api": "https://www.yytv4.cc/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🔞小鸡资源",
-        "api": "https://api.xjzyapi.xyz/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🔞黄色仓库",
-        "api": "https://hsckzy888.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🔞-大奶子-",
-        "api": "https://apidanaizi.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🔞jkun资源",
-        "api": "https://jkunzyapi.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🔞乐播资源",
-        "api": "https://lbapi9.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🔞奶香资源",
-        "api": "https://Naixxzy.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🔞森林资源",
-        "api": "https://beiyong.slapibf.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🔞辣椒资源",
-        "api": "https://apilj.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🔞鲨鱼资源",
-        "api": "https://shayuzy.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🔞豆豆资源",
-        "api": "https://api.douapi.cc/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🔞滴滴资源",
-        "api": "https://didiziyuan.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🔞黑料资源",
-        "api": "https://www.heiliaozyapi.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🔞百万资源",
-        "api": "https://api.bwzyz.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🔞桃花资源",
-        "api": "https://thzy1.me/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🔞精品资源",
-        "api": "https://www.jingpinx.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🔞 CK-资源",
-        "api": "https://ckzy.me/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🔞souavZY",
-        "api": "https://souavzyw.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🔞细胞资源",
-        "api": "https://www.xxibaozyw.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🔞香蕉资源",
-        "api": "https://www.xiangjiaozyw.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      },
-      {
-        "name": "🔞-奥斯卡-",
-        "api": "https://aosikazy6.com/api.php/provide/vod",
-        "disabled": false,
-        "success": true,
-        "viaProxy": false,
-        "searchStatus": "✅"
-      }
-    ]
-  },
   {
     "date": "2026-04-27",
     "keyword": "我的",
@@ -13237,6 +12791,436 @@
       },
       {
         "name": "🔞奶香",
+        "api": "https://Naixxzy.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🔞森林",
+        "api": "https://beiyong.slapibf.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🔞辣椒",
+        "api": "https://apilj.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🔞鲨鱼",
+        "api": "https://shayuzy.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🔞豆豆",
+        "api": "https://api.douapi.cc/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🔞滴滴",
+        "api": "https://didiziyuan.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🔞黑料",
+        "api": "https://www.heiliaozyapi.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🔞百万",
+        "api": "https://api.bwzyz.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🔞桃花",
+        "api": "https://thzy1.me/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🔞精品",
+        "api": "https://www.jingpinx.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🔞 CK",
+        "api": "https://ckzy.me/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🔞搜AV",
+        "api": "https://souavzyw.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🔞细胞",
+        "api": "https://www.xxibaozyw.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🔞香蕉",
+        "api": "https://www.xiangjiaozyw.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🔞奥斯卡",
+        "api": "https://aosikazy6.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      }
+    ]
+  },
+  {
+    "date": "2026-05-09",
+    "keyword": "我的",
+    "results": [
+      {
+        "name": "🎬如意",
+        "api": "https://cj.rycjapi.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🎬爱奇艺",
+        "api": "https://iqiyizyapi.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🎬豆瓣",
+        "api": "https://caiji.dbzy5.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🎬茅台",
+        "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🎬卧龙",
+        "api": "https://wolongzyw.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🎬爱坤",
+        "api": "https://ikunzyapi.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🎬电影天堂",
+        "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "❌"
+      },
+      {
+        "name": "🎬猫眼",
+        "api": "https://api.maoyanapi.top/api.php/provide/vod",
+        "disabled": false,
+        "success": false,
+        "viaProxy": false,
+        "searchStatus": "❌"
+      },
+      {
+        "name": "🎬量子",
+        "api": "https://cj.lzcaiji.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🎬360",
+        "api": "https://360zyzz.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🎬极速",
+        "api": "https://jszyapi.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🎬魔都",
+        "api": "https://www.mdzyapi.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🎬非凡",
+        "api": "https://api.ffzyapi.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "❌"
+      },
+      {
+        "name": "🎬暴风",
+        "api": "https://bfzyapi.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🎬最大",
+        "api": "https://api.zuidapi.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🎬无尽",
+        "api": "https://api.wujinapi.me/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🎬新浪",
+        "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🎬旺旺",
+        "api": "https://api.wwzy.tv/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🎬速播",
+        "api": "https://subocaiji.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🎬金鹰",
+        "api": "https://jyzyapi.com/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🎬飘零",
+        "api": "https://p2100.net/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🎬U酷",
+        "api": "https://api.ukuapi88.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🎬红牛",
+        "api": "https://www.hongniuzy2.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🎬百度云",
+        "api": "https://api.apibdzy.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": true,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🎬艾旦",
+        "api": "https://lovedan.net/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": true,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🎬优质",
+        "api": "https://api.yzzy-api.com/inc/apijson.php",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🎬虎牙",
+        "api": "https://www.huyaapi.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🎬花旗",
+        "api": "https://www.seacms.org/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🔞麻豆",
+        "api": "https://91md.me/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🔞155",
+        "api": "https://155api.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🔞玉兔",
+        "api": "https://apiyutu.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🔞番号",
+        "api": "http://fhapi9.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🔞优优",
+        "api": "https://www.yytv4.cc/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🔞小鸡",
+        "api": "https://api.xjzyapi.xyz/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🔞黄色仓库",
+        "api": "https://hsckzy888.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🔞大奶子",
+        "api": "https://apidanaizi.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🔞jkun",
+        "api": "https://jkunzyapi.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🔞乐播",
+        "api": "https://lbapi9.com/api.php/provide/vod",
+        "disabled": false,
+        "success": true,
+        "viaProxy": false,
+        "searchStatus": "✅"
+      },
+      {
+        "name": "🔞奶香香",
         "api": "https://Naixxzy.com/api.php/provide/vod",
         "disabled": false,
         "success": true,
