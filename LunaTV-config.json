@@ -140,7 +140,7 @@
       "name": "🎬花旗",
       "api": "https://www.seacms.org/api.php/provide/vod",
       "detail": "https://www.seacms.org"
-    },      
+    },
     "www.haohuazy.com": {
       "name": "🎬豪华",
       "api": "https://hhzyapi.com/api.php/provide/vod",
@@ -255,6 +255,11 @@
       "name": "🔞奥斯卡",
       "api": "https://aosikazy6.com/api.php/provide/vod",
       "detail": "https://aosikazy6.com"
+    },  
+    "bwzy.tv": {
+      "name": "🔞百万",
+      "api": "https://api.bwzyz.com/api.php/provide/vod",
+      "detail": "https://bwzy.tv"      
     }
   }
 }
