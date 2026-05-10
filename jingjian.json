@@ -141,6 +141,11 @@
       "api": "https://www.seacms.org/api.php/provide/vod",
       "detail": "https://www.seacms.org"
     },
+    "www.haohuazy.com": {
+      "name": "🎬豪华资源",
+      "api": "https://hhzyapi.com/api.php/provide/vod",
+      "detail": "https://www.haohuazy.com"
+    },
     "91md.me": {
       "name": "🔞麻豆",
       "api": "https://91md.me/api.php/provide/vod",
