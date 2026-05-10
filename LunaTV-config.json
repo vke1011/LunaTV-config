@@ -231,11 +231,6 @@
       "api": "https://www.heiliaozyapi.com/api.php/provide/vod",
       "detail": "https://heiliaozy.cc"
     },
-    "api.bwzyz.com": {
-      "name": "🔞百万",
-      "api": "https://api.bwzyz.com/api.php/provide/vod",
-      "detail": "https://api.bwzyz.com"
-    },
     "thzy1.me": {
       "name": "🔞桃花",
       "api": "https://thzy1.me/api.php/provide/vod",
@@ -247,7 +242,7 @@
       "detail": "https://jingpinx.com"
     },
     "ckzy.me": {
-      "name": "🔞 CK",
+      "name": "🔞CK",
       "api": "https://ckzy.me/api.php/provide/vod",
       "detail": "https://ckzy.me"
     },
@@ -255,16 +250,6 @@
       "name": "🔞搜AV",
       "api": "https://souavzyw.com/api.php/provide/vod",
       "detail": "https://souavzyw.com"
-    },
-    "www.xxibaozyw.com": {
-      "name": "🔞细胞",
-      "api": "https://www.xxibaozyw.com/api.php/provide/vod",
-      "detail": "https://www.xxibaozyw.com"
-    },
-    "xiangjiaozyw.com": {
-      "name": "🔞香蕉",
-      "api": "https://www.xiangjiaozyw.com/api.php/provide/vod",
-      "detail": "https://xiangjiaozyw.com"
     },
     "aosikazy6.com": {
       "name": "🔞奥斯卡",
