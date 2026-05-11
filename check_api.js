@@ -113,6 +113,8 @@ const testSearch = async (api, keyword) => {
         headers: { ...REQUEST_HEADERS, Referer: api },
       });
       if (typeof res.data === "string" && /<html/i.test(res.data)) return "验证码";
+      const msg = res.data.msg || res.data.message || "";
+      if (/不支持|禁止|关闭|disabled|not support/i.test(msg)) return "不支持";
       if (res.status !== 200 || !res.data || typeof res.data !== "object") return "❌";
       const list = res.data.list || [];
       if (!list.length) return "无结果";
