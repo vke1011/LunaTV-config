@@ -119,6 +119,7 @@ const testSearch = async (api, keyword) => {
         /不支持|禁止|关闭|disabled|not support/i.test(msg) ||
         (
           resDefault &&
+          resSearch.data.list?.length > 0 &&
           JSON.stringify(resSearch.data.list) === JSON.stringify(resDefault.data?.list) &&
           JSON.stringify(resSearch.data.data) === JSON.stringify(resDefault.data?.data)
         )
