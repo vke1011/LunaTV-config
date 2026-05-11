@@ -166,10 +166,10 @@
       "api": "http://fhapi9.com/api.php/provide/vod",
       "detail": "http://fhapi9.com"
     },
-    "www.yytv4.cc": {
+    "www.yytv.cc": {
       "name": "🔞优优",
-      "api": "https://www.yytv4.cc/api.php/provide/vod",
-      "detail": "https://www.yytv4.cc"
+      "api": "https://yytv1.cc/api.php/provide/vod",
+      "detail": "https://www.yytv.cc"
     },
     "xjzy1.xyz": {
       "name": "🔞小鸡",
@@ -255,11 +255,11 @@
       "name": "🔞奥斯卡",
       "api": "https://aosikazy6.com/api.php/provide/vod",
       "detail": "https://aosikazy6.com"
-    },  
+    },
     "bwzy.tv": {
       "name": "🔞百万",
       "api": "https://api.bwzyz.com/api.php/provide/vod",
-      "detail": "https://bwzy.tv"      
+      "detail": "https://bwzy.tv"
     }
   }
 }
