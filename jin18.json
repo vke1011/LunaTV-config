@@ -145,6 +145,11 @@
       "name": "🎬豪华",
       "api": "https://hhzyapi.com/api.php/provide/vod",
       "detail": "https://www.haohuazy.com"
+    },
+    "guangsuzy.com": {
+      "name": "🎬光速",
+      "api": "https://api.guangsuapi.com/api.php/provide/vod",
+      "detail": "https://guangsuzy.com"
     }
   }
 }
