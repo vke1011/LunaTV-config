@@ -108,15 +108,18 @@ const testSearch = async (api, keyword) => {
   const finalUrl = resolveUrl(rawUrl);
   for (let attempt = 1; attempt <= MAX_RETRY; attempt++) {
     try {
-      const res = await axios.get(finalUrl, {
-        timeout: TIMEOUT_MS,
-        headers: { ...REQUEST_HEADERS, Referer: api },
-      });
-      if (typeof res.data === "string" && /<html/i.test(res.data)) return "验证码";
-      const msg = (typeof res.data === "string" ? res.data : res.data.msg || res.data.message || res.data.info || "");
-      if (/不支持|禁止|关闭|disabled|not support/i.test(msg)) return "不支持";
-      if (res.status !== 200 || !res.data || typeof res.data !== "object") return "❌";
-      const list = res.data.list || [];
+      const [resSearch, resDefault] = await Promise.all([
+        axios.get(finalUrl, { timeout: TIMEOUT_MS, headers: { ...REQUEST_HEADERS, Referer: api } }),
+        axios.get(resolveUrl(api), { timeout: TIMEOUT_MS, headers: { ...REQUEST_HEADERS, Referer: api } }),
+      ]);
+      if (typeof resSearch.data === "string" && /<html/i.test(resSearch.data)) return "验证码";
+      const msg = typeof resSearch.data === "string" ? resSearch.data : resSearch.data.msg || resSearch.data.message || resSearch.data.info || "";
+      if (
+        /不支持|禁止|关闭|disabled|not support/i.test(msg) ||
+        JSON.stringify(resSearch.data.list) === JSON.stringify(resDefault.data?.list)
+      ) return "不支持";
+      if (resSearch.status !== 200 || !resSearch.data || typeof resSearch.data !== "object") return "❌";
+      const list = resSearch.data.list || [];
       if (!list.length) return "无结果";
       return list.some((item) => JSON.stringify(item).includes(keyword)) ? "✅" : "不匹配";
     } catch {
