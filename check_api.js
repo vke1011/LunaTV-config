@@ -30,6 +30,7 @@ const PROXY_PREFIX = "https://corsapi.998836.xyz/?url=";
 const PROXY_DOMAINS = [
   "apibdzy.com",
   "lovedan.net",
+  "maotaizy.cc",
 ];
 
 // === 判断某个 URL 是否需要走中转站 ===
