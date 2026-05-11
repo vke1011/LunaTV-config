@@ -152,9 +152,34 @@
       "detail": "https://guangsuzy.com"
     },
     "kuaichezy.com": {
+      "_comment": "暂不支持搜索",      
       "name": "🎬快车",
       "api": "https://caiji.kuaichezy.org/api.php/provide/vod",
       "detail": "https://kuaichezy.com"
+    },
+    "suonizy.net": {
+      "_comment": "暂不支持搜索",
+      "name": "🎬索尼",
+      "api": "https://suoniapi.com/api.php/provide/vod",
+      "detail": "https://suonizy.net"
+    },
+    "yayazy1.com": {
+      "_comment": "暂不支持搜索",
+      "name": "🎬鸭鸭",
+      "api": "https://cj.yayazy.net/api.php/provide/vod",
+      "detail": "https://yayazy1.com"
+    },
+    "shandianzy.com": {
+      "_comment": "暂不支持搜索",
+      "name": "🎬闪电",
+      "api": "https://xsd.sdzyapi.com/api.php/provide/vod",
+      "detail": "https://shandianzy.com"
+    },
+    "yhzy.cc": {
+      "_comment": "暂不支持搜索",
+      "name": "🎬樱花",
+      "api": "https://m3u8.apiyhzy.com/api.php/provide/vod",
+      "detail": "https://yhzy.cc"
     },
     "155zy2.com": {
       "name": "🔞155",
