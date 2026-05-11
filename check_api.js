@@ -110,23 +110,25 @@ const testSearch = async (api, keyword) => {
     try {
       const [resSearch, resDefault] = await Promise.all([
         axios.get(finalUrl, { timeout: TIMEOUT_MS, headers: { ...REQUEST_HEADERS, Referer: api } }),
-        axios.get(resolveUrl(api), { timeout: TIMEOUT_MS, headers: { ...REQUEST_HEADERS, Referer: api } }),
+        axios.get(resolveUrl(api), { timeout: TIMEOUT_MS, headers: { ...REQUEST_HEADERS, Referer: api } }).catch(() => null),
       ]);
       if (typeof resSearch.data === "string" && /<html/i.test(resSearch.data)) return "验证码";
       const msg = typeof resSearch.data === "string" ? resSearch.data : resSearch.data.msg || resSearch.data.message || resSearch.data.info || "";
       if (
+        resSearch.status === 403 ||
         /不支持|禁止|关闭|disabled|not support/i.test(msg) ||
         (
+          resDefault &&
           JSON.stringify(resSearch.data.list) === JSON.stringify(resDefault.data?.list) &&
           JSON.stringify(resSearch.data.data) === JSON.stringify(resDefault.data?.data)
         )
       ) return "不支持";
       if (resSearch.status !== 200 || !resSearch.data || typeof resSearch.data !== "object") return "❌";
-      // 兼容 data 字段和 list 字段
       const list = (resSearch.data.data?.length ? resSearch.data.data : resSearch.data.list) || [];
       if (!list.length) return "无结果";
       return list.some((item) => JSON.stringify(item).includes(keyword)) ? "✅" : "不匹配";
-    } catch {
+    } catch (e) {
+      if (e.response?.status === 403) return "不支持";
       if (attempt < MAX_RETRY) await delay(RETRY_DELAY_MS);
       else return "❌";
     }
