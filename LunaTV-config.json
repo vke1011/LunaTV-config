@@ -270,6 +270,11 @@
       "name": "🔞杏吧",
       "api": "https://json.xingba222.com/api.php/provide/vod",
       "detail": "http://www.sex8zy.com"
+    },
+    "www.semaozy.com/": {
+      "name": "🔞色猫",
+      "api": "https://caiji.semaozy.net/inc/apijson_vod.php",
+      "detail": "https://www.semaozy.com/"
     }
   }
 }
