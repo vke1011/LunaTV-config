@@ -85,6 +85,17 @@ jobs:
 
           node encode.js
 
+      # 5.5 测试网络连通性（调试用）
+      - name: Test network connectivity
+        run: |
+          echo "=== 直连测试 ==="
+          curl -sv --max-time 10 "https://caiji.maotaizy.cc/api.php/provide/vod?wd=%E6%96%97%E7%BD%97%E5%A4%A7%E9%99%86" 2>&1 | tail -20
+          echo "=== 中转测试 ==="
+          curl -sv --max-time 10 "https://corsapi.998836.xyz/?url=https%3A%2F%2Fcaiji.maotaizy.cc%2Fapi.php%2Fprovide%2Fvod%3Fwd%3D%E6%96%97%E7%BD%97%E5%A4%A7%E9%99%86" 2>&1 | tail -20
+
+
+
+
       # 6️⃣ 运行 API 检查脚本
       - name: Run API check
         run: |
