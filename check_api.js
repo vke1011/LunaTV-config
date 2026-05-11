@@ -121,17 +121,11 @@ const testSearch = async (api, keyword) => {
           resDefault &&
           resSearch.data.list?.length > 0 &&
           JSON.stringify(resSearch.data.list) === JSON.stringify(resDefault.data?.list) &&
-          JSON.stringify(resSearch.data.data ?? resSearch.data.class) === JSON.stringify(resDefault.data?.data ?? resDefault.data?.class)
+          JSON.stringify(resSearch.data.data) === JSON.stringify(resDefault.data?.data)
         )
       ) return "不支持";
       if (resSearch.status !== 200 || !resSearch.data || typeof resSearch.data !== "object") return "❌";
       const list = (resSearch.data.data?.length ? resSearch.data.data : resSearch.data.list) || [];
-      // 临时 log
-      console.log(`[debug] ${api}`);
-      console.log(`  list.length=${list.length}`);
-      console.log(`  data.list.length=${resSearch.data.list?.length}`);
-      console.log(`  data.data.length=${resSearch.data.data?.length}`);
-      console.log(`  keys=${Object.keys(resSearch.data)}`);
       if (!list.length) return "无结果";
       return list.some((item) => JSON.stringify(item).includes(keyword)) ? "✅" : "不匹配";
     } catch (e) {
