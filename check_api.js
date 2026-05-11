@@ -116,10 +116,14 @@ const testSearch = async (api, keyword) => {
       const msg = typeof resSearch.data === "string" ? resSearch.data : resSearch.data.msg || resSearch.data.message || resSearch.data.info || "";
       if (
         /不支持|禁止|关闭|disabled|not support/i.test(msg) ||
-        JSON.stringify(resSearch.data.list) === JSON.stringify(resDefault.data?.list)
+        (
+          JSON.stringify(resSearch.data.list) === JSON.stringify(resDefault.data?.list) &&
+          JSON.stringify(resSearch.data.data) === JSON.stringify(resDefault.data?.data)
+        )
       ) return "不支持";
       if (resSearch.status !== 200 || !resSearch.data || typeof resSearch.data !== "object") return "❌";
-      const list = resSearch.data.list || [];
+      // 兼容 data 字段和 list 字段
+      const list = (resSearch.data.data?.length ? resSearch.data.data : resSearch.data.list) || [];
       if (!list.length) return "无结果";
       return list.some((item) => JSON.stringify(item).includes(keyword)) ? "✅" : "不匹配";
     } catch {
