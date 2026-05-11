@@ -260,6 +260,11 @@
       "name": "🔞百万",
       "api": "https://api.bwzyz.com/api.php/provide/vod",
       "detail": "https://bwzy.tv"
+    },
+    "lbapiby.com": {
+      "name": "🔞AIvin",
+      "api": "http://lbapiby.com/api.php/provide/vod",
+      "detail": "http://lbapiby.com"
     }
   }
 }
