@@ -342,7 +342,7 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
   
 # API 健康报告（每日自动检测API状态）
 
-## API 状态（最近更新：2026-05-11 09:59 CST）
+## API 状态（最近更新：2026-05-11 11:20 CST）
 
 - 总 API 数量：55
 - 成功 API 数量：54
@@ -377,32 +377,32 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
 | ✅ | 🎬花旗 | [Link](https://www.seacms.org) | [Link](https://www.seacms.org/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬虎牙 | [Link](https://huyazy.com) | [Link](https://www.huyaapi.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬豆瓣 | [Link](https://dbzy.tv) | [Link](https://caiji.dbzy5.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
-| ✅ | 🎬豪华 | [Link](https://www.haohuazy.com) | [Link](https://hhzyapi.com/api.php/provide/vod) | 🌐 | ✅ | 10 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
+| ✅ | 🎬豪华 | [Link](https://www.haohuazy.com) | [Link](https://hhzyapi.com/api.php/provide/vod) | 🌐 | ✅ | 11 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬量子 | [Link](https://lzizy.com) | [Link](https://cj.lzcaiji.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬金鹰 | [Link](https://jinyingzy.com) | [Link](https://jyzyapi.com/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬非凡 | [Link](https://cj.ffzyapi.com) | [Link](https://api.ffzyapi.com/api.php/provide/vod) | 🌐 | ❌ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬飘零 | [Link](https://p2100.net) | [Link](https://p2100.net/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬魔都 | [Link](https://www.moduzy.net) | [Link](https://www.mdzyapi.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞155 | [Link](https://155zy2.com) | [Link](https://155api.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
-| ✅ | 🔞AIvin | [Link](http://lbapiby.com) | [Link](http://lbapiby.com/api.php/provide/vod) | 🌐 | ✅ | 3 | 0 | 100.0% | ----✅✅✅ |
+| ✅ | 🔞AIvin | [Link](http://lbapiby.com) | [Link](http://lbapiby.com/api.php/provide/vod) | 🌐 | ✅ | 4 | 0 | 100.0% | ---✅✅✅✅ |
 | ✅ | 🔞CK | [Link](https://ckzy.me) | [Link](https://ckzy.me/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞jkun | [Link](https://jkunzyapi.com) | [Link](https://jkunzyapi.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞乐播 | [Link](https://lebozy.com) | [Link](https://lbapi9.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
-| ✅ | 🔞优优 | [Link](https://www.yytv.cc) | [Link](https://yytv4.cc/api.php/provide/vod) | 🌐 | ✅ | 4 | 0 | 100.0% | ---✅✅✅✅ |
+| ✅ | 🔞优优 | [Link](https://www.yytv.cc) | [Link](https://yytv4.cc/api.php/provide/vod) | 🌐 | ✅ | 5 | 0 | 100.0% | --✅✅✅✅✅ |
 | ✅ | 🔞大奶子 | [Link](https://apidanaizi.com) | [Link](https://apidanaizi.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞奥斯卡 | [Link](https://aosikazy6.com) | [Link](https://aosikazy6.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞奶香香 | [Link](https://Naixxzy.com) | [Link](https://Naixxzy.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞小鸡 | [Link](https://xjzy1.xyz) | [Link](https://api.xjzyapi.xyz/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞搜AV | [Link](https://souavzyw.com) | [Link](https://souavzyw.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
-| ✅ | 🔞杏吧 | [Link](http://www.sex8zy.com) | [Link](https://json.xingba222.com/api.php/provide/vod) | 🌐 | ✅ | 2 | 0 | 100.0% | -----✅✅ |
+| ✅ | 🔞杏吧 | [Link](http://www.sex8zy.com) | [Link](https://json.xingba222.com/api.php/provide/vod) | 🌐 | ✅ | 3 | 0 | 100.0% | ----✅✅✅ |
 | ✅ | 🔞桃花 | [Link](https://thzy1.me) | [Link](https://thzy1.me/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞森林 | [Link](https://senlinzy1.com) | [Link](https://beiyong.slapibf.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞滴滴 | [Link](https://didiziyuan.com) | [Link](https://didiziyuan.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞玉兔 | [Link](https://yutuzy.com) | [Link](https://apiyutu.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞番号 | [Link](http://fhapi9.com) | [Link](http://fhapi9.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞百万 | [Link](https://bwzy.tv) | [Link](https://api.bwzyz.com/api.php/provide/vod) | 🌐 | ✅ | 28 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
-| ✅ | 🔞精品 | [Link](https://jingpinx.com) | [Link](https://jingpinx.com/api.php/provide/vod) | 🌐 | ✅ | 11 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
-| ✅ | 🔞色猫 | [Link](https://www.semaozy.com/) | [Link](https://caiji.semaozy.net/inc/apijson_vod.php) | 🌐 | ✅ | 1 | 0 | 100.0% | ------✅ |
+| ✅ | 🔞精品 | [Link](https://jingpinx.com) | [Link](https://jingpinx.com/api.php/provide/vod) | 🌐 | ✅ | 12 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
+| ✅ | 🔞色猫 | [Link](https://www.semaozy.com/) | [Link](https://caiji.semaozy.net/inc/apijson_vod.php) | 🌐 | ✅ | 2 | 0 | 100.0% | -----✅✅ |
 | ✅ | 🔞豆豆 | [Link](https://doudouzy.com) | [Link](https://api.douapi.cc/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞辣椒 | [Link](https://apilj.com) | [Link](https://apilj.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞鲨鱼 | [Link](https://shayuzy.com) | [Link](https://shayuzy.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
@@ -412,7 +412,7 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
 | ✅ | 🎬茅台 | [Link](https://mtzy.me) | [Link](https://caiji.maotaizy.cc/api.php/provide/vod) | 🌐 | ✅ | 29 | 1 | 96.7% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬速播 | [Link](https://www.subozy.com) | [Link](https://subocaiji.com/api.php/provide/vod) | 🌐 | ✅ | 29 | 1 | 96.7% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬猫眼 | [Link](https://www.maoyanzy.com) | [Link](https://api.maoyanapi.top/api.php/provide/vod) | 🌐 | ✅ | 26 | 4 | 86.7% | ✅✅✅✅✅✅✅ |
-| 🚨 | 🎬U酷 | [Link](https://www.ukuzy.com) | [Link](https://api.ukuapi88.com/api.php/provide/vod) | 🌐 | ❌ | 25 | 5 | 83.3% | ✅❌✅❌❌❌❌ |
+| 🚨 | 🎬U酷 | [Link](https://www.ukuzy.com) | [Link](https://api.ukuapi88.com/api.php/provide/vod) | 🌐 | ❌ | 24 | 6 | 80.0% | ❌✅❌❌❌❌❌ |
 <!-- API_TABLE_END -->
 
 ---
