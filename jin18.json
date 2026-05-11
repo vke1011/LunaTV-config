@@ -150,6 +150,11 @@
       "name": "🎬光速",
       "api": "https://api.guangsuapi.com/api.php/provide/vod",
       "detail": "https://guangsuzy.com"
+    },
+    "kuaichezy.com": {
+      "name": "🎬快车",
+      "api": "https://caiji.kuaichezy.org/api.php/provide/vod",
+      "detail": "https://kuaichezy.com"
     }
   }
 }
