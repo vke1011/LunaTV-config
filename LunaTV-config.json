@@ -147,6 +147,7 @@
       "detail": "https://www.haohuazy.com"
     },
     "91md.me": {
+      "_comment": "无法使用",      
       "name": "🔞麻豆",
       "api": "https://91md.me/api.php/provide/vod",
       "detail": "https://91md.me"
@@ -162,11 +163,13 @@
       "detail": "https://yutuzy.com"
     },
     "fhapi9.com": {
+      "_comment": "无法使用",      
       "name": "🔞番号",
       "api": "http://fhapi9.com/api.php/provide/vod",
       "detail": "http://fhapi9.com"
     },
     "www.yytv.cc": {
+      "_comment": "无法使用",      
       "name": "🔞优优",
       "api": "https://yytv4.cc/api.php/provide/vod",
       "detail": "https://www.yytv.cc"
@@ -192,6 +195,7 @@
       "detail": "https://jkunzyapi.com"
     },
     "lebozy.com": {
+      "_comment": "无法使用",      
       "name": "🔞乐播",
       "api": "https://lbapi9.com/api.php/provide/vod",
       "detail": "https://lebozy.com"
@@ -207,11 +211,13 @@
       "detail": "https://senlinzy1.com"
     },
     "apilj.com": {
+      "_comment": "无法使用",      
       "name": "🔞辣椒",
       "api": "https://apilj.com/api.php/provide/vod",
       "detail": "https://apilj.com"
     },
     "shayuzy.com": {
+      "_comment": "无法使用",      
       "name": "🔞鲨鱼",
       "api": "https://shayuzy.com/api.php/provide/vod",
       "detail": "https://shayuzy.com"
@@ -232,6 +238,7 @@
       "detail": "https://heiliaozy.cc"
     },
     "thzy1.me": {
+      "_comment": "无法使用",      
       "name": "🔞桃花",
       "api": "https://thzy1.me/api.php/provide/vod",
       "detail": "https://thzy1.me"
@@ -262,16 +269,19 @@
       "detail": "https://bwzy.tv"
     },
     "lbapiby.com": {
+      "_comment": "无法使用",      
       "name": "🔞AIvin",
       "api": "http://lbapiby.com/api.php/provide/vod",
       "detail": "http://lbapiby.com"
     },
     "www.sex8zy.com": {
+      "_comment": "无法使用",      
       "name": "🔞杏吧",
       "api": "https://json.xingba222.com/api.php/provide/vod",
       "detail": "http://www.sex8zy.com"
     },
     "www.semaozy.com/": {
+      "_comment": "无法使用",      
       "name": "🔞色猫",
       "api": "https://caiji.semaozy.net/inc/apijson_vod.php",
       "detail": "https://www.semaozy.com/"
