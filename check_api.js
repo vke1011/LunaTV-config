@@ -121,10 +121,11 @@ const testSearch = async (api, keyword) => {
           resDefault &&
           resSearch.data.list?.length > 0 &&
           JSON.stringify(resSearch.data.list) === JSON.stringify(resDefault.data?.list) &&
-          JSON.stringify(resSearch.data.data) === JSON.stringify(resDefault.data?.data)
+          JSON.stringify(resSearch.data.data ?? resSearch.data.class) === JSON.stringify(resDefault.data?.data ?? resDefault.data?.class)
         )
       ) return "不支持";
       if (resSearch.status !== 200 || !resSearch.data || typeof resSearch.data !== "object") return "❌";
+      // 兼容 data / list 字段
       const list = (resSearch.data.data?.length ? resSearch.data.data : resSearch.data.list) || [];
       if (!list.length) return "无结果";
       return list.some((item) => JSON.stringify(item).includes(keyword)) ? "✅" : "不匹配";
