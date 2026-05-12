@@ -15,7 +15,12 @@
       "name": "🎬豆瓣",
       "api": "https://caiji.dbzy5.com/api.php/provide/vod",
       "detail": "https://dbzy.tv"
-
+    },
+    "mtzy.me": {
+      "name": "🎬茅台",
+      "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
+      "detail": "https://mtzy.me",
+      "skip_search": true
     },
     "wolongzyw.com": {
       "name": "🎬卧龙",
