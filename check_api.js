@@ -23,8 +23,10 @@ const REQUEST_HEADERS = {
 };
 
 // === 中转站配置 ===
+// 中转站前缀，请求时拼接在目标 URL 前面
 const PROXY_PREFIX = "https://corsapi.998836.xyz/?url=";
 
+// 需要走中转站的域名列表（在这里添加你的域名）
 const PROXY_DOMAINS = [
   "apibdzy.com",
   "lovedan.net",
@@ -40,6 +42,7 @@ const needsProxy = (url) => {
   }
 };
 
+// 根据是否需要中转站，返回最终请求 URL
 const resolveUrl = (url) => (needsProxy(url) ? `${PROXY_PREFIX}${encodeURIComponent(url)}` : url);
 
 // === 加载配置 ===
@@ -53,7 +56,6 @@ const apiEntries = Object.values(config.api_site).map((s) => ({
   api: s.api,
   detail: s.detail || "-",
   disabled: !!s.disabled,
-  skip_search: !!s.skip_search,
 }));
 
 // === 读取历史记录 ===
@@ -85,14 +87,14 @@ const safeGet = async (url) => {
     try {
       const res = await axios.get(finalUrl, {
         timeout: TIMEOUT_MS,
-        responseType: "text",
         headers: { ...REQUEST_HEADERS, Referer: url },
       });
-      const raw = typeof res.data === "string" ? res.data : JSON.stringify(res.data);
-      const jsonMatch = raw.match(/(\{[\s\S]*\})/);
-      if (!jsonMatch) return { success: false, viaProxy };
-      const data = JSON.parse(jsonMatch[1]);
-      const isValid = res.status === 200 && data && typeof data === "object" && Object.keys(data).length > 0;
+      const isValid =
+        res.status === 200 &&
+        res.data &&
+        typeof res.data === "object" &&
+        Object.keys(res.data).length > 0;
+
       return { success: isValid, viaProxy };
     } catch {
       if (attempt < MAX_RETRY) await delay(RETRY_DELAY_MS);
@@ -104,47 +106,26 @@ const safeGet = async (url) => {
 const testSearch = async (api, keyword) => {
   const rawUrl = `${api}?wd=${encodeURIComponent(keyword)}`;
   const finalUrl = resolveUrl(rawUrl);
-
-  const parseResponse = (res) => {
-    if (!res) return null;
-    const raw = typeof res.data === "string" ? res.data : JSON.stringify(res.data);
-    const jsonMatch = raw.match(/(\{[\s\S]*\})/);
-    if (!jsonMatch) return null;
-    try { return JSON.parse(jsonMatch[1]); } catch { return null; }
-  };
-
   for (let attempt = 1; attempt <= MAX_RETRY; attempt++) {
     try {
       const [resSearch, resDefault] = await Promise.all([
-        axios.get(finalUrl, { timeout: TIMEOUT_MS, responseType: "text", headers: { ...REQUEST_HEADERS, Referer: api } }),
-        axios.get(resolveUrl(api), { timeout: TIMEOUT_MS, responseType: "text", headers: { ...REQUEST_HEADERS, Referer: api } }).catch(() => null),
+        axios.get(finalUrl, { timeout: TIMEOUT_MS, headers: { ...REQUEST_HEADERS, Referer: api } }),
+        axios.get(resolveUrl(api), { timeout: TIMEOUT_MS, headers: { ...REQUEST_HEADERS, Referer: api } }).catch(() => null),
       ]);
-
-      const dataSearch = parseResponse(resSearch);
-      const dataDefault = parseResponse(resDefault);
-
-      if (!dataSearch) return "❌";
-
-      // 验证码检测
-      const raw = typeof resSearch.data === "string" ? resSearch.data : "";
-      if (/<html/i.test(raw) && !raw.includes('"code"')) return "验证码";
-
-      // 不支持检测
-      const msg = dataSearch.msg || dataSearch.message || dataSearch.info || "";
+      if (typeof resSearch.data === "string" && /<html/i.test(resSearch.data)) return "验证码";
+      const msg = typeof resSearch.data === "string" ? resSearch.data : resSearch.data.msg || resSearch.data.message || resSearch.data.info || "";
       if (
         resSearch.status === 403 ||
         /不支持|禁止|关闭|disabled|not support/i.test(msg) ||
         (
-          dataDefault &&
-          dataSearch.list?.length > 0 &&
-          JSON.stringify(dataSearch.list) === JSON.stringify(dataDefault.list) &&
-          JSON.stringify(dataSearch.data) === JSON.stringify(dataDefault.data)
+          resDefault &&
+          resSearch.data.list?.length > 0 &&
+          JSON.stringify(resSearch.data.list) === JSON.stringify(resDefault.data?.list) &&
+          JSON.stringify(resSearch.data.data) === JSON.stringify(resDefault.data?.data)
         )
       ) return "不支持";
-
-      if (resSearch.status !== 200) return "❌";
-
-      const list = (dataSearch.data?.length ? dataSearch.data : dataSearch.list) || [];
+      if (resSearch.status !== 200 || !resSearch.data || typeof resSearch.data !== "object") return "❌";
+      const list = (resSearch.data.data?.length ? resSearch.data.data : resSearch.data.list) || [];
       if (!list.length) return "无结果";
       return list.some((item) => JSON.stringify(item).includes(keyword)) ? "✅" : "不匹配";
     } catch (e) {
@@ -154,6 +135,7 @@ const testSearch = async (api, keyword) => {
     }
   }
 };
+
 
 // === 队列并发执行函数 ===
 const queueRun = (tasks, limit) => {
@@ -190,15 +172,13 @@ const queueRun = (tasks, limit) => {
     console.log("ℹ️  未配置中转站域名，所有请求直连");
   }
 
-  const tasks = apiEntries.map((entry) => async () => {
-    const { name, api, disabled } = entry;
+  const tasks = apiEntries.map(({ name, api, disabled }) => async () => {
     if (disabled) {
       return { name, api, disabled, success: null, viaProxy: false, searchStatus: "无法搜索" };
     }
 
     const { success, viaProxy } = await safeGet(api);
-    const searchStatus = entry.skip_search ? "跳过" :
-      (ENABLE_SEARCH_TEST ? await testSearch(api, SEARCH_KEYWORD) : "-");
+    const searchStatus = ENABLE_SEARCH_TEST ? await testSearch(api, SEARCH_KEYWORD) : "-";
     return { name, api, disabled, success, viaProxy, searchStatus };
   });
 
