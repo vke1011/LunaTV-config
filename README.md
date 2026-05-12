@@ -342,14 +342,14 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
   
 # API 健康报告（每日自动检测API状态）
 
-## API 状态（最近更新：2026-05-12 20:16 CST）
+## API 状态（最近更新：2026-05-13 02:54 CST）
 
 - 总 API 数量：64
-- 成功 API 数量：64
-- 失败 API 数量：0
-- 平均可用率：99.6%
-- 完美可用率（100%）：56 个
-- 高可用率（80%-99%）：8 个
+- 成功 API 数量：63
+- 失败 API 数量：1
+- 平均可用率：99.5%
+- 完美可用率（100%）：55 个
+- 高可用率（80%-99%）：9 个
 - 中等可用率（50%-79%）：0 个
 - 低可用率（<50%）：0 个
 
@@ -377,7 +377,6 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
 | ✅ | 🎬百度云 | [Link](https://bdzy1.com) | [Link](https://api.apibdzy.com/api.php/provide/vod) | 🔄 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬索尼 | [Link](https://suonizy.net) | [Link](https://suoniapi.com/api.php/provide/vod) | 🌐 | 不支持 | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬艾旦 | [Link](https://lovedan.net) | [Link](https://lovedan.net/api.php/provide/vod) | 🔄 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
-| ✅ | 🎬豆瓣 | [Link](https://dbzy.tv) | [Link](https://caiji.dbzy5.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬量子 | [Link](https://lzizy.com) | [Link](https://cj.lzcaiji.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬金鹰 | [Link](https://jinyingzy.com) | [Link](https://jyzyapi.com/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬闪电 | [Link](https://shandianzy.com) | [Link](https://xsd.sdzyapi.com/api.php/provide/vod) | 🌐 | 不支持 | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
@@ -419,8 +418,9 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
 | ✅ | 🎬红牛 | [Link](https://www.hongniuzy.com) | [Link](https://www.hongniuzy2.com/api.php/provide/vod) | 🌐 | ✅ | 29 | 1 | 96.7% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬花旗 | [Link](https://www.seacms.org) | [Link](https://www.seacms.org/api.php/provide/vod) | 🌐 | ✅ | 29 | 1 | 96.7% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬虎牙 | [Link](https://huyazy.com) | [Link](https://www.huyaapi.com/api.php/provide/vod) | 🌐 | ✅ | 29 | 1 | 96.7% | ✅✅✅✅✅✅✅ |
+| ❌ | 🎬豆瓣 | [Link](https://dbzy.tv) | [Link](https://caiji.dbzy5.com/api.php/provide/vod) | 🌐 | ❌ | 29 | 1 | 96.7% | ✅✅✅✅✅✅❌ |
 | ✅ | 🎬豪华 | [Link](https://www.haohuazy.com) | [Link](https://hhzyapi.com/api.php/provide/vod) | 🌐 | ✅ | 29 | 1 | 96.7% | ✅✅✅✅✅✅✅ |
-| ✅ | 🎬速播 | [Link](https://www.subozy.com) | [Link](https://subocaiji.com/api.php/provide/vod) | 🌐 | ✅ | 29 | 1 | 96.7% | ❌✅✅✅✅✅✅ |
+| ✅ | 🎬速播 | [Link](https://www.subozy.com) | [Link](https://subocaiji.com/api.php/provide/vod) | 🌐 | ✅ | 29 | 1 | 96.7% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞麻豆 | [Link](https://91md.me) | [Link](https://91md.me/api.php/provide/vod) | 🌐 | ✅ | 29 | 1 | 96.7% | ✅✅✅✅✅✅✅ |
 <!-- API_TABLE_END -->
 
