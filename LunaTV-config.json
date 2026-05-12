@@ -146,11 +146,6 @@
       "api": "https://api.guangsuapi.com/api.php/provide/vod",
       "detail": "https://guangsuzy.com"
     },
-    "mtzy.me": {
-      "name": "🎬茅台",
-      "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
-      "detail": "https://mtzy.me"
-    },
     "kuaichezy.com": {
       "_comment": "暂不支持搜索",
       "name": "🎬快车",
