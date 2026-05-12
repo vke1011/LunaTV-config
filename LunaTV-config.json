@@ -19,7 +19,8 @@
     "mtzy.me": {
       "name": "🎬茅台",
       "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
-      "detail": "https://mtzy.me"
+      "detail": "https://mtzy.me",
+      "disabled": true
     },
     "wolongzyw.com": {
       "name": "🎬卧龙",
@@ -152,7 +153,7 @@
       "detail": "https://guangsuzy.com"
     },
     "kuaichezy.com": {
-      "_comment": "暂不支持搜索",      
+      "_comment": "暂不支持搜索",
       "name": "🎬快车",
       "api": "https://caiji.kuaichezy.org/api.php/provide/vod",
       "detail": "https://kuaichezy.com"
