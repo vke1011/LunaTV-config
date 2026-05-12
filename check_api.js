@@ -53,12 +53,29 @@ if (!fs.existsSync(CONFIG_PATH)) {
   process.exit(1);
 }
 const config = JSON.parse(fs.readFileSync(CONFIG_PATH, "utf-8"));
-const apiEntries = Object.values(config.api_site).map((s) => ({
-  name: s.name,
-  api: s.api,
-  detail: s.detail || "-",
-  disabled: !!s.disabled,
-}));
+
+// 校验 api_site 字段
+const rawSites = config.api_site;
+if (!rawSites || typeof rawSites !== "object") {
+  console.error("❌ 配置文件格式错误：缺少 api_site 字段");
+  process.exit(1);
+}
+
+// 过滤掉缺少 name 或 api 字段的残缺条目，避免后续请求崩溃
+const apiEntries = Object.values(rawSites)
+  .filter((s) => {
+    if (!s.name || !s.api) {
+      console.warn(`⚠️  跳过残缺条目（缺少 name 或 api）:`, JSON.stringify(s));
+      return false;
+    }
+    return true;
+  })
+  .map((s) => ({
+    name: s.name,
+    api: s.api,
+    detail: s.detail || "-",
+    disabled: !!s.disabled,
+  }));
 
 // === 读取历史记录 ===
 let history = [];
@@ -68,12 +85,14 @@ if (fs.existsSync(REPORT_PATH)) {
   if (match) {
     try {
       history = JSON.parse(match[1]);
-    } catch {}
+    } catch {
+      console.warn("⚠️  历史记录解析失败，将从空白开始");
+    }
   }
 }
 
-// === 当前 CST 时间（用 Intl，更语义化、避免手动偏移运算） ===
-const nowCST = () => {
+// === 当前 CST 时间（用 Intl，语义化、避免手动偏移运算） ===
+const now = (() => {
   const parts = new Intl.DateTimeFormat("zh-CN", {
     timeZone: "Asia/Shanghai",
     year: "numeric",
@@ -89,14 +108,17 @@ const nowCST = () => {
       return acc;
     }, {});
   return `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:${parts.minute} CST`;
-};
-const now = nowCST();
+})();
 
 // === 工具函数 ===
 const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// === 缓存各 API 的默认响应，避免 testSearch 重复请求 ===
+const defaultResponseCache = new Map();
+
 // === safeGet：检测 API 根路径是否可用 ===
 // 成功判定：HTTP 200 + 返回对象 + code 字段符合常见约定（1 / 200 / 不存在）
+// 成功时顺手写入 defaultResponseCache，供 testSearch 复用，减少一次重复请求
 const safeGet = async (url) => {
   const finalUrl = resolveUrl(url);
   const viaProxy = finalUrl !== url;
@@ -120,29 +142,38 @@ const safeGet = async (url) => {
         Object.keys(data).length > 0 &&
         isValidCode;
 
+      // 顺手缓存默认响应，testSearch 可直接复用
+      if (isValid && !defaultResponseCache.has(url)) {
+        defaultResponseCache.set(url, res);
+      }
+
       return { success: isValid, viaProxy };
     } catch {
       if (attempt < MAX_RETRY) await delay(RETRY_DELAY_MS);
-      else return { success: false, viaProxy };
     }
   }
+  // 兜底：所有重试失败
+  return { success: false, viaProxy };
 };
 
-// === 缓存各 API 的默认响应，避免 testSearch 重复请求 ===
-const defaultResponseCache = new Map();
-
+// === fetchDefault：获取 API 默认响应（带重试 + 缓存） ===
 const fetchDefault = async (api) => {
   if (defaultResponseCache.has(api)) return defaultResponseCache.get(api);
-  try {
-    const res = await axios.get(resolveUrl(api), {
-      timeout: TIMEOUT_MS,
-      headers: { ...REQUEST_HEADERS, Referer: api },
-    });
-    defaultResponseCache.set(api, res);
-    return res;
-  } catch {
-    defaultResponseCache.set(api, null);
-    return null;
+  for (let attempt = 1; attempt <= MAX_RETRY; attempt++) {
+    try {
+      const res = await axios.get(resolveUrl(api), {
+        timeout: TIMEOUT_MS,
+        headers: { ...REQUEST_HEADERS, Referer: api },
+      });
+      defaultResponseCache.set(api, res);
+      return res;
+    } catch {
+      if (attempt === MAX_RETRY) {
+        defaultResponseCache.set(api, null);
+        return null;
+      }
+      await delay(RETRY_DELAY_MS);
+    }
   }
 };
 
@@ -161,14 +192,11 @@ const testSearch = async (api, keyword) => {
       ]);
 
       // 返回 HTML 说明触发了验证码/跳转页
-      if (
-        typeof resSearch.data === "string" &&
-        /<html/i.test(resSearch.data)
-      ) {
+      if (typeof resSearch.data === "string" && /<html/i.test(resSearch.data)) {
         return "验证码";
       }
 
-      // 提取 msg 字段，用于判断服务器明确返回的禁止信息
+      // 提取 msg 字段，判断服务器明确返回的禁止信息
       const msg =
         typeof resSearch.data === "string"
           ? resSearch.data
@@ -184,8 +212,8 @@ const testSearch = async (api, keyword) => {
         return "不支持";
       }
 
-      // 仅当搜索结果非空时，才通过与默认响应对比来判断是否真正执行了搜索
-      // 避免默认结果本身就是空列表导致的误判
+      // 仅当搜索结果和默认结果都非空时，才做对比判断是否真正执行了搜索
+      // 避免两边都是空列表时误判为"不支持"
       if (resDefault) {
         const searchList = resSearch.data.data?.length
           ? resSearch.data.data
@@ -222,9 +250,10 @@ const testSearch = async (api, keyword) => {
     } catch (e) {
       if (e.response?.status === 403) return "不支持";
       if (attempt < MAX_RETRY) await delay(RETRY_DELAY_MS);
-      else return "❌";
     }
   }
+  // 兜底：所有重试失败
+  return "❌";
 };
 
 // === 队列并发执行函数（修复空任务时永不 resolve 的边界 bug） ===
@@ -271,7 +300,7 @@ const queueRun = (tasks, limit) => {
   }
 
   let completed = 0;
-  const total = apiEntries.length;
+  const totalCount = apiEntries.length;
 
   const tasks = apiEntries.map(({ name, api, disabled }) => async () => {
     let result;
@@ -294,7 +323,7 @@ const queueRun = (tasks, limit) => {
 
     completed++;
     const icon = result.disabled ? "🚫" : result.success ? "✅" : "❌";
-    console.log(`[${completed}/${total}] ${icon} ${name}`);
+    console.log(`[${completed}/${totalCount}] ${icon} ${name}`);
     return result;
   });
 
@@ -311,6 +340,10 @@ const queueRun = (tasks, limit) => {
 
   // === 统计和生成报告 ===
   const stats = {};
+
+  // 取 push 今天之前的历史，用于判断是否为新源
+  const pastHistory = history.slice(0, -1);
+
   for (const { name, api, detail, disabled } of apiEntries) {
     stats[api] = {
       name,
@@ -319,9 +352,11 @@ const queueRun = (tasks, limit) => {
       disabled,
       ok: 0,
       fail: 0,
+      fail_streak: 0,
       trend: "",
       // 直接从 todayResults 读取，统一数据来源
-      searchStatus: todayResults.find((x) => x.api === api)?.searchStatus ?? "-",
+      searchStatus:
+        todayResults.find((x) => x.api === api)?.searchStatus ?? "-",
       status: "❌",
       viaProxy: false,
     };
@@ -333,6 +368,7 @@ const queueRun = (tasks, limit) => {
       else stats[api].fail++;
     }
 
+    // 计算连续失败天数并写入 stats
     let streak = 0;
     for (let i = history.length - 1; i >= 0; i--) {
       const rec = history[i].results.find((x) => x.api === api);
@@ -340,18 +376,31 @@ const queueRun = (tasks, limit) => {
       if (rec.success) break;
       streak++;
     }
+    stats[api].fail_streak = streak;
 
-    const total = stats[api].ok + stats[api].fail;
+    const recordCount = stats[api].ok + stats[api].fail;
     stats[api].successRate =
-      total > 0 ? ((stats[api].ok / total) * 100).toFixed(1) + "%" : "-";
+      recordCount > 0
+        ? ((stats[api].ok / recordCount) * 100).toFixed(1) + "%"
+        : "-";
 
-    const recent = history.slice(-7);
-    stats[api].trend = recent
-      .map((day) => {
-        const r = day.results.find((x) => x.api === api);
-        return r ? (r.disabled ? "🚫" : r.success ? "✅" : "❌") : "-";
-      })
-      .join("");
+    // 最近 7 天趋势
+    // 判断新源时只看今天之前的历史，避免 push 后 isNew 永远为 false
+    const isNew =
+      pastHistory.length > 0 &&
+      pastHistory.every((day) => !day.results.find((x) => x.api === api));
+
+    if (isNew) {
+      stats[api].trend = "🆕";
+    } else {
+      const recent = history.slice(-7);
+      stats[api].trend = recent
+        .map((day) => {
+          const r = day.results.find((x) => x.api === api);
+          return r ? (r.disabled ? "🚫" : r.success ? "✅" : "❌") : "-";
+        })
+        .join("");
+    }
 
     const latest = todayResults.find((x) => x.api === api);
     if (latest) {
@@ -366,7 +415,7 @@ const queueRun = (tasks, limit) => {
   // === 生成 Markdown 报告 ===
   let md = `# 源接口健康检测报告\n\n`;
   md += `最近更新时间：${now}\n\n`;
-  md += `**总源数:** ${apiEntries.length} | **检测关键词:** ${SEARCH_KEYWORD}`;
+  md += `**总源数:** ${totalCount} | **检测关键词:** ${SEARCH_KEYWORD}`;
 
   if (PROXY_DOMAINS.length > 0) {
     md += ` | **中转站:** \`${PROXY_PREFIX}\` (${PROXY_DOMAINS.length} 个域名)\n\n`;
@@ -385,7 +434,8 @@ const queueRun = (tasks, limit) => {
   });
 
   for (const s of sorted) {
-    const detailLink = s.detail.startsWith("http")
+    // 使用更严谨的 URL 判断，避免非 http(s) 开头的字符串被误渲染为链接
+    const detailLink = /^https?:\/\//.test(s.detail)
       ? `[Link](${s.detail})`
       : s.detail;
     const apiLink = `[Link](${s.api})`;
