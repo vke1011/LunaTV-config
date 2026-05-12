@@ -20,7 +20,7 @@
       "name": "🎬茅台",
       "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
       "detail": "https://mtzy.me",
-      "disabled": true
+      "skip_search": true
     },
     "wolongzyw.com": {
       "name": "🎬卧龙",
