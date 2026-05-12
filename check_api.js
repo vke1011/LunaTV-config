@@ -9,6 +9,7 @@ const REPORT_PATH = path.join(__dirname, "report.md");
 const MAX_DAYS = 30;
 const WARN_STREAK = 3;
 const ENABLE_SEARCH_TEST = true;
+// 支持命令行传参: node check.js 关键词，默认 "斗罗大陆"
 const SEARCH_KEYWORD = process.argv[2] || "斗罗大陆";
 const TIMEOUT_MS = 10000;
 const CONCURRENT_LIMIT = 10;
@@ -17,8 +18,9 @@ const RETRY_DELAY_MS = 500;
 
 // === 请求头（模拟浏览器，避免被视频源拒绝） ===
 const REQUEST_HEADERS = {
-  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-  "Accept": "application/json, text/plain, */*",
+  "User-Agent":
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+  Accept: "application/json, text/plain, */*",
   "Accept-Language": "zh-CN,zh;q=0.9",
 };
 
@@ -27,23 +29,23 @@ const REQUEST_HEADERS = {
 const PROXY_PREFIX = "https://corsapi.998836.xyz/?url=";
 
 // 需要走中转站的域名列表（在这里添加你的域名）
-const PROXY_DOMAINS = [
-  "apibdzy.com",
-  "lovedan.net",
-];
+const PROXY_DOMAINS = ["apibdzy.com", "lovedan.net"];
 
 // === 判断某个 URL 是否需要走中转站 ===
 const needsProxy = (url) => {
   try {
     const hostname = new URL(url).hostname;
-    return PROXY_DOMAINS.some((domain) => hostname === domain || hostname.endsWith("." + domain));
+    return PROXY_DOMAINS.some(
+      (domain) => hostname === domain || hostname.endsWith("." + domain)
+    );
   } catch {
     return false;
   }
 };
 
 // 根据是否需要中转站，返回最终请求 URL
-const resolveUrl = (url) => (needsProxy(url) ? `${PROXY_PREFIX}${encodeURIComponent(url)}` : url);
+const resolveUrl = (url) =>
+  needsProxy(url) ? `${PROXY_PREFIX}${encodeURIComponent(url)}` : url;
 
 // === 加载配置 ===
 if (!fs.existsSync(CONFIG_PATH)) {
@@ -70,16 +72,31 @@ if (fs.existsSync(REPORT_PATH)) {
   }
 }
 
-// === 当前 CST 时间 ===
-const now =
-  new Date(Date.now() + 8 * 60 * 60 * 1000)
-    .toISOString()
-    .replace("T", " ")
-    .slice(0, 16) + " CST";
+// === 当前 CST 时间（用 Intl，更语义化、避免手动偏移运算） ===
+const nowCST = () => {
+  const parts = new Intl.DateTimeFormat("zh-CN", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  })
+    .formatToParts(new Date())
+    .reduce((acc, p) => {
+      if (p.type !== "literal") acc[p.type] = p.value;
+      return acc;
+    }, {});
+  return `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:${parts.minute} CST`;
+};
+const now = nowCST();
 
-// === 工具函数（带重试 + 中转站支持） ===
+// === 工具函数 ===
 const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// === safeGet：检测 API 根路径是否可用 ===
+// 成功判定：HTTP 200 + 返回对象 + code 字段符合常见约定（1 / 200 / 不存在）
 const safeGet = async (url) => {
   const finalUrl = resolveUrl(url);
   const viaProxy = finalUrl !== url;
@@ -89,11 +106,19 @@ const safeGet = async (url) => {
         timeout: TIMEOUT_MS,
         headers: { ...REQUEST_HEADERS, Referer: url },
       });
+      const data = res.data;
+      const isValidCode =
+        data.code === undefined ||
+        data.code === 1 ||
+        data.code === 200 ||
+        data.code === "1" ||
+        data.code === "200";
       const isValid =
         res.status === 200 &&
-        res.data &&
-        typeof res.data === "object" &&
-        Object.keys(res.data).length > 0;
+        data &&
+        typeof data === "object" &&
+        Object.keys(data).length > 0 &&
+        isValidCode;
 
       return { success: isValid, viaProxy };
     } catch {
@@ -103,31 +128,97 @@ const safeGet = async (url) => {
   }
 };
 
+// === 缓存各 API 的默认响应，避免 testSearch 重复请求 ===
+const defaultResponseCache = new Map();
+
+const fetchDefault = async (api) => {
+  if (defaultResponseCache.has(api)) return defaultResponseCache.get(api);
+  try {
+    const res = await axios.get(resolveUrl(api), {
+      timeout: TIMEOUT_MS,
+      headers: { ...REQUEST_HEADERS, Referer: api },
+    });
+    defaultResponseCache.set(api, res);
+    return res;
+  } catch {
+    defaultResponseCache.set(api, null);
+    return null;
+  }
+};
+
+// === testSearch：测试搜索功能可用性 ===
 const testSearch = async (api, keyword) => {
   const rawUrl = `${api}?wd=${encodeURIComponent(keyword)}`;
   const finalUrl = resolveUrl(rawUrl);
   for (let attempt = 1; attempt <= MAX_RETRY; attempt++) {
     try {
       const [resSearch, resDefault] = await Promise.all([
-        axios.get(finalUrl, { timeout: TIMEOUT_MS, headers: { ...REQUEST_HEADERS, Referer: api } }),
-        axios.get(resolveUrl(api), { timeout: TIMEOUT_MS, headers: { ...REQUEST_HEADERS, Referer: api } }).catch(() => null),
+        axios.get(finalUrl, {
+          timeout: TIMEOUT_MS,
+          headers: { ...REQUEST_HEADERS, Referer: api },
+        }),
+        fetchDefault(api),
       ]);
-      if (typeof resSearch.data === "string" && /<html/i.test(resSearch.data)) return "验证码";
-      const msg = typeof resSearch.data === "string" ? resSearch.data : resSearch.data.msg || resSearch.data.message || resSearch.data.info || "";
+
+      // 返回 HTML 说明触发了验证码/跳转页
+      if (
+        typeof resSearch.data === "string" &&
+        /<html/i.test(resSearch.data)
+      ) {
+        return "验证码";
+      }
+
+      // 提取 msg 字段，用于判断服务器明确返回的禁止信息
+      const msg =
+        typeof resSearch.data === "string"
+          ? resSearch.data
+          : resSearch.data.msg ||
+            resSearch.data.message ||
+            resSearch.data.info ||
+            "";
+
       if (
         resSearch.status === 403 ||
-        /不支持|禁止|关闭|disabled|not support/i.test(msg) ||
-        (
-          resDefault &&
-          resSearch.data.list?.length > 0 &&
-          JSON.stringify(resSearch.data.list) === JSON.stringify(resDefault.data?.list) &&
-          JSON.stringify(resSearch.data.data) === JSON.stringify(resDefault.data?.data)
-        )
-      ) return "不支持";
-      if (resSearch.status !== 200 || !resSearch.data || typeof resSearch.data !== "object") return "❌";
-      const list = (resSearch.data.data?.length ? resSearch.data.data : resSearch.data.list) || [];
+        /不支持|禁止|关闭|disabled|not support/i.test(msg)
+      ) {
+        return "不支持";
+      }
+
+      // 仅当搜索结果非空时，才通过与默认响应对比来判断是否真正执行了搜索
+      // 避免默认结果本身就是空列表导致的误判
+      if (resDefault) {
+        const searchList = resSearch.data.data?.length
+          ? resSearch.data.data
+          : resSearch.data.list || [];
+        const defaultList = resDefault.data?.data?.length
+          ? resDefault.data.data
+          : resDefault.data?.list || [];
+
+        if (
+          searchList.length > 0 &&
+          defaultList.length > 0 &&
+          JSON.stringify(searchList) === JSON.stringify(defaultList)
+        ) {
+          return "不支持";
+        }
+      }
+
+      if (
+        resSearch.status !== 200 ||
+        !resSearch.data ||
+        typeof resSearch.data !== "object"
+      ) {
+        return "❌";
+      }
+
+      const list =
+        (resSearch.data.data?.length
+          ? resSearch.data.data
+          : resSearch.data.list) || [];
       if (!list.length) return "无结果";
-      return list.some((item) => JSON.stringify(item).includes(keyword)) ? "✅" : "不匹配";
+      return list.some((item) => JSON.stringify(item).includes(keyword))
+        ? "✅"
+        : "不匹配";
     } catch (e) {
       if (e.response?.status === 403) return "不支持";
       if (attempt < MAX_RETRY) await delay(RETRY_DELAY_MS);
@@ -136,15 +227,19 @@ const testSearch = async (api, keyword) => {
   }
 };
 
-
-// === 队列并发执行函数 ===
+// === 队列并发执行函数（修复空任务时永不 resolve 的边界 bug） ===
 const queueRun = (tasks, limit) => {
+  if (tasks.length === 0) return Promise.resolve([]);
+
   let index = 0;
   let active = 0;
   const results = [];
 
   return new Promise((resolve) => {
     const next = () => {
+      // 提前判断：所有任务已派发且无活跃任务时结束
+      if (index >= tasks.length && active === 0) return resolve(results);
+
       while (active < limit && index < tasks.length) {
         const i = index++;
         active++;
@@ -156,7 +251,6 @@ const queueRun = (tasks, limit) => {
             next();
           });
       }
-      if (index >= tasks.length && active === 0) resolve(results);
     };
     next();
   });
@@ -164,22 +258,44 @@ const queueRun = (tasks, limit) => {
 
 // === 主逻辑 ===
 (async () => {
-  console.log("⏳ 正在检测 API 与搜索功能可用性（队列并发 + 重试机制 + 中转站支持）...");
+  console.log(
+    "⏳ 正在检测 API 与搜索功能可用性（队列并发 + 重试机制 + 中转站支持）..."
+  );
 
   if (PROXY_DOMAINS.length > 0) {
-    console.log(`🔄 中转站已启用，共 ${PROXY_DOMAINS.length} 个域名走代理：${PROXY_DOMAINS.join(", ")}`);
+    console.log(
+      `🔄 中转站已启用，共 ${PROXY_DOMAINS.length} 个域名走代理：${PROXY_DOMAINS.join(", ")}`
+    );
   } else {
     console.log("ℹ️  未配置中转站域名，所有请求直连");
   }
 
+  let completed = 0;
+  const total = apiEntries.length;
+
   const tasks = apiEntries.map(({ name, api, disabled }) => async () => {
+    let result;
     if (disabled) {
-      return { name, api, disabled, success: null, viaProxy: false, searchStatus: "无法搜索" };
+      result = {
+        name,
+        api,
+        disabled,
+        success: null,
+        viaProxy: false,
+        searchStatus: "已禁用",
+      };
+    } else {
+      const { success, viaProxy } = await safeGet(api);
+      const searchStatus = ENABLE_SEARCH_TEST
+        ? await testSearch(api, SEARCH_KEYWORD)
+        : "-";
+      result = { name, api, disabled, success, viaProxy, searchStatus };
     }
 
-    const { success, viaProxy } = await safeGet(api);
-    const searchStatus = ENABLE_SEARCH_TEST ? await testSearch(api, SEARCH_KEYWORD) : "-";
-    return { name, api, disabled, success, viaProxy, searchStatus };
+    completed++;
+    const icon = result.disabled ? "🚫" : result.success ? "✅" : "❌";
+    console.log(`[${completed}/${total}] ${icon} ${name}`);
+    return result;
   });
 
   const todayResults = await queueRun(tasks, CONCURRENT_LIMIT);
@@ -203,17 +319,16 @@ const queueRun = (tasks, limit) => {
       disabled,
       ok: 0,
       fail: 0,
-      fail_streak: 0,
       trend: "",
-      searchStatus: "-",
+      // 直接从 todayResults 读取，统一数据来源
+      searchStatus: todayResults.find((x) => x.api === api)?.searchStatus ?? "-",
       status: "❌",
       viaProxy: false,
     };
 
     for (const day of history) {
       const rec = day.results.find((x) => x.api === api);
-      if (!rec) continue;
-      if (rec.disabled) continue;
+      if (!rec || rec.disabled) continue;
       if (rec.success) stats[api].ok++;
       else stats[api].fail++;
     }
@@ -221,13 +336,14 @@ const queueRun = (tasks, limit) => {
     let streak = 0;
     for (let i = history.length - 1; i >= 0; i--) {
       const rec = history[i].results.find((x) => x.api === api);
-      if (!rec) continue;
+      if (!rec || rec.disabled) continue;
       if (rec.success) break;
       streak++;
     }
 
     const total = stats[api].ok + stats[api].fail;
-    stats[api].successRate = total > 0 ? ((stats[api].ok / total) * 100).toFixed(1) + "%" : "-";
+    stats[api].successRate =
+      total > 0 ? ((stats[api].ok / total) * 100).toFixed(1) + "%" : "-";
 
     const recent = history.slice(-7);
     stats[api].trend = recent
@@ -239,7 +355,6 @@ const queueRun = (tasks, limit) => {
 
     const latest = todayResults.find((x) => x.api === api);
     if (latest) {
-      stats[api].searchStatus = latest.searchStatus;
       stats[api].viaProxy = latest.viaProxy || false;
     }
 
@@ -259,8 +374,10 @@ const queueRun = (tasks, limit) => {
     md += `\n\n`;
   }
 
-  md += "| 状态 | 资源名称 | 地址 | API | 连接 | 搜索 | 成功 | 失败 | 成功率 | 最近7天趋势 |\n";
-  md += "|------|---------|-----|-----|:----:|---------|---------:|--------:|-------:|--------------|\n";
+  md +=
+    "| 状态 | 资源名称 | 地址 | API | 连接 | 搜索 | 成功 | 失败 | 成功率 | 最近7天趋势 |\n";
+  md +=
+    "|------|---------|-----|-----|:----:|---------|---------:|--------:|-------:|--------------|\n";
 
   const sorted = Object.values(stats).sort((a, b) => {
     const order = { "🚨": 1, "❌": 2, "✅": 3, "🚫": 4 };
@@ -268,7 +385,9 @@ const queueRun = (tasks, limit) => {
   });
 
   for (const s of sorted) {
-    const detailLink = s.detail.startsWith("http") ? `[Link](${s.detail})` : s.detail;
+    const detailLink = s.detail.startsWith("http")
+      ? `[Link](${s.detail})`
+      : s.detail;
     const apiLink = `[Link](${s.api})`;
     const proxyBadge = s.viaProxy ? "🔄" : "🌐";
     md += `| ${s.status} | ${s.name} | ${detailLink} | ${apiLink} | ${proxyBadge} | ${s.searchStatus} | ${s.ok} | ${s.fail} | ${s.successRate} | ${s.trend} |\n`;
