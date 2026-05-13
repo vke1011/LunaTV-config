@@ -1,5 +1,4 @@
 name: JSON Build, API Check & Encoding
-
 on:
   schedule:
     - cron: "0 17 * * *"  # 每天北京时间凌晨1点运行 (UTC 17点)
@@ -11,28 +10,23 @@ on:
       api_name:
         description: '搜索关键字'
         default: 美女
-
 jobs:
   build-check-encode:
     runs-on: ubuntu-latest
-
     permissions:
       contents: write  # 允许推送
-
     steps:
       # 1️⃣ 检出仓库
-      - uses: actions/checkout@v5
-
+      - uses: actions/checkout@v4                  
       # 2️⃣ 安装系统依赖 & Node.js
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@v4                
         with:
-          node-version: '20'
+          node-version: '24'                       
       - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y jq curl
           npm install bs58 axios
-
       # 3️⃣ JSON 处理：生成 jingjian.json
       - name: Generate jingjian.json (strip _comment)
         run: |
@@ -44,10 +38,8 @@ jobs:
               | with_entries(select(.value.disabled | not))
             )
           }' LunaTV-config.json > jingjian.json
-
       - name: Validate jingjian.json
         run: jq empty jingjian.json
-
       # 4️⃣ JSON 处理：生成 jin18.json（去掉 adult）
       - name: Generate jin18.json (strip adult resources)
         run: |
@@ -58,23 +50,19 @@ jobs:
               | with_entries(select(.value.name | startswith("🔞") | not))
             )
           }' jingjian.json > jin18.json
-
       - name: Validate jin18.json
         run: jq empty jin18.json
-
       # 5️⃣ Base58 编码
       - name: Encode JSON to Base58
         run: |
           cat > encode.js <<'EOF'
           const fs = require('fs');
           const bs58 = require('bs58');
-
           const files = [
             { input: 'LunaTV-config.json', output: 'LunaTV-config.txt' },
             { input: 'jingjian.json', output: 'jingjian.txt' },
             { input: 'jin18.json', output: 'jin18.txt' }
           ];
-
           files.forEach(file => {
             if (!fs.existsSync(file.input)) return;
             const data = fs.readFileSync(file.input);
@@ -82,30 +70,25 @@ jobs:
             fs.writeFileSync(file.output, encoded);
           });
           EOF
-
           node encode.js
-
       # 6️⃣ 运行 API 检查脚本
       - name: Run API check
         run: |
           API_NAME="${{ github.event.inputs.api_name || '我的' }}"
           echo "检查 API: $API_NAME"
-          node check_api.js "$API_NAME"
-
+          node check_sources_queue_retry.js "$API_NAME"   # 修复④：文件名与实际脚本对齐
       # 7️⃣ 更新 README 或报告
       - name: Update report
         run: node update_readme.js
-
-      # 8️⃣ 提交并推送所有生成文件（优化版）
+      # 8️⃣ 提交并推送所有生成文件
       - name: Commit and push all generated files
         run: |
           # 配置 Git
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # 拉取远程 main 分支，避免冲突
-          git fetch origin main
-          git reset --soft origin/main
+
+          # 修复⑤：用 pull --rebase 替代 fetch+reset --soft，避免丢弃工作区变更
+          git pull --rebase origin main
 
           # 添加所有生成文件
           git add jingjian.json jin18.json LunaTV-config.txt jingjian.txt jin18.txt report.md README.md
@@ -115,4 +98,3 @@ jobs:
 
           # 推送到远程 main
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
-
