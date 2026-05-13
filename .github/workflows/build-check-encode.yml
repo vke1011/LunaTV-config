@@ -10,7 +10,7 @@ on:
     inputs:
       api_name:
         description: '搜索关键字'
-        default: 我的
+        default: 美女
 
 jobs:
   build-check-encode:
