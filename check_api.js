@@ -9,14 +9,12 @@ const REPORT_PATH = path.join(__dirname, "report.md");
 const MAX_DAYS = 30;
 const WARN_STREAK = 3;
 const ENABLE_SEARCH_TEST = true;
-// 支持命令行传参: node check.js 关键词，默认 "斗罗大陆"
 const SEARCH_KEYWORD = process.argv[2] || "斗罗大陆";
 const TIMEOUT_MS = 10000;
 const CONCURRENT_LIMIT = 10;
 const MAX_RETRY = 3;
 const RETRY_DELAY_MS = 500;
 
-// === 请求头（模拟浏览器，避免被视频源拒绝） ===
 const REQUEST_HEADERS = {
   "User-Agent":
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -24,14 +22,9 @@ const REQUEST_HEADERS = {
   "Accept-Language": "zh-CN,zh;q=0.9",
 };
 
-// === 中转站配置 ===
-// 中转站前缀，请求时拼接在目标 URL 前面
 const PROXY_PREFIX = "https://corsapi.998836.xyz/?url=";
-
-// 需要走中转站的域名列表（在这里添加你的域名）
 const PROXY_DOMAINS = ["apibdzy.com", "lovedan.net"];
 
-// === 判断某个 URL 是否需要走中转站 ===
 const needsProxy = (url) => {
   try {
     const hostname = new URL(url).hostname;
@@ -43,25 +36,21 @@ const needsProxy = (url) => {
   }
 };
 
-// 根据是否需要中转站，返回最终请求 URL
 const resolveUrl = (url) =>
   needsProxy(url) ? `${PROXY_PREFIX}${encodeURIComponent(url)}` : url;
 
-// === 加载配置 ===
 if (!fs.existsSync(CONFIG_PATH)) {
   console.error("❌ 配置文件不存在:", CONFIG_PATH);
   process.exit(1);
 }
 const config = JSON.parse(fs.readFileSync(CONFIG_PATH, "utf-8"));
 
-// 校验 api_site 字段
 const rawSites = config.api_site;
 if (!rawSites || typeof rawSites !== "object") {
   console.error("❌ 配置文件格式错误：缺少 api_site 字段");
   process.exit(1);
 }
 
-// 过滤掉缺少 name 或 api 字段的残缺条目，避免后续请求崩溃
 const apiEntries = Object.values(rawSites)
   .filter((s) => {
     if (!s.name || !s.api) {
@@ -77,7 +66,6 @@ const apiEntries = Object.values(rawSites)
     disabled: !!s.disabled,
   }));
 
-// === 读取历史记录 ===
 let history = [];
 if (fs.existsSync(REPORT_PATH)) {
   const old = fs.readFileSync(REPORT_PATH, "utf-8");
@@ -91,7 +79,6 @@ if (fs.existsSync(REPORT_PATH)) {
   }
 }
 
-// === 当前 CST 时间（用 Intl，语义化、避免手动偏移运算） ===
 const now = (() => {
   const parts = new Intl.DateTimeFormat("zh-CN", {
     timeZone: "Asia/Shanghai",
@@ -110,15 +97,11 @@ const now = (() => {
   return `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:${parts.minute} CST`;
 })();
 
-// === 工具函数 ===
 const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 
-// === 缓存各 API 的默认响应，避免 testSearch 重复请求 ===
 const defaultResponseCache = new Map();
 
-// === safeGet：检测 API 根路径是否可用 ===
-// 成功判定：HTTP 200 + 返回对象 + code 字段符合常见约定（1 / 200 / 不存在）
-// 成功时顺手写入 defaultResponseCache，供 testSearch 复用，减少一次重复请求
+// === [改动1] safeGet：增加 XSS 污染检测，返回新增的 xssFlag 字段 ===
 const safeGet = async (url) => {
   const finalUrl = resolveUrl(url);
   const viaProxy = finalUrl !== url;
@@ -135,28 +118,32 @@ const safeGet = async (url) => {
         data.code === 200 ||
         data.code === "1" ||
         data.code === "200";
+
+      // 检测响应数据是否含有注入的 <script 标签
+      const rawJson = JSON.stringify(data);
+      const xssFlag = /<script/i.test(rawJson);
+
       const isValid =
         res.status === 200 &&
         data &&
         typeof data === "object" &&
         Object.keys(data).length > 0 &&
         isValidCode;
+      // 注意：xssFlag 不影响 isValid，数据可用性和污染状态分开判断
+      // 这样报告里能同时看到"连接正常"和"数据有污染"两个信息
 
-      // 顺手缓存默认响应，testSearch 可直接复用
       if (isValid && !defaultResponseCache.has(url)) {
         defaultResponseCache.set(url, res);
       }
 
-      return { success: isValid, viaProxy };
+      return { success: isValid, viaProxy, xssFlag };
     } catch {
       if (attempt < MAX_RETRY) await delay(RETRY_DELAY_MS);
     }
   }
-  // 兜底：所有重试失败
-  return { success: false, viaProxy };
+  return { success: false, viaProxy, xssFlag: false };
 };
 
-// === fetchDefault：获取 API 默认响应（带重试 + 缓存） ===
 const fetchDefault = async (api) => {
   if (defaultResponseCache.has(api)) return defaultResponseCache.get(api);
   for (let attempt = 1; attempt <= MAX_RETRY; attempt++) {
@@ -177,7 +164,6 @@ const fetchDefault = async (api) => {
   }
 };
 
-// === testSearch：测试搜索功能可用性 ===
 const testSearch = async (api, keyword) => {
   const rawUrl = `${api}?wd=${encodeURIComponent(keyword)}`;
   const finalUrl = resolveUrl(rawUrl);
@@ -191,12 +177,10 @@ const testSearch = async (api, keyword) => {
         fetchDefault(api),
       ]);
 
-      // 返回 HTML 说明触发了验证码/跳转页
       if (typeof resSearch.data === "string" && /<html/i.test(resSearch.data)) {
         return "验证码";
       }
 
-      // 提取 msg 字段，判断服务器明确返回的禁止信息
       const msg =
         typeof resSearch.data === "string"
           ? resSearch.data
@@ -212,8 +196,6 @@ const testSearch = async (api, keyword) => {
         return "不支持";
       }
 
-      // 仅当搜索结果和默认结果都非空时，才做对比判断是否真正执行了搜索
-      // 避免两边都是空列表时误判为"不支持"
       if (resDefault) {
         const searchList = resSearch.data.data?.length
           ? resSearch.data.data
@@ -252,11 +234,9 @@ const testSearch = async (api, keyword) => {
       if (attempt < MAX_RETRY) await delay(RETRY_DELAY_MS);
     }
   }
-  // 兜底：所有重试失败
   return "❌";
 };
 
-// === 队列并发执行函数（修复空任务时永不 resolve 的边界 bug） ===
 const queueRun = (tasks, limit) => {
   if (tasks.length === 0) return Promise.resolve([]);
 
@@ -266,7 +246,6 @@ const queueRun = (tasks, limit) => {
 
   return new Promise((resolve) => {
     const next = () => {
-      // 提前判断：所有任务已派发且无活跃任务时结束
       if (index >= tasks.length && active === 0) return resolve(results);
 
       while (active < limit && index < tasks.length) {
@@ -285,7 +264,6 @@ const queueRun = (tasks, limit) => {
   });
 };
 
-// === 主逻辑 ===
 (async () => {
   console.log(
     "⏳ 正在检测 API 与搜索功能可用性（队列并发 + 重试机制 + 中转站支持）..."
@@ -311,19 +289,23 @@ const queueRun = (tasks, limit) => {
         disabled,
         success: null,
         viaProxy: false,
+        xssFlag: false,
         searchStatus: "已禁用",
       };
     } else {
-      const { success, viaProxy } = await safeGet(api);
+      // === [改动2] 解构时取出 xssFlag ===
+      const { success, viaProxy, xssFlag } = await safeGet(api);
       const searchStatus = ENABLE_SEARCH_TEST
         ? await testSearch(api, SEARCH_KEYWORD)
         : "-";
-      result = { name, api, disabled, success, viaProxy, searchStatus };
+      result = { name, api, disabled, success, viaProxy, xssFlag, searchStatus };
     }
 
     completed++;
+    // === [改动3] 控制台输出增加污染提示 ===
     const icon = result.disabled ? "🚫" : result.success ? "✅" : "❌";
-    console.log(`[${completed}/${totalCount}] ${icon} ${name}`);
+    const xssHint = result.xssFlag ? " ⚠️ 数据污染" : "";
+    console.log(`[${completed}/${totalCount}] ${icon} ${name}${xssHint}`);
     return result;
   });
 
@@ -338,10 +320,7 @@ const queueRun = (tasks, limit) => {
   history.push(todayRecord);
   if (history.length > MAX_DAYS) history = history.slice(-MAX_DAYS);
 
-  // === 统计和生成报告 ===
   const stats = {};
-
-  // 取 push 今天之前的历史，用于判断是否为新源
   const pastHistory = history.slice(0, -1);
 
   for (const { name, api, detail, disabled } of apiEntries) {
@@ -354,9 +333,10 @@ const queueRun = (tasks, limit) => {
       fail: 0,
       fail_streak: 0,
       trend: "",
-      // 直接从 todayResults 读取，统一数据来源
       searchStatus:
         todayResults.find((x) => x.api === api)?.searchStatus ?? "-",
+      // === [改动4] stats 里记录 xssFlag，供报告使用 ===
+      xssFlag: todayResults.find((x) => x.api === api)?.xssFlag ?? false,
       status: "❌",
       viaProxy: false,
     };
@@ -368,7 +348,6 @@ const queueRun = (tasks, limit) => {
       else stats[api].fail++;
     }
 
-    // 计算连续失败天数并写入 stats
     let streak = 0;
     for (let i = history.length - 1; i >= 0; i--) {
       const rec = history[i].results.find((x) => x.api === api);
@@ -384,8 +363,6 @@ const queueRun = (tasks, limit) => {
         ? ((stats[api].ok / recordCount) * 100).toFixed(1) + "%"
         : "-";
 
-    // 最近 7 天趋势
-    // 判断新源时只看今天之前的历史，避免 push 后 isNew 永远为 false
     const isNew =
       pastHistory.length > 0 &&
       pastHistory.every((day) => !day.results.find((x) => x.api === api));
@@ -412,7 +389,6 @@ const queueRun = (tasks, limit) => {
     else if (latest?.success) stats[api].status = "✅";
   }
 
-  // === 生成 Markdown 报告 ===
   let md = `# 源接口健康检测报告\n\n`;
   md += `最近更新时间：${now}\n\n`;
   md += `**总源数:** ${totalCount} | **检测关键词:** ${SEARCH_KEYWORD}`;
@@ -423,10 +399,11 @@ const queueRun = (tasks, limit) => {
     md += `\n\n`;
   }
 
+  // === [改动4续] 表头增加"污染"列 ===
   md +=
-    "| 状态 | 资源名称 | 地址 | API | 连接 | 搜索 | 成功 | 失败 | 成功率 | 最近7天趋势 |\n";
+    "| 状态 | 资源名称 | 地址 | API | 连接 | 搜索 | 污染 | 成功 | 失败 | 成功率 | 最近7天趋势 |\n";
   md +=
-    "|------|---------|-----|-----|:----:|---------|---------:|--------:|-------:|--------------|\n";
+    "|------|---------|-----|-----|:----:|---------|:----:|---------:|--------:|-------:|--------------|\n";
 
   const sorted = Object.values(stats).sort((a, b) => {
     const order = { "🚨": 1, "❌": 2, "✅": 3, "🚫": 4 };
@@ -434,13 +411,13 @@ const queueRun = (tasks, limit) => {
   });
 
   for (const s of sorted) {
-    // 使用更严谨的 URL 判断，避免非 http(s) 开头的字符串被误渲染为链接
     const detailLink = /^https?:\/\//.test(s.detail)
       ? `[Link](${s.detail})`
       : s.detail;
     const apiLink = `[Link](${s.api})`;
     const proxyBadge = s.viaProxy ? "🔄" : "🌐";
-    md += `| ${s.status} | ${s.name} | ${detailLink} | ${apiLink} | ${proxyBadge} | ${s.searchStatus} | ${s.ok} | ${s.fail} | ${s.successRate} | ${s.trend} |\n`;
+    const xssBadge = s.xssFlag ? "⚠️" : "-";
+    md += `| ${s.status} | ${s.name} | ${detailLink} | ${apiLink} | ${proxyBadge} | ${s.searchStatus} | ${xssBadge} | ${s.ok} | ${s.fail} | ${s.successRate} | ${s.trend} |\n`;
   }
 
   md += `\n<details>\n<summary>📜 点击展开查看历史检测数据 (JSON)</summary>\n\n`;
