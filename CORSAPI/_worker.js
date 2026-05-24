@@ -141,6 +141,11 @@ async function handleRequest(request) {
   if (pathname === '/health') {
     return new Response('OK', { status: 200, headers: CORS_HEADERS })
   }
+  // 🔑 新增：处理源专属路径 /p/{sourceId}?url=...
+  // 这样可以让 TVBox 认为每个源是不同的域名/路径
+  if (pathname.startsWith('/p/') && targetUrlParam) {
+    return handleProxyRequest(request, targetUrlParam, currentOrigin)
+  }
 
   // 通用代理请求处理
   if (targetUrlParam) {
