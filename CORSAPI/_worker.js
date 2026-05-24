@@ -308,26 +308,26 @@ async function handleHomePage(currentOrigin, defaultPrefix) {
     
   <div class="section">
     <h3>📦 精简版（jin18）</h3>
-    <p>原始 JSON：<br><code class="copyable">${currentOrigin}?format=0&source=jin18</code> <button class="copy-btn">复制</button></p>
-    <p>中转代理 JSON：<br><code class="copyable">${currentOrigin}?format=1&source=jin18</code> <button class="copy-btn">复制</button></p>
-    <p>原始 Base58：<br><code class="copyable">${currentOrigin}?format=2&source=jin18</code> <button class="copy-btn">复制</button></p>
-    <p>中转 Base58：<br><code class="copyable">${currentOrigin}?format=3&source=jin18</code> <button class="copy-btn">复制</button></p>
+    <p>原始 JSON：<br><code class="copyable">${currentOrigin}/?format=0&source=jin18</code> <button class="copy-btn">复制</button></p>
+    <p>中转代理 JSON：<br><code class="copyable">${currentOrigin}/?format=1&source=jin18</code> <button class="copy-btn">复制</button></p>
+    <p>原始 Base58：<br><code class="copyable">${currentOrigin}/?format=2&source=jin18</code> <button class="copy-btn">复制</button></p>
+    <p>中转 Base58：<br><code class="copyable">${currentOrigin}/?format=3&source=jin18</code> <button class="copy-btn">复制</button></p>
   </div>
   
   <div class="section">
     <h3>📦 精简版+成人（jingjian）</h3>
-    <p>原始 JSON：<br><code class="copyable">${currentOrigin}?format=0&source=jingjian</code> <button class="copy-btn">复制</button></p>
-    <p>中转代理 JSON：<br><code class="copyable">${currentOrigin}?format=1&source=jingjian</code> <button class="copy-btn">复制</button></p>
-    <p>原始 Base58：<br><code class="copyable">${currentOrigin}?format=2&source=jingjian</code> <button class="copy-btn">复制</button></p>
-    <p>中转 Base58：<br><code class="copyable">${currentOrigin}?format=3&source=jingjian</code> <button class="copy-btn">复制</button></p>
+    <p>原始 JSON：<br><code class="copyable">${currentOrigin}/?format=0&source=jingjian</code> <button class="copy-btn">复制</button></p>
+    <p>中转代理 JSON：<br><code class="copyable">${currentOrigin}/?format=1&source=jingjian</code> <button class="copy-btn">复制</button></p>
+    <p>原始 Base58：<br><code class="copyable">${currentOrigin}/?format=2&source=jingjian</code> <button class="copy-btn">复制</button></p>
+    <p>中转 Base58：<br><code class="copyable">${currentOrigin}/?format=3&source=jingjian</code> <button class="copy-btn">复制</button></p>
   </div>
   
   <div class="section">
     <h3>📦 完整版（full，默认）</h3>
-    <p>原始 JSON：<br><code class="copyable">${currentOrigin}?format=0&source=full</code> <button class="copy-btn">复制</button></p>
-    <p>中转代理 JSON：<br><code class="copyable">${currentOrigin}?format=1&source=full</code> <button class="copy-btn">复制</button></p>
-    <p>原始 Base58：<br><code class="copyable">${currentOrigin}?format=2&source=full</code> <button class="copy-btn">复制</button></p>
-    <p>中转 Base58：<br><code class="copyable">${currentOrigin}?format=3&source=full</code> <button class="copy-btn">复制</button></p>
+    <p>原始 JSON：<br><code class="copyable">${currentOrigin}/?format=0&source=full</code> <button class="copy-btn">复制</button></p>
+    <p>中转代理 JSON：<br><code class="copyable">${currentOrigin}/?format=1&source=full</code> <button class="copy-btn">复制</button></p>
+    <p>原始 Base58：<br><code class="copyable">${currentOrigin}/?format=2&source=full</code> <button class="copy-btn">复制</button></p>
+    <p>中转 Base58：<br><code class="copyable">${currentOrigin}/?format=3&source=full</code> <button class="copy-btn">复制</button></p>
   </div>
   
   <h2>支持的功能</h2>
