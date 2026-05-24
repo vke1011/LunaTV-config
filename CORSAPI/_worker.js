@@ -24,9 +24,9 @@ const EXCLUDE_HEADERS = new Set([
 ])
 
 const JSON_SOURCES = {
-  'jin18': 'https://raw.githubusercontent.com/vke1011/LunaTV-config/refs/heads/main/jin18.json',
-  'jingjian': 'https://raw.githubusercontent.com/vke1011/LunaTV-config/refs/heads/main/jingjian.json',
-  'full': 'https://raw.githubusercontent.com/vke1011/LunaTV-config/refs/heads/main/LunaTV-config.json'
+  'jin18': 'https://raw.githubusercontent.com/hafrey1/LunaTV-config/refs/heads/main/jin18.json',
+  'jingjian': 'https://raw.githubusercontent.com/hafrey1/LunaTV-config/refs/heads/main/jingjian.json',
+  'full': 'https://raw.githubusercontent.com/hafrey1/LunaTV-config/refs/heads/main/LunaTV-config.json'
 }
 
 const FORMAT_CONFIG = {
@@ -66,24 +66,7 @@ function base58Encode(obj) {
   return result
 }
 
-// 🔑 从 URL 中提取唯一标识符
-function extractSourceId(apiUrl) {
-  try {
-    const url = new URL(apiUrl)
-    const hostname = url.hostname
-    const parts = hostname.split('.')
-    if (parts.length >= 3 && (parts[0] === 'caiji' || parts[0] === 'api' || parts[0] === 'cj' || parts[0] === 'www')) {
-      return parts[parts.length - 2].toLowerCase().replace(/[^a-z0-9]/g, '')
-    }
-    let name = parts[0].toLowerCase()
-    name = name.replace(/zyapi$/, '').replace(/zy$/, '').replace(/api$/, '')
-    return name.replace(/[^a-z0-9]/g, '') || 'source'
-  } catch {
-    return 'source' + Math.random().toString(36).substr(2, 6)
-  }
-}
-
-// JSON api 字段前缀替换（为每个源生成唯一路径）
+// JSON api 字段前缀替换
 function addOrReplacePrefix(obj, newPrefix) {
   if (typeof obj !== 'object' || obj === null) return obj
   if (Array.isArray(obj)) return obj.map(item => addOrReplacePrefix(item, newPrefix))
@@ -93,11 +76,7 @@ function addOrReplacePrefix(obj, newPrefix) {
       let apiUrl = obj[key]
       const urlIndex = apiUrl.indexOf('?url=')
       if (urlIndex !== -1) apiUrl = apiUrl.slice(urlIndex + 5)
-      if (!apiUrl.startsWith(newPrefix)) {
-        const sourceId = extractSourceId(apiUrl)
-        const baseUrl = newPrefix.replace(/\/?\?url=$/, '')
-        apiUrl = `${baseUrl}/p/${sourceId}?url=${apiUrl}`
-      }
+      if (!apiUrl.startsWith(newPrefix)) apiUrl = newPrefix + apiUrl
       newObj[key] = apiUrl
     } else {
       newObj[key] = addOrReplacePrefix(obj[key], newPrefix)
@@ -123,7 +102,7 @@ async function getCachedJSON(url) {
     const res = await fetch(url)
     if (!res.ok) throw new Error(`Fetch failed: ${res.status}`)
     const data = await res.json()
-    await KV.put(cacheKey, JSON.stringify(data), { expirationTtl: 1800 })   // 三十分钟
+    await KV.put(cacheKey, JSON.stringify(data), { expirationTtl: 1800 })   // 缓存三十分钟
     return data
   } else {
     const res = await fetch(url)
@@ -161,11 +140,6 @@ async function handleRequest(request) {
   // 🩺 健康检查（最常见的性能检查，提前处理）
   if (pathname === '/health') {
     return new Response('OK', { status: 200, headers: CORS_HEADERS })
-  }
-  // 🔑 新增：处理源专属路径 /p/{sourceId}?url=...
-  // 这样可以让 TVBox 认为每个源是不同的域名/路径
-  if (pathname.startsWith('/p/') && targetUrlParam) {
-    return handleProxyRequest(request, targetUrlParam, currentOrigin)
   }
 
   // 通用代理请求处理
@@ -329,26 +303,26 @@ async function handleHomePage(currentOrigin, defaultPrefix) {
     
   <div class="section">
     <h3>📦 精简版（jin18）</h3>
-    <p>原始 JSON：<br><code class="copyable">${currentOrigin}/?format=0&source=jin18</code> <button class="copy-btn">复制</button></p>
-    <p>中转代理 JSON：<br><code class="copyable">${currentOrigin}/?format=1&source=jin18</code> <button class="copy-btn">复制</button></p>
-    <p>原始 Base58：<br><code class="copyable">${currentOrigin}/?format=2&source=jin18</code> <button class="copy-btn">复制</button></p>
-    <p>中转 Base58：<br><code class="copyable">${currentOrigin}/?format=3&source=jin18</code> <button class="copy-btn">复制</button></p>
+    <p>原始 JSON：<br><code class="copyable">${currentOrigin}?format=0&source=jin18</code> <button class="copy-btn">复制</button></p>
+    <p>中转代理 JSON：<br><code class="copyable">${currentOrigin}?format=1&source=jin18</code> <button class="copy-btn">复制</button></p>
+    <p>原始 Base58：<br><code class="copyable">${currentOrigin}?format=2&source=jin18</code> <button class="copy-btn">复制</button></p>
+    <p>中转 Base58：<br><code class="copyable">${currentOrigin}?format=3&source=jin18</code> <button class="copy-btn">复制</button></p>
   </div>
   
   <div class="section">
     <h3>📦 精简版+成人（jingjian）</h3>
-    <p>原始 JSON：<br><code class="copyable">${currentOrigin}/?format=0&source=jingjian</code> <button class="copy-btn">复制</button></p>
-    <p>中转代理 JSON：<br><code class="copyable">${currentOrigin}/?format=1&source=jingjian</code> <button class="copy-btn">复制</button></p>
-    <p>原始 Base58：<br><code class="copyable">${currentOrigin}/?format=2&source=jingjian</code> <button class="copy-btn">复制</button></p>
-    <p>中转 Base58：<br><code class="copyable">${currentOrigin}/?format=3&source=jingjian</code> <button class="copy-btn">复制</button></p>
+    <p>原始 JSON：<br><code class="copyable">${currentOrigin}?format=0&source=jingjian</code> <button class="copy-btn">复制</button></p>
+    <p>中转代理 JSON：<br><code class="copyable">${currentOrigin}?format=1&source=jingjian</code> <button class="copy-btn">复制</button></p>
+    <p>原始 Base58：<br><code class="copyable">${currentOrigin}?format=2&source=jingjian</code> <button class="copy-btn">复制</button></p>
+    <p>中转 Base58：<br><code class="copyable">${currentOrigin}?format=3&source=jingjian</code> <button class="copy-btn">复制</button></p>
   </div>
   
   <div class="section">
     <h3>📦 完整版（full，默认）</h3>
-    <p>原始 JSON：<br><code class="copyable">${currentOrigin}/?format=0&source=full</code> <button class="copy-btn">复制</button></p>
-    <p>中转代理 JSON：<br><code class="copyable">${currentOrigin}/?format=1&source=full</code> <button class="copy-btn">复制</button></p>
-    <p>原始 Base58：<br><code class="copyable">${currentOrigin}/?format=2&source=full</code> <button class="copy-btn">复制</button></p>
-    <p>中转 Base58：<br><code class="copyable">${currentOrigin}/?format=3&source=full</code> <button class="copy-btn">复制</button></p>
+    <p>原始 JSON：<br><code class="copyable">${currentOrigin}?format=0&source=full</code> <button class="copy-btn">复制</button></p>
+    <p>中转代理 JSON：<br><code class="copyable">${currentOrigin}?format=1&source=full</code> <button class="copy-btn">复制</button></p>
+    <p>原始 Base58：<br><code class="copyable">${currentOrigin}?format=2&source=full</code> <button class="copy-btn">复制</button></p>
+    <p>中转 Base58：<br><code class="copyable">${currentOrigin}?format=3&source=full</code> <button class="copy-btn">复制</button></p>
   </div>
   
   <h2>支持的功能</h2>
