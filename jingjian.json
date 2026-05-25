@@ -21,11 +21,6 @@
       "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
       "detail": "https://mtzy.me"
     },
-    "wolongzyw.com": {
-      "name": "🎬卧龙",
-      "api": "https://wolongzyw.com/api.php/provide/vod",
-      "detail": "https://wolongzyw.com"
-    },
     "ikunzy.com": {
       "name": "🎬爱坤",
       "api": "https://ikunzyapi.com/api.php/provide/vod",
