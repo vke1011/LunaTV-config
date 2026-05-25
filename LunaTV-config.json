@@ -21,11 +21,6 @@
       "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
       "detail": "https://mtzy.me"
     },
-    "wolongzyw.com": {
-      "name": "🎬卧龙",
-      "api": "https://wolongzyw.com/api.php/provide/vod",
-      "detail": "https://wolongzyw.com"
-    },
     "ikunzy.com": {
       "name": "🎬爱坤",
       "api": "https://ikunzyapi.com/api.php/provide/vod",
@@ -320,12 +315,6 @@
       "name": "🔞桃花",
       "api": "https://thzy1.me/api.php/provide/vod",
       "detail": "https://thzy1.me"
-    },
-    "siwazyw.tv": {
-      "_comment": "不好用",
-      "name": "🔞丝袜",
-      "api": "https://siwazyw.tv/api.php/provide/vod",
-      "detail": "https://siwazyw.tv"
     },
     "dadizy.com": {
       "_comment": "不好用",
