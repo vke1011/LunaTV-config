@@ -140,11 +140,6 @@
       "name": "🎬光速",
       "api": "https://api.guangsuapi.com/api.php/provide/vod",
       "detail": "https://guangsuzy.com"
-    },
-    "www.caiji.cyou": {
-      "name": "🎬789",
-      "api": "https://www.caiji.cyou/api.php/provide/vod",
-      "detail": "https://www.caiji.cyou"
     }
   }
 }
