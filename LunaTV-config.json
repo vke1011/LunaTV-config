@@ -263,12 +263,6 @@
       "api": "http://fhapi9.com/api.php/provide/vod",
       "detail": "http://fhapi9.com"
     },
-    "www.yytv.cc": {
-      "_comment": "不好用",
-      "name": "🔞优优",
-      "api": "https://yytv4.cc/api.php/provide/vod",
-      "detail": "https://www.yytv.cc"
-    },
     "lbapiby.com": {
       "_comment": "不好用",
       "name": "🔞AIvin",
