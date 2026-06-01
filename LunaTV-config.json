@@ -76,11 +76,6 @@
       "api": "https://api.wujinapi.me/api.php/provide/vod",
       "detail": "https://wujinzy.com"
     },
-    "tyyszy.com": {
-      "name": "🎬天涯",
-      "api": "https://tyyszyapi.com/api.php/provide/vod",
-      "detail": "https://tyyszy.com"
-    },
     "www.subozy.com": {
       "name": "🎬速播",
       "api": "https://subocaiji.com/api.php/provide/vod",
