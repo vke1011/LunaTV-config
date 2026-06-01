@@ -136,6 +136,12 @@
       "api": "https://api.guangsuapi.com/api.php/provide/vod",
       "detail": "https://guangsuzy.com"
     },
+    "tyyszy.com": {
+      "_comment": "暂不支持搜索",
+      "name": "🎬天涯",
+      "api": "https://tyyszyapi.com/api.php/provide/vod",
+      "detail": "https://tyyszy.com"
+    },
     "xinlangzy.com": {
       "_comment": "暂不支持搜索",
       "name": "🎬新浪",
