@@ -29,7 +29,7 @@ const REQUEST_HEADERS = {
 const PROXY_PREFIX = "https://corsapi.998836.xyz/?url=";
 
 // 需要走中转站的域名列表（在这里添加你的域名）
-const PROXY_DOMAINS = ["apibdzy.com", "lovedan.net"];
+const PROXY_DOMAINS = [];
 
 // === 判断某个 URL 是否需要走中转站 ===
 const needsProxy = (url) => {
