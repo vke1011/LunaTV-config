@@ -135,6 +135,11 @@
       "name": "🎬光速",
       "api": "https://api.guangsuapi.com/api.php/provide/vod",
       "detail": "https://guangsuzy.com"
+    },
+    "xgzy1.tv": {
+      "name": "🎬西瓜",
+      "api": "https://caiji.xgzyapi.com/api.php/provide/vod",
+      "detail": "https://xgzy1.tv"
     }
   }
 }
