@@ -203,6 +203,8 @@ const testSearch = async (api, keyword) => {
           : resSearch.data.msg ||
             resSearch.data.message ||
             resSearch.data.info ||
+            resSearch.data.err ||
+            resSearch.data.error ||
             "";
 
       if (
