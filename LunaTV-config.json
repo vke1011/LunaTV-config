@@ -258,11 +258,6 @@
       "api": "https://souavzyw.com/api.php/provide/vod",
       "detail": "https://souavzyw.com"
     },
-    "aosikazy6.com": {
-      "name": "🔞奥斯卡",
-      "api": "https://aosikazy6.com/api.php/provide/vod",
-      "detail": "https://aosikazy6.com"
-    },
     "bwzy.tv": {
       "name": "🔞百万",
       "api": "https://api.bwzyz.com/api.php/provide/vod",
@@ -277,6 +272,12 @@
       "name": "🔞老色逼",
       "api": "https://apilsbzy1.com/api.php/provide/vod",
       "detail": "https://laosebizy8.com"
+    },
+    "aosikazy6.com": {
+      "_comment": "不好用",
+      "name": "🔞奥斯卡",
+      "api": "https://aosikazy6.com/api.php/provide/vod",
+      "detail": "https://aosikazy6.com"
     },
     "fhapi9.com": {
       "_comment": "不好用",
