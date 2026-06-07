@@ -204,7 +204,7 @@
     "taopianzy.com": {
       "_comment": "暂不支持搜索",
       "name": "🎬淘片",
-      "api": "https://taopianapi.com/cjapi/sda/vod",
+      "api": "https://taopianapi.com/cjapi/sda/vod/json",
       "detail": "https://taopianzy.com"
     },
     "155zy2.com": {
