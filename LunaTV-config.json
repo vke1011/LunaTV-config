@@ -278,7 +278,7 @@
     },
     "bwzy.tv": {
       "name": "🔞百万",
-      "api": "https://api.bwzyz.com/api.php/provide/vod",
+      "api": "https://bwzy.tv/api.php/provide/vod",
       "detail": "https://bwzy.tv"
     },
     "fqzy.me": {
