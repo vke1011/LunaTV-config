@@ -191,6 +191,12 @@ const testSearch = async (api, keyword) => {
         fetchDefault(api),
       ]);
 
+      if (api.includes('xingba222')) {
+        console.log('DEBUG xingba222 finalUrl:', finalUrl);
+        console.log('DEBUG xingba222 resSearch.data:', JSON.stringify(resSearch.data).slice(0, 500));
+        console.log('DEBUG xingba222 resDefault.data:', JSON.stringify(resDefault?.data).slice(0, 500));
+      }
+      
       // 返回 HTML 说明触发了验证码/跳转页
       if (typeof resSearch.data === "string" && /<html/i.test(resSearch.data)) {
         return "验证码";
