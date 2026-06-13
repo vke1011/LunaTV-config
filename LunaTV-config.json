@@ -106,11 +106,6 @@
       "api": "https://api.apibdzy.com/api.php/provide/vod",
       "detail": "https://bdzy1.com"
     },
-    "lovedan.net": {
-      "name": "🎬艾旦",
-      "api": "https://lovedan.net/api.php/provide/vod",
-      "detail": "https://lovedan.net"
-    },
     "1080zyk4.com": {
       "name": "🎬优质",
       "api": "https://api.yzzy-api.com/inc/apijson.php",
@@ -140,6 +135,12 @@
       "name": "🎬西瓜",
       "api": "https://caiji.xgzyapi.com/api.php/provide/vod",
       "detail": "https://xgzy1.tv"
+    },
+    "lovedan.net": {
+      "_comment": "有黄色",
+      "name": "🎬艾旦",
+      "api": "https://lovedan.net/api.php/provide/vod",
+      "detail": "https://lovedan.net"
     },
     "tyyszy.com": {
       "_comment": "不支持搜索",
