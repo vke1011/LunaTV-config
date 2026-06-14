@@ -274,7 +274,7 @@
     },
     "souavzyw.com": {
       "name": "🔞搜AV",
-      "api": "https://souavzyw.com/api.php/provide/vod",
+      "api": "https://api.souavzyw.net/api.php/provide/vod",
       "detail": "https://souavzyw.com"
     },
     "bwzy.tv": {
