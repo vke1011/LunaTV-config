@@ -6,6 +6,11 @@
       "api": "https://cj.rycjapi.com/api.php/provide/vod",
       "detail": "https://www.ryzyw.com"
     },
+    "xgzy1.tv": {
+      "name": "🎬西瓜",
+      "api": "https://caiji.xgzyapi.com/api.php/provide/vod",
+      "detail": "https://xgzy1.tv"
+    },
     "iqiyizyapi.com": {
       "name": "🎬爱奇艺",
       "api": "https://iqiyizyapi.com/api.php/provide/vod",
@@ -130,11 +135,6 @@
       "name": "🎬光速",
       "api": "https://api.guangsuapi.com/api.php/provide/vod",
       "detail": "https://guangsuzy.com"
-    },
-    "xgzy1.tv": {
-      "name": "🎬西瓜",
-      "api": "https://caiji.xgzyapi.com/api.php/provide/vod",
-      "detail": "https://xgzy1.tv"
     },
     "lovedan.net": {
       "_comment": "有黄色",
