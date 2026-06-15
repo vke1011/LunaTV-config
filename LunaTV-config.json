@@ -242,11 +242,6 @@
       "api": "https://Naixxzy.com/api.php/provide/vod",
       "detail": "https://Naixxzy.com"
     },
-    "senlinzy1.com": {
-      "name": "🔞森林",
-      "api": "https://beiyong.slapibf.com/api.php/provide/vod",
-      "detail": "https://senlinzy1.com"
-    },
     "doudouzy.com": {
       "name": "🔞豆豆",
       "api": "https://api.douapi.cc/api.php/provide/vod",
@@ -291,6 +286,12 @@
       "name": "🔞老色逼",
       "api": "https://apilsbzy1.com/api.php/provide/vod",
       "detail": "https://laosebizy8.com"
+    },
+    "senlinzy1.com": {
+      "_comment": "不支持搜索",
+      "name": "🔞森林",
+      "api": "https://beiyong.slapibf.com/api.php/provide/vod",
+      "detail": "https://senlinzy1.com"
     },
     "aosikazy6.com": {
       "_comment": "不支持搜索",
