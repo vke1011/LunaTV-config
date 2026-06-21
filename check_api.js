@@ -249,12 +249,12 @@ const testSearch = async (api, keyword) => {
       return list.some((item) => JSON.stringify(item).includes(keyword))
         ? "✅"
         : "不匹配";
-    } catch (e) {
-      if (e.response?.status === 403) return "不支持";
-      console.warn(`[testSearch] ${api} 第${attempt}次失败:`, e.code || e.message);
-      if (attempt < MAX_RETRY) await delay(RETRY_DELAY_MS);
-    }
+  } catch (e) {
+    if (e.response?.status === 403) return "不支持";
+    console.warn(`[testSearch] ${api} 第${attempt}次失败:`, e.code || e.message, `status=${e.response?.status ?? 'N/A'}`);
+    if (attempt < MAX_RETRY) await delay(RETRY_DELAY_MS);
   }
+}
   // 兜底：所有重试失败
   return "❌";
 };
