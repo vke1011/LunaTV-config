@@ -1,15 +1,20 @@
 {
   "cache_time": 7200,
   "api_site": {
+    "xgzy1.tv": {
+      "name": "🎬西瓜",
+      "api": "https://caiji.xgzyapi.com/api.php/provide/vod",
+      "detail": "https://xgzy1.tv"
+    },
     "www.ryzyw.com": {
       "name": "🎬如意",
       "api": "https://cj.rycjapi.com/api.php/provide/vod",
       "detail": "https://www.ryzyw.com"
     },
-    "xgzy1.tv": {
-      "name": "🎬西瓜",
-      "api": "https://caiji.xgzyapi.com/api.php/provide/vod",
-      "detail": "https://xgzy1.tv"
+    "dyttzyapi.com": {
+      "name": "🎬电影天堂",
+      "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
+      "detail": "http://caiji.dyttzyapi.com"
     },
     "iqiyizyapi.com": {
       "name": "🎬爱奇艺",
@@ -30,11 +35,6 @@
       "name": "🎬爱坤",
       "api": "https://ikunzyapi.com/api.php/provide/vod",
       "detail": "https://ikunzy.com"
-    },
-    "dyttzyapi.com": {
-      "name": "🎬电影天堂",
-      "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
-      "detail": "http://caiji.dyttzyapi.com"
     },
     "www.maoyanzy.com": {
       "name": "🎬猫眼",
