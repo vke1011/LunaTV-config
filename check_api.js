@@ -117,8 +117,7 @@ const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 const defaultResponseCache = new Map();
 
 // === safeGet：检测 API 根路径是否可用 ===
-// 成功判定：HTTP 200 + 返回对象 + code 字段符合常见约定（1 / 200 / 不存在）
-// 成功时顺手写入 defaultResponseCache，供 testSearch 复用，减少一次重复请求
+// 成功判定：HTTP 200 + 返回对象非空（不再强求特定 code 值，兼容 code:0 等约定）
 const safeGet = async (url) => {
   const finalUrl = resolveUrl(url);
   const viaProxy = finalUrl !== url;
@@ -126,20 +125,15 @@ const safeGet = async (url) => {
     try {
       const res = await axios.get(finalUrl, {
         timeout: TIMEOUT_MS,
+        headers: { ...REQUEST_HEADERS, Referer: url },
       });
       const data = res.data;
-      const isValidCode =
-        data.code === undefined ||
-        data.code === 1 ||
-        data.code === 200 ||
-        data.code === "1" ||
-        data.code === "200";
+      // 只校验 HTTP 200 且返回内容为非空对象
       const isValid =
         res.status === 200 &&
         data &&
         typeof data === "object" &&
-        Object.keys(data).length > 0 &&
-        isValidCode;
+        Object.keys(data).length > 0;
 
       // 顺手缓存默认响应，testSearch 可直接复用
       if (isValid && !defaultResponseCache.has(url)) {
@@ -162,6 +156,7 @@ const fetchDefault = async (api) => {
     try {
       const res = await axios.get(resolveUrl(api), {
         timeout: TIMEOUT_MS,
+        headers: { ...REQUEST_HEADERS, Referer: api },
       });
       defaultResponseCache.set(api, res);
       return res;
@@ -184,10 +179,11 @@ const testSearch = async (api, keyword) => {
       const [resSearch, resDefault] = await Promise.all([
         axios.get(finalUrl, {
           timeout: TIMEOUT_MS,
+          headers: { ...REQUEST_HEADERS, Referer: api },
         }),
         fetchDefault(api),
       ]);
-      
+
       // 返回 HTML 说明触发了验证码/跳转页
       if (typeof resSearch.data === "string" && /<html/i.test(resSearch.data)) {
         return "验证码";
@@ -206,7 +202,7 @@ const testSearch = async (api, keyword) => {
 
       if (
         resSearch.status === 403 ||
-        /不支持|禁止|关闭|disabled|not support|not search|serarch/i.test(msg)
+        /不支持|禁止|关闭|disabled|not support|not search|search/i.test(msg)  // 修正了拼写 serarch -> search
       ) {
         return "不支持";
       }
