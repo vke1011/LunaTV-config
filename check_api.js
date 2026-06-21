@@ -20,8 +20,19 @@ const RETRY_DELAY_MS = 500;
 const REQUEST_HEADERS = {
   "User-Agent":
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-  Accept: "application/json, text/plain, */*",
-  "Accept-Language": "zh-CN,zh;q=0.9",
+  Accept:
+    "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+  "Accept-Encoding": "gzip, deflate, br",
+  "Cache-Control": "no-cache",
+  Pragma: "no-cache",
+  "Sec-Ch-Ua":
+    '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"',
+  "Sec-Ch-Ua-Mobile": "?0",
+  "Sec-Ch-Ua-Platform": '"Windows"',
+  "Sec-Fetch-Dest": "empty",
+  "Sec-Fetch-Mode": "cors",
+  "Sec-Fetch-Site": "cross-site",
 };
 
 // === 中转站配置 ===
@@ -61,13 +72,6 @@ if (!rawSites || typeof rawSites !== "object") {
   process.exit(1);
 }
 
-// === 特殊测试地址映射 ===
-// 部分 API 裸地址返回 code ≠ 1/200，需携带特定参数才能通过连通性检测
-const SPECIAL_TEST_URLS = {
-  "https://maotaizy.com/api.php/provide/vod": "https://maotaizy.com/api.php/provide/vod?ac=list",
-  // 在此继续添加其他需要特殊测试 URL 的源
-};
-
 // 过滤掉缺少 name 或 api 字段的残缺条目，避免后续请求崩溃
 const apiEntries = Object.values(rawSites)
   .filter((s) => {
@@ -82,7 +86,6 @@ const apiEntries = Object.values(rawSites)
     api: s.api,
     detail: s.detail || "-",
     disabled: !!s.disabled,
-    testApi: SPECIAL_TEST_URLS[s.api] || s.api,   // 连通性检测专用地址
   }));
 
 // === 读取历史记录 ===
@@ -153,13 +156,6 @@ const safeGet = async (url) => {
       // 顺手缓存默认响应，testSearch 可直接复用
       if (isValid && !defaultResponseCache.has(url)) {
         defaultResponseCache.set(url, res);
-      }
-
-      // DEBUG：打印所有中转请求的响应摘要
-      if (viaProxy) {
-        console.log(`[DEBUG proxy] url=${url}  status=${res.status}  data_sample=`, JSON.stringify(data).slice(0,200));
-      } else {
-        console.log(`[DEBUG direct] url=${url}  status=${res.status}  data_sample=`, JSON.stringify(data).slice(0,200));
       }
 
       return { success: isValid, viaProxy };
@@ -319,7 +315,7 @@ const queueRun = (tasks, limit) => {
   let completed = 0;
   const totalCount = apiEntries.length;
 
-  const tasks = apiEntries.map(({ name, api, disabled, testApi }) => async () => {
+  const tasks = apiEntries.map(({ name, api, disabled }) => async () => {
     let result;
     if (disabled) {
       result = {
@@ -331,9 +327,7 @@ const queueRun = (tasks, limit) => {
         searchStatus: "已禁用",
       };
     } else {
-      // 连通性检测使用专用测试地址
-      const { success, viaProxy } = await safeGet(testApi);
-      // 搜索测试仍使用原始 api（避免拼接参数冲突）
+      const { success, viaProxy } = await safeGet(api);
       const searchStatus = ENABLE_SEARCH_TEST
         ? await testSearch(api, SEARCH_KEYWORD)
         : "-";
