@@ -241,6 +241,8 @@ const testSearch = async (api, keyword) => {
         return "❌";
       }
 
+      console.log(`[testSearch] ${api} 响应状态=${resSearch.status} 数据=${JSON.stringify(resSearch.data).slice(0, 100)}`);
+
       const list =
         (resSearch.data.data?.length
           ? resSearch.data.data
