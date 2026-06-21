@@ -61,6 +61,13 @@ if (!rawSites || typeof rawSites !== "object") {
   process.exit(1);
 }
 
+// === 特殊测试地址映射 ===
+// 部分 API 裸地址返回 code ≠ 1/200，需携带特定参数才能通过连通性检测
+const SPECIAL_TEST_URLS = {
+  "https://maotaizy.com/api.php/provide/vod": "https://maotaizy.com/api.php/provide/vod?ac=list",
+  // 在此继续添加其他需要特殊测试 URL 的源
+};
+
 // 过滤掉缺少 name 或 api 字段的残缺条目，避免后续请求崩溃
 const apiEntries = Object.values(rawSites)
   .filter((s) => {
@@ -75,6 +82,7 @@ const apiEntries = Object.values(rawSites)
     api: s.api,
     detail: s.detail || "-",
     disabled: !!s.disabled,
+    testApi: SPECIAL_TEST_URLS[s.api] || s.api,   // 连通性检测专用地址
   }));
 
 // === 读取历史记录 ===
@@ -149,10 +157,10 @@ const safeGet = async (url) => {
 
       // DEBUG：打印所有中转请求的响应摘要
       if (viaProxy) {
-      console.log(`[DEBUG proxy] url=${url}  status=${res.status}  data_sample=`, JSON.stringify(data).slice(0,200));
+        console.log(`[DEBUG proxy] url=${url}  status=${res.status}  data_sample=`, JSON.stringify(data).slice(0,200));
       } else {
-      console.log(`[DEBUG direct] url=${url}  status=${res.status}  data_sample=`, JSON.stringify(data).slice(0,200));
-     }
+        console.log(`[DEBUG direct] url=${url}  status=${res.status}  data_sample=`, JSON.stringify(data).slice(0,200));
+      }
 
       return { success: isValid, viaProxy };
     } catch {
@@ -311,7 +319,7 @@ const queueRun = (tasks, limit) => {
   let completed = 0;
   const totalCount = apiEntries.length;
 
-  const tasks = apiEntries.map(({ name, api, disabled }) => async () => {
+  const tasks = apiEntries.map(({ name, api, disabled, testApi }) => async () => {
     let result;
     if (disabled) {
       result = {
@@ -323,7 +331,9 @@ const queueRun = (tasks, limit) => {
         searchStatus: "已禁用",
       };
     } else {
-      const { success, viaProxy } = await safeGet(api);
+      // 连通性检测使用专用测试地址
+      const { success, viaProxy } = await safeGet(testApi);
+      // 搜索测试仍使用原始 api（避免拼接参数冲突）
       const searchStatus = ENABLE_SEARCH_TEST
         ? await testSearch(api, SEARCH_KEYWORD)
         : "-";
