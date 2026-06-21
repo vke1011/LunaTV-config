@@ -126,7 +126,7 @@ const safeGet = async (url) => {
     try {
       const res = await axios.get(finalUrl, {
         timeout: TIMEOUT_MS,
-        headers: { ...REQUEST_HEADERS, Referer: url },
+        headers: { ...REQUEST_HEADERS },
       });
       const data = res.data;
       const isValidCode =
@@ -163,7 +163,7 @@ const fetchDefault = async (api) => {
     try {
       const res = await axios.get(resolveUrl(api), {
         timeout: TIMEOUT_MS,
-        headers: { ...REQUEST_HEADERS, Referer: api },
+        headers: { ...REQUEST_HEADERS },
       });
       defaultResponseCache.set(api, res);
       return res;
@@ -186,7 +186,7 @@ const testSearch = async (api, keyword) => {
       const [resSearch, resDefault] = await Promise.all([
         axios.get(finalUrl, {
           timeout: TIMEOUT_MS,
-          headers: { ...REQUEST_HEADERS, Referer: api },
+          headers: { ...REQUEST_HEADERS },
         }),
         fetchDefault(api),
       ]);
