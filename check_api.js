@@ -29,7 +29,7 @@ const REQUEST_HEADERS = {
 const PROXY_PREFIX = "https://corsapi.998836.xyz/?url=";
 
 // 需要走中转站的域名列表（在这里添加你的域名）
-const PROXY_DOMAINS = ["apibdzy.com", "lovedan.net","maotaizy.com"];
+const PROXY_DOMAINS = ["apibdzy.com", "lovedan.net"];
 
 // === 判断某个 URL 是否需要走中转站 ===
 const needsProxy = (url) => {
@@ -241,8 +241,6 @@ const testSearch = async (api, keyword) => {
         return "❌";
       }
 
-      console.log(`[testSearch] ${api} 响应状态=${resSearch.status} 数据=${JSON.stringify(resSearch.data).slice(0, 100)}`);
-
       const list =
         (resSearch.data.data?.length
           ? resSearch.data.data
@@ -251,12 +249,11 @@ const testSearch = async (api, keyword) => {
       return list.some((item) => JSON.stringify(item).includes(keyword))
         ? "✅"
         : "不匹配";
-  } catch (e) {
-    if (e.response?.status === 403) return "不支持";
-    console.warn(`[testSearch] ${api} 第${attempt}次失败:`, e.code || e.message, `status=${e.response?.status ?? 'N/A'}`);
-    if (attempt < MAX_RETRY) await delay(RETRY_DELAY_MS);
+    } catch (e) {
+      if (e.response?.status === 403) return "不支持";
+      if (attempt < MAX_RETRY) await delay(RETRY_DELAY_MS);
+    }
   }
-}
   // 兜底：所有重试失败
   return "❌";
 };
