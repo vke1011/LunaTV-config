@@ -251,6 +251,7 @@ const testSearch = async (api, keyword) => {
         : "不匹配";
     } catch (e) {
       if (e.response?.status === 403) return "不支持";
+      console.warn(`[testSearch] ${api} 第${attempt}次失败:`, e.code || e.message);
       if (attempt < MAX_RETRY) await delay(RETRY_DELAY_MS);
     }
   }
