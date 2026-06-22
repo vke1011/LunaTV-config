@@ -109,7 +109,7 @@ const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 const defaultResponseCache = new Map();
 
 // === safeGet：检测 API 根路径是否可用 ===
-// 成功判定：HTTP 200 + 返回对象 + code 字段符合常见约定（1 / 200 / 不存在）
+// 成功判定：HTTP 200 + 返回对象 + code 字段符合常见约定（0/1/200 或不存在）
 // 成功时顺手写入 defaultResponseCache，供 testSearch 复用，减少一次重复请求
 const safeGet = async (url) => {
   const finalUrl = resolveUrl(url);
@@ -125,7 +125,9 @@ const safeGet = async (url) => {
         data.code === 1 ||
         data.code === 200 ||
         data.code === "1" ||
-        data.code === "200";
+        data.code === "200" ||
+        data.code === 0 ||      // 部分 API 用 code: 0 表示成功
+        data.code === "0";
       const isValid =
         res.status === 200 &&
         data &&
@@ -376,9 +378,9 @@ const queueRun = (tasks, limit) => {
         : "-";
 
     // 最近 7 天趋势
-    // 判断新源时只看今天之前的历史，避免 push 后 isNew 永远为 false
+    // 判断新源时只看今天之前的历史，首次运行（无历史）也视为新源
     const isNew =
-      pastHistory.length > 0 &&
+      pastHistory.length === 0 ||
       pastHistory.every((day) => !day.results.find((x) => x.api === api));
 
     if (isNew) {
