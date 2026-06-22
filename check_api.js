@@ -16,14 +16,6 @@ const CONCURRENT_LIMIT = 10;
 const MAX_RETRY = 3;
 const RETRY_DELAY_MS = 500;
 
-// === 请求头（模拟浏览器，避免被视频源拒绝） ===
-const REQUEST_HEADERS = {
-  "User-Agent":
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-  Accept: "application/json, text/plain, */*",
-  "Accept-Language": "zh-CN,zh;q=0.9",
-};
-
 // === 中转站配置 ===
 // 中转站前缀，请求时拼接在目标 URL 前面
 const PROXY_PREFIX = "https://corsapi.998836.xyz/?url=";
@@ -126,7 +118,6 @@ const safeGet = async (url) => {
     try {
       const res = await axios.get(finalUrl, {
         timeout: TIMEOUT_MS,
-        headers: { ...REQUEST_HEADERS, Referer: url },
       });
       const data = res.data;
       const isValidCode =
@@ -163,7 +154,6 @@ const fetchDefault = async (api) => {
     try {
       const res = await axios.get(resolveUrl(api), {
         timeout: TIMEOUT_MS,
-        headers: { ...REQUEST_HEADERS, Referer: api },
       });
       defaultResponseCache.set(api, res);
       return res;
@@ -186,7 +176,6 @@ const testSearch = async (api, keyword) => {
       const [resSearch, resDefault] = await Promise.all([
         axios.get(finalUrl, {
           timeout: TIMEOUT_MS,
-          headers: { ...REQUEST_HEADERS, Referer: api },
         }),
         fetchDefault(api),
       ]);
