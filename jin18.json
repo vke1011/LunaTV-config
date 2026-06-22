@@ -121,11 +121,6 @@
       "api": "https://www.huyaapi.com/api.php/provide/vod",
       "detail": "https://huyazy.com"
     },
-    "www.seacms.org": {
-      "name": "🎬花旗",
-      "api": "https://www.seacms.org/api.php/provide/vod",
-      "detail": "https://www.seacms.org"
-    },
     "www.haohuazy.com": {
       "name": "🎬豪华",
       "api": "https://hhzyapi.com/api.php/provide/vod",
