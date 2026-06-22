@@ -5,7 +5,7 @@
       "name": "🎬西瓜",
       "api": "https://caiji.xgzyapi.com/api.php/provide/vod",
       "detail": "https://xgzy1.tv"
-    },  
+    },
     "www.ryzyw.com": {
       "name": "🎬如意",
       "api": "https://cj.rycjapi.com/api.php/provide/vod",
@@ -120,11 +120,6 @@
       "name": "🎬虎牙",
       "api": "https://www.huyaapi.com/api.php/provide/vod",
       "detail": "https://huyazy.com"
-    },
-    "www.seacms.org": {
-      "name": "🎬花旗",
-      "api": "https://www.seacms.org/api.php/provide/vod",
-      "detail": "https://www.seacms.org"
     },
     "www.haohuazy.com": {
       "name": "🎬豪华",
