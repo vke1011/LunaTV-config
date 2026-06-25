@@ -1,15 +1,15 @@
 {
   "cache_time": 7200,
   "api_site": {
-    "xgzy1.tv": {
-      "name": "🎬西瓜",
-      "api": "https://caiji.xgzyapi.com/api.php/provide/vod",
-      "detail": "https://xgzy1.tv"
-    },
     "www.ryzyw.com": {
       "name": "🎬如意",
       "api": "https://cj.rycjapi.com/api.php/provide/vod",
       "detail": "https://www.ryzyw.com"
+    },      
+    "xgzy1.tv": {
+      "name": "🎬西瓜",
+      "api": "https://caiji.xgzyapi.com/api.php/provide/vod",
+      "detail": "https://xgzy1.tv"
     },
     "dyttzyapi.com": {
       "name": "🎬电影天堂",
@@ -20,16 +20,6 @@
       "name": "🎬爱奇艺",
       "api": "https://iqiyizyapi.com/api.php/provide/vod",
       "detail": "https://iqiyizyapi.com"
-    },
-    "dbzy.tv": {
-      "name": "🎬豆瓣",
-      "api": "https://caiji.dbzy5.com/api.php/provide/vod",
-      "detail": "https://dbzy.tv"
-    },
-    "mtzy.me": {
-      "name": "🎬茅台",
-      "api": "https://caiji.maotai999.vip/api.php/provide/vod",
-      "detail": "https://mtzy.me"
     },
     "ikunzy.com": {
       "name": "🎬爱坤",
@@ -50,6 +40,11 @@
       "name": "🎬360",
       "api": "https://360zyzz.com/api.php/provide/vod",
       "detail": "https://360zy.com"
+    },
+    "xinlangzy.com": {
+      "name": "🎬新浪",
+      "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
+      "detail": "https://xinlangzy.com"
     },
     "jszyapi.com": {
       "name": "🎬极速",
@@ -131,6 +126,18 @@
       "api": "https://api.guangsuapi.com/api.php/provide/vod",
       "detail": "https://guangsuzy.com"
     },
+    "dbzy.tv": {
+      "_comment": "不支持搜索",
+      "name": "🎬豆瓣",
+      "api": "https://caiji.dbzy5.com/api.php/provide/vod",
+      "detail": "https://dbzy.tv"
+    },
+    "mtzy.me": {
+      "_comment": "不支持搜索",
+      "name": "🎬茅台",
+      "api": "https://caiji.maotai999.vip/api.php/provide/vod",
+      "detail": "https://mtzy.me"
+    },
     "lovedan.net": {
       "_comment": "有黄色",
       "name": "🎬艾旦",
@@ -142,12 +149,6 @@
       "name": "🎬天涯",
       "api": "https://tyyszyapi.com/api.php/provide/vod",
       "detail": "https://tyyszy.com"
-    },
-    "xinlangzy.com": {
-      "_comment": "不支持搜索",
-      "name": "🎬新浪",
-      "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
-      "detail": "https://xinlangzy.com"
     },
     "kuaichezy.com": {
       "_comment": "不支持搜索",
@@ -324,11 +325,11 @@
       "api": "https://lbapi9.com/api.php/provide/vod",
       "detail": "https://lebozy.com"
     },
-    "apilj.com": {
+    "lajiaozy.com": {
       "_comment": "LunaTV无法使用",
       "name": "🔞辣椒",
-      "api": "https://apilj.com/api.php/provide/vod",
-      "detail": "https://apilj.com"
+      "api": "https://lajiaozy.com/api.php/provide/vod",
+      "detail": "https://lajiaozy.com"
     },
     "shayuzy.com": {
       "_comment": "LunaTV无法使用",
