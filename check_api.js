@@ -200,7 +200,7 @@ const testSearch = async (api, keyword) => {
 
       if (
         resSearch.status === 403 ||
-        /不支持|禁止|关闭|disabled|not support|not search|serarch/i.test(msg)
+        /不支持|禁止|关闭|disabled|not support|not search|not allow|forbid|keyword|serarch/i.test(msg)
       ) {
         return "不支持";
       }
