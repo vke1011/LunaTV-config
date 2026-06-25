@@ -5,7 +5,7 @@
       "name": "🎬如意",
       "api": "https://cj.rycjapi.com/api.php/provide/vod",
       "detail": "https://www.ryzyw.com"
-    },      
+    },
     "xgzy1.tv": {
       "name": "🎬西瓜",
       "api": "https://caiji.xgzyapi.com/api.php/provide/vod",
@@ -328,7 +328,7 @@
     "lajiaozy.com": {
       "_comment": "LunaTV无法使用",
       "name": "🔞辣椒",
-      "api": "https://lajiaozy.com/api.php/provide/vod",
+      "api": "https://apilj.com/api.php/provide/vod",
       "detail": "https://lajiaozy.com"
     },
     "shayuzy.com": {
