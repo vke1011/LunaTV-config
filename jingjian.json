@@ -41,11 +41,6 @@
       "api": "https://360zyzz.com/api.php/provide/vod",
       "detail": "https://360zy.com"
     },
-    "xinlangzy.com": {
-      "name": "🎬新浪",
-      "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
-      "detail": "https://xinlangzy.com"
-    },
     "jszyapi.com": {
       "name": "🎬极速",
       "api": "https://jszyapi.com/api.php/provide/vod",
