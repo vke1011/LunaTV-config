@@ -361,6 +361,12 @@
       "name": "🔞香蕉",
       "api": "https://www.xiangjiaozyw.com/api.php/provide/vod",
       "detail": "https://www.xiangjiaozyw.com"
+    },
+    "tmzyz.com": {
+      "_comment": "LunaTV无法使用",
+      "name": "🔞天美",
+      "api": "https://tmzyz.com/api.php/provide/vod",
+      "detail": "https://tmzyz.com"
     }
   }
 }
