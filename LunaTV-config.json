@@ -121,6 +121,11 @@
       "api": "https://api.guangsuapi.com/api.php/provide/vod",
       "detail": "https://guangsuzy.com"
     },
+    "dzzy.com": {
+      "name": "🎬大众",
+      "api": "https://cdn.dzzyapi.com/api.php/provide/vod",
+      "detail": "https://dzzy.com"
+    },
     "xinlangzy.com": {
       "_comment": "不支持搜索",
       "name": "🎬新浪",
