@@ -125,6 +125,11 @@
       "name": "🎬大众",
       "api": "https://cdn.dzzyapi.com/api.php/provide/vod",
       "detail": "https://dzzy.com"
+    },
+    "xinlangzy.com": {
+      "name": "🎬新浪",
+      "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
+      "detail": "https://xinlangzy.com"
     }
   }
 }
