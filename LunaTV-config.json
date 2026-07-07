@@ -127,7 +127,6 @@
       "detail": "https://dzzy.com"
     },
     "xinlangzy.com": {
-      "_comment": "不支持搜索",
       "name": "🎬新浪",
       "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
       "detail": "https://xinlangzy.com"
