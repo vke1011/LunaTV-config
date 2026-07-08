@@ -530,8 +530,7 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
 
 
 
-## ⭐ Star History
-![GitHub Repo stars](https://img.shields.io/github/stars/hafrey1/LunaTV-config?style=social)
+
 
 
 
