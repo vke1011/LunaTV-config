@@ -36,11 +36,6 @@
       "api": "https://www.mdzyapi.com/api.php/provide/vod",
       "detail": "https://www.moduzy.net"
     },
-    "bfzy.tv": {
-      "name": "🎬暴风",
-      "api": "https://bfzyapi.com/api.php/provide/vod",
-      "detail": "https://bfzy.tv"
-    },
     "zuida.xyz": {
       "name": "🎬最大",
       "api": "https://api.zuidapi.com/api.php/provide/vod",
@@ -55,51 +50,6 @@
       "name": "🎬速播",
       "api": "https://subocaiji.com/api.php/provide/vod",
       "detail": "https://www.subozy.com"
-    },
-    "jinyingzy.com": {
-      "name": "🎬金鹰",
-      "api": "https://jyzyapi.com/provide/vod",
-      "detail": "https://jinyingzy.com"
-    },
-    "p2100.net": {
-      "name": "🎬飘零",
-      "api": "https://p2100.net/api.php/provide/vod",
-      "detail": "https://p2100.net"
-    },
-    "api.ukuapi88.com": {
-      "name": "🎬U酷",
-      "api": "https://api.ukuapi88.com/api.php/provide/vod",
-      "detail": "https://www.ukuzy.com"
-    },
-    "www.hongniuzy.com": {
-      "name": "🎬红牛",
-      "api": "https://www.hongniuzy2.com/api.php/provide/vod",
-      "detail": "https://www.hongniuzy.com"
-    },
-    "bdzy1.com": {
-      "name": "🎬百度云",
-      "api": "https://api.apibdzy.com/api.php/provide/vod",
-      "detail": "https://bdzy1.com"
-    },
-    "huyazy.com": {
-      "name": "🎬虎牙",
-      "api": "https://www.huyaapi.com/api.php/provide/vod",
-      "detail": "https://huyazy.com"
-    },
-    "www.haohuazy.com": {
-      "name": "🎬豪华",
-      "api": "https://hhzyapi.com/api.php/provide/vod",
-      "detail": "https://www.haohuazy.com"
-    },
-    "guangsuzy.com": {
-      "name": "🎬光速",
-      "api": "https://api.guangsuapi.com/api.php/provide/vod",
-      "detail": "https://guangsuzy.com"
-    },
-    "dzzy.com": {
-      "name": "🎬大众",
-      "api": "https://cdn.dzzyapi.com/api.php/provide/vod",
-      "detail": "https://dzzy.com"
     },
     "xinlangzy.com": {
       "name": "🎬新浪",
@@ -116,10 +66,30 @@
       "api": "https://caiji.xgzyapi.com/api.php/provide/vod",
       "detail": "https://xgzy1.tv"
     },
-    "lzizy.com": {
-      "name": "🎬量子",
-      "api": "https://cj.lzcaiji.com/api.php/provide/vod",
-      "detail": "https://lzizy.com"
+    "www.hongniuzy.com": {
+      "name": "🎬红牛",
+      "api": "https://www.hongniuzy2.com/api.php/provide/vod",
+      "detail": "https://www.hongniuzy.com"
+    },
+    "huyazy.com": {
+      "name": "🎬虎牙",
+      "api": "https://www.huyaapi.com/api.php/provide/vod",
+      "detail": "https://huyazy.com"
+    },
+    "jinyingzy.com": {
+      "name": "🎬金鹰",
+      "api": "https://jyzyapi.com/provide/vod",
+      "detail": "https://jinyingzy.com"
+    },
+    "guangsuzy.com": {
+      "name": "🎬光速",
+      "api": "https://api.guangsuapi.com/api.php/provide/vod",
+      "detail": "https://guangsuzy.com"
+    },
+    "dzzy.com": {
+      "name": "🎬大众",
+      "api": "https://cdn.dzzyapi.com/api.php/provide/vod",
+      "detail": "https://dzzy.com"
     },
     "dyttzyapi.com": {
       "name": "🎬电影天堂",
@@ -130,6 +100,31 @@
       "name": "🎬非凡",
       "api": "https://api.ffzyapi.com/api.php/provide/vod",
       "detail": "https://cj.ffzyapi.com"
+    },
+    "bfzy.tv": {
+      "name": "🎬暴风",
+      "api": "https://bfzyapi.com/api.php/provide/vod",
+      "detail": "https://bfzy.tv"
+    },
+    "api.ukuapi88.com": {
+      "name": "🎬U酷",
+      "api": "https://api.ukuapi88.com/api.php/provide/vod",
+      "detail": "https://www.ukuzy.com"
+    },
+    "bdzy1.com": {
+      "name": "🎬百度云",
+      "api": "https://api.apibdzy.com/api.php/provide/vod",
+      "detail": "https://bdzy1.com"
+    },
+    "www.haohuazy.com": {
+      "name": "🎬豪华",
+      "api": "https://hhzyapi.com/api.php/provide/vod",
+      "detail": "https://www.haohuazy.com"
+    },
+    "lzizy.com": {
+      "name": "🎬量子",
+      "api": "https://cj.lzcaiji.com/api.php/provide/vod",
+      "detail": "https://lzizy.com"
     },
     "155zy2.com": {
       "name": "🔞155",
