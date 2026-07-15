@@ -36,11 +36,6 @@
       "api": "https://www.mdzyapi.com/api.php/provide/vod",
       "detail": "https://www.moduzy.net"
     },
-    "ffzyapi.com": {
-      "name": "🎬非凡",
-      "api": "https://api.ffzyapi.com/api.php/provide/vod",
-      "detail": "https://cj.ffzyapi.com"
-    },
     "bfzy.tv": {
       "name": "🎬暴风",
       "api": "https://bfzyapi.com/api.php/provide/vod",
@@ -130,6 +125,11 @@
       "name": "🎬电影天堂",
       "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
       "detail": "http://caiji.dyttzyapi.com"
+    },
+    "ffzyapi.com": {
+      "name": "🎬非凡",
+      "api": "https://api.ffzyapi.com/api.php/provide/vod",
+      "detail": "https://cj.ffzyapi.com"
     },
     "155zy2.com": {
       "name": "🔞155",
