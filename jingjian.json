@@ -6,16 +6,6 @@
       "api": "https://cj.rycjapi.com/api.php/provide/vod",
       "detail": "https://www.ryzyw.com"
     },
-    "xgzy1.tv": {
-      "name": "🎬西瓜",
-      "api": "https://caiji.xgzyapi.com/api.php/provide/vod",
-      "detail": "https://xgzy1.tv"
-    },
-    "dyttzyapi.com": {
-      "name": "🎬电影天堂",
-      "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
-      "detail": "http://caiji.dyttzyapi.com"
-    },
     "iqiyizyapi.com": {
       "name": "🎬爱奇艺",
       "api": "https://iqiyizyapi.com/api.php/provide/vod",
@@ -31,20 +21,15 @@
       "api": "https://api.maoyanapi.top/api.php/provide/vod",
       "detail": "https://www.maoyanzy.com"
     },
-    "lzizy.com": {
-      "name": "🎬量子",
-      "api": "https://cj.lzcaiji.com/api.php/provide/vod",
-      "detail": "https://lzizy.com"
+    "1080zyk4.com": {
+      "name": "🎬优质",
+      "api": "https://api.yzzy-api.com/inc/apijson.php",
+      "detail": "https://1080zyk4.com"
     },
     "360zy.com": {
       "name": "🎬360",
       "api": "https://360zyzz.com/api.php/provide/vod",
       "detail": "https://360zy.com"
-    },
-    "jszyapi.com": {
-      "name": "🎬极速",
-      "api": "https://jszyapi.com/api.php/provide/vod",
-      "detail": "https://jszyapi.com"
     },
     "www.moduzy.net": {
       "name": "🎬魔都",
@@ -101,11 +86,6 @@
       "api": "https://api.apibdzy.com/api.php/provide/vod",
       "detail": "https://bdzy1.com"
     },
-    "1080zyk4.com": {
-      "name": "🎬优质",
-      "api": "https://api.yzzy-api.com/inc/apijson.php",
-      "detail": "https://1080zyk4.com"
-    },
     "huyazy.com": {
       "name": "🎬虎牙",
       "api": "https://www.huyaapi.com/api.php/provide/vod",
@@ -130,6 +110,26 @@
       "name": "🎬新浪",
       "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
       "detail": "https://xinlangzy.com"
+    },
+    "jszyapi.com": {
+      "name": "🎬极速",
+      "api": "https://jszyapi.com/api.php/provide/vod",
+      "detail": "https://jszyapi.com"
+    },
+    "xgzy1.tv": {
+      "name": "🎬西瓜",
+      "api": "https://caiji.xgzyapi.com/api.php/provide/vod",
+      "detail": "https://xgzy1.tv"
+    },
+    "lzizy.com": {
+      "name": "🎬量子",
+      "api": "https://cj.lzcaiji.com/api.php/provide/vod",
+      "detail": "https://lzizy.com"
+    },
+    "dyttzyapi.com": {
+      "name": "🎬电影天堂",
+      "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
+      "detail": "http://caiji.dyttzyapi.com"
     },
     "155zy2.com": {
       "name": "🔞155",
