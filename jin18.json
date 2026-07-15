@@ -111,11 +111,6 @@
       "api": "https://api.ukuapi88.com/api.php/provide/vod",
       "detail": "https://www.ukuzy.com"
     },
-    "bdzy1.com": {
-      "name": "🎬百度云",
-      "api": "https://api.apibdzy.com/api.php/provide/vod",
-      "detail": "https://bdzy1.com"
-    },
     "www.haohuazy.com": {
       "name": "🎬豪华",
       "api": "https://hhzyapi.com/api.php/provide/vod",
@@ -125,6 +120,11 @@
       "name": "🎬量子",
       "api": "https://cj.lzcaiji.com/api.php/provide/vod",
       "detail": "https://lzizy.com"
+    },
+    "bdzy1.com": {
+      "name": "🎬百度云",
+      "api": "https://api.apibdzy.com/api.php/provide/vod",
+      "detail": "https://bdzy1.com"
     }
   }
 }
