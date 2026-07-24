@@ -342,12 +342,12 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
   
 # API 健康报告（每日自动检测API状态）
 
-## API 状态（最近更新：2026-07-24 02:10 CST）
+## API 状态（最近更新：2026-07-25 02:16 CST）
 
 - 总 API 数量：69
-- 成功 API 数量：68
-- 失败 API 数量：1
-- 平均可用率：98.3%
+- 成功 API 数量：67
+- 失败 API 数量：2
+- 平均可用率：98.2%
 - 完美可用率（100%）：61 个
 - 高可用率（80%-99%）：6 个
 - 中等可用率（50%-79%）：1 个
@@ -363,7 +363,7 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
 | ✅ | 🎬优质 | [Link](https://1080zyk4.com) | [Link](https://api.yzzy-api.com/inc/apijson.php) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬光速 | [Link](https://guangsuzy.com) | [Link](https://api.guangsuapi.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬最大 | [Link](https://zuida.xyz) | [Link](https://api.zuidapi.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
-| ✅ | 🎬大众 | [Link](https://dzzy.com) | [Link](https://cdn.dzzyapi.com/api.php/provide/vod) | 🌐 | ✅ | 23 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
+| ✅ | 🎬大众 | [Link](https://dzzy.com) | [Link](https://cdn.dzzyapi.com/api.php/provide/vod) | 🌐 | ✅ | 24 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬天涯 | [Link](https://tyyszy.com) | [Link](https://tyyszyapi.com/api.php/provide/vod) | 🌐 | 不支持 | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬如意 | [Link](https://www.ryzyw.com) | [Link](https://cj.rycjapi.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬快车 | [Link](https://kuaichezy.com) | [Link](https://caiji.kuaichezy.org/api.php/provide/vod) | 🌐 | 不支持 | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
@@ -422,11 +422,11 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
 | ✅ | 🔞桃花 | [Link](https://thzy1.me) | [Link](https://thzy1.me/api.php/provide/vod) | 🌐 | ✅ | 29 | 1 | 96.7% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞番茄 | [Link](https://fqzy.me) | [Link](https://fqzy.me//api.php/provide/vod) | 🌐 | ✅ | 29 | 1 | 96.7% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞精品 | [Link](https://jingpinx.com) | [Link](https://jingpinx.com/api.php/provide/vod) | 🌐 | ✅ | 29 | 1 | 96.7% | ✅✅✅✅✅✅✅ |
-| ✅ | 🔞天美 | [Link](https://tmzyz.com) | [Link](https://tmzyz.com/api.php/provide/vod) | 🌐 | ✅ | 28 | 1 | 96.6% | ✅✅✅✅✅❌✅ |
-| ✅ | 🎬U酷 | [Link](https://www.ukuzy.com) | [Link](https://api.ukuapi88.com/api.php/provide/vod) | 🌐 | ✅ | 28 | 2 | 93.3% | ✅❌✅✅✅✅✅ |
-| ✅ | 🔞鲨鱼 | [Link](https://shayuzy.com) | [Link](https://shayuzy.com/api.php/provide/vod) | 🌐 | ✅ | 27 | 3 | 90.0% | ✅✅✅✅✅❌✅ |
+| ✅ | 🎬U酷 | [Link](https://www.ukuzy.com) | [Link](https://api.ukuapi88.com/api.php/provide/vod) | 🌐 | ✅ | 28 | 2 | 93.3% | ❌✅✅✅✅✅✅ |
+| ❌ | 🔞天美 | [Link](https://tmzyz.com) | [Link](https://tmzyz.com/api.php/provide/vod) | 🌐 | ❌ | 28 | 2 | 93.3% | ✅✅✅✅❌✅❌ |
+| ✅ | 🔞鲨鱼 | [Link](https://shayuzy.com) | [Link](https://shayuzy.com/api.php/provide/vod) | 🌐 | ✅ | 27 | 3 | 90.0% | ✅✅✅✅❌✅✅ |
 | ✅ | 🎬极速 | [Link](https://jszyapi.com) | [Link](https://jszyapi.com/api.php/provide/vod) | 🌐 | ✅ | 23 | 7 | 76.7% | ✅✅✅✅✅✅✅ |
-| 🚨 | 🎬飘零 | [Link](https://p2100.net) | [Link](https://p2100.net/api.php/provide/vod) | 🌐 | 不支持 | 11 | 19 | 36.7% | ❌❌❌❌❌❌❌ |
+| 🚨 | 🎬飘零 | [Link](https://p2100.net) | [Link](https://p2100.net/api.php/provide/vod) | 🌐 | 不支持 | 10 | 20 | 33.3% | ❌❌❌❌❌❌❌ |
 <!-- API_TABLE_END -->
 
 ---
