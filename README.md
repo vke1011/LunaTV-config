@@ -342,7 +342,7 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
   
 # API 健康报告（每日自动检测API状态）
 
-## API 状态（最近更新：2026-08-11 01:50 CST）
+## API 状态（最近更新：2026-08-12 01:56 CST）
 
 - 总 API 数量：68
 - 成功 API 数量：67
@@ -381,7 +381,7 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
 | ✅ | 🎬索尼 | [Link](https://suonizy.net) | [Link](https://suoniapi.com/api.php/provide/vod) | 🌐 | 不支持 | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬艾旦 | [Link](https://lovedan.net) | [Link](https://lovedan.net/api.php/provide/vod) | 🔄 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬茅台 | [Link](https://mtzy.me) | [Link](https://caiji.maotai999.vip/api.php/provide/vod) | 🌐 | 不支持 | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
-| ✅ | 🎬西瓜 | [Link](https://xgzy1.tv) | [Link](https://caiji.xgzyapi.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
+| ✅ | 🎬西瓜 | [Link](https://xgzy1.tv) | [Link](https://caiji.xgzyapi.com/api.php/provide/vod) | 🌐 | 验证码 | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬豆瓣 | [Link](https://dbzy.tv) | [Link](https://caiji.dbzy5.com/api.php/provide/vod) | 🌐 | 不支持 | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬豪华 | [Link](https://www.haohuazy.com) | [Link](https://hhzyapi.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬速播 | [Link](https://www.subozy.com) | [Link](https://subocaiji.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
@@ -425,7 +425,7 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
 | ✅ | 🔞奥斯卡 | [Link](https://aosikazy6.com) | [Link](https://aosikazy6.com/api.php/provide/vod) | 🌐 | 不支持 | 28 | 2 | 93.3% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬虎牙 | [Link](https://huyazy.com) | [Link](https://www.huyaapi.com/api.php/provide/vod) | 🌐 | ✅ | 27 | 3 | 90.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞天美 | [Link](https://tmzyz.com) | [Link](https://tmzyz.com/api.php/provide/vod) | 🌐 | ✅ | 24 | 3 | 88.9% | ✅✅✅✅✅✅✅ |
-| ❌ | 🔞鲨鱼 | [Link](https://shayuzy.com) | [Link](https://shayuzy.com/api.php/provide/vod) | 🌐 | ❌ | 24 | 6 | 80.0% | ✅✅✅✅❌✅❌ |
+| ❌ | 🔞鲨鱼 | [Link](https://shayuzy.com) | [Link](https://shayuzy.com/api.php/provide/vod) | 🌐 | ❌ | 24 | 6 | 80.0% | ✅✅✅❌✅❌❌ |
 <!-- API_TABLE_END -->
 
 ---
