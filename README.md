@@ -342,11 +342,11 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
   
 # API 健康报告（每日自动检测API状态）
 
-## API 状态（最近更新：2026-08-12 01:56 CST）
+## API 状态（最近更新：2026-08-13 01:55 CST）
 
 - 总 API 数量：68
-- 成功 API 数量：67
-- 失败 API 数量：1
+- 成功 API 数量：68
+- 失败 API 数量：0
 - 平均可用率：99.2%
 - 完美可用率（100%）：61 个
 - 高可用率（80%-99%）：7 个
@@ -425,7 +425,7 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
 | ✅ | 🔞奥斯卡 | [Link](https://aosikazy6.com) | [Link](https://aosikazy6.com/api.php/provide/vod) | 🌐 | 不支持 | 28 | 2 | 93.3% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬虎牙 | [Link](https://huyazy.com) | [Link](https://www.huyaapi.com/api.php/provide/vod) | 🌐 | ✅ | 27 | 3 | 90.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞天美 | [Link](https://tmzyz.com) | [Link](https://tmzyz.com/api.php/provide/vod) | 🌐 | ✅ | 24 | 3 | 88.9% | ✅✅✅✅✅✅✅ |
-| ❌ | 🔞鲨鱼 | [Link](https://shayuzy.com) | [Link](https://shayuzy.com/api.php/provide/vod) | 🌐 | ❌ | 24 | 6 | 80.0% | ✅✅✅❌✅❌❌ |
+| ✅ | 🔞鲨鱼 | [Link](https://shayuzy.com) | [Link](https://shayuzy.com/api.php/provide/vod) | 🌐 | ✅ | 24 | 6 | 80.0% | ✅✅❌✅❌❌✅ |
 <!-- API_TABLE_END -->
 
 ---
