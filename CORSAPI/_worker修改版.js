@@ -356,6 +356,9 @@ async function handleHomePage(currentOrigin, defaultPrefix) {
       margin-bottom: 8px;
       color: var(--text);
     }
+    .hero h1 .accent {
+      color: var(--luna-green);
+    }
     .hero p {
       color: var(--sub);
       font-size: 14px;
@@ -515,7 +518,7 @@ async function handleHomePage(currentOrigin, defaultPrefix) {
   <div class="container">
     <!-- 头部 -->
     <div class="hero">
-      <h1>🔄 CORSAPI / LunaTV</h1>
+      <h1>🔄 CORSAPI <span class="accent">/ LunaTV 配套</span></h1>
       <p><span class="status"></span>API 中转代理服务正在运行</p>
       <p>基于 Cloudflare Workers 的通用 API 中转代理服务，用于加速和转发 API 请求。</p>
     </div>
