@@ -59,7 +59,7 @@ HTML 页面会根据当前域名自动生成示例链接，无需手动修改
 2. 新建一个 **Workers & Pages → Worker**
 3. 将 `worker.js` 代码粘贴到编辑器中
 4. 保存并部署
-5. 在 Cloudflare Workers KV 中创建命名空间：名称：CONFIG_KV,绑定变量名：CONFIG_KV
+5. 在 Cloudflare Workers KV 中创建命名空间：名称：随意,绑定变量名：KV
 6. 绑定自定义域名（可选）
 
 ---
