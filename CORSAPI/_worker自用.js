@@ -359,7 +359,7 @@ async function handleHomePage(currentOrigin, defaultPrefix) {
   </div>
   
   <h2>配置订阅链接示例</h2>
-  <p>订阅采用高级用法</p>
+  <p>订阅中转采用高级用法</p>
     
   <div class="section">
     <h3>📦 精简版（jin18）</h3>
