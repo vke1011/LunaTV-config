@@ -358,7 +358,7 @@ async function handleHomePage(currentOrigin, defaultPrefix) {
     </table>
   </div>
   
-  <h2>配置订阅链接示例</h2>
+  <h2>配置订阅链接示例输出使用高级用法</h2>
     
   <div class="section">
     <h3>📦 精简版（jin18）</h3>
