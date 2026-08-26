@@ -18,7 +18,7 @@ const RETRY_DELAY_MS = 500;
 
 // === 中转站配置 ===
 // 中转站前缀，请求时拼接在目标 URL 前面
-const PROXY_PREFIX = "https://corsapi.998836.xyz/?url=";
+const PROXY_PREFIX = "https://api.998836.xyz/?url=";
 
 // 需要走中转站的域名列表（在这里添加你的域名）
 const PROXY_DOMAINS = ["apibdzy.com", "lovedan.net"];
