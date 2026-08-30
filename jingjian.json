@@ -196,11 +196,6 @@
       "api": "https://api.souavzyw.net/api.php/provide/vod",
       "detail": "https://souavzyw.com"
     },
-    "bwzy.tv": {
-      "name": "🔞百万",
-      "api": "https://bwzy.tv/api.php/provide/vod",
-      "detail": "https://bwzy.tv"
-    },
     "fqzy.me": {
       "name": "🔞番茄",
       "api": "https://fqzy.me//api.php/provide/vod",
