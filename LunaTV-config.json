@@ -268,11 +268,6 @@
       "api": "https://api.souavzyw.net/api.php/provide/vod",
       "detail": "https://souavzyw.com"
     },
-    "bwzy.tv": {
-      "name": "🔞百万",
-      "api": "https://bwzy.tv/api.php/provide/vod",
-      "detail": "https://bwzy.tv"
-    },
     "fqzy.me": {
       "name": "🔞番茄",
       "api": "https://fqzy.me//api.php/provide/vod",
@@ -300,12 +295,6 @@
       "name": "🔞番号",
       "api": "http://fhapi9.com/api.php/provide/vod",
       "detail": "http://fhzy1.com"
-    },
-    "lbapiby.com": {
-      "_comment": "LunaTV无法使用",
-      "name": "🔞AIvin",
-      "api": "http://lbapiby.com/api.php/provide/vod",
-      "detail": "http://lbapiby.com"
     },
     "www.sex8zy.com": {
       "_comment": "LunaTV无法使用",
