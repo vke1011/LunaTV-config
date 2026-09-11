@@ -243,10 +243,10 @@
       "api": "https://api.douapi.cc/api.php/provide/vod",
       "detail": "https://doudouzy.com"
     },
-    "didiziyuan.com": {
+    "didizy.com": {
       "name": "🔞滴滴",
-      "api": "https://didiziyuan.com/api.php/provide/vod",
-      "detail": "https://didiziyuan.com"
+      "api": "https://api.ddapi.cc/api.php/provide/vod",
+      "detail": "https://didizy.com"
     },
     "heiliaozy.cc": {
       "name": "🔞黑料",
