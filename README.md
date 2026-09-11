@@ -342,12 +342,12 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
   
 # API 健康报告（每日自动检测API状态）
 
-## API 状态（最近更新：2026-09-11 03:19 CST）
+## API 状态（最近更新：2026-09-12 03:21 CST）
 
 - 总 API 数量：66
 - 成功 API 数量：63
 - 失败 API 数量：3
-- 平均可用率：92.6%
+- 平均可用率：92.4%
 - 完美可用率（100%）：3 个
 - 高可用率（80%-99%）：61 个
 - 中等可用率（50%-79%）：2 个
@@ -415,15 +415,15 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
 | ✅ | 🎬豆瓣 | [Link](https://dbzy.tv) | [Link](https://caiji.dbzy5.com/api.php/provide/vod) | 🌐 | 不支持 | 27 | 3 | 90.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬魔都 | [Link](https://www.moduzy.net) | [Link](https://www.mdzyapi.com/api.php/provide/vod) | 🌐 | ✅ | 27 | 3 | 90.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞jkun | [Link](https://jkunzyapi.com) | [Link](https://jkunzyapi.com/api.php/provide/vod) | 🌐 | ✅ | 27 | 3 | 90.0% | ✅✅✅✅✅✅✅ |
-| ❌ | 🔞滴滴 | [Link](https://didiziyuan.com) | [Link](https://didiziyuan.com/api.php/provide/vod) | 🌐 | 验证码 | 27 | 3 | 90.0% | ✅✅✅✅✅✅❌ |
 | ✅ | 🔞玉兔 | [Link](https://yutuzy.com) | [Link](https://apiyutu.com/api.php/provide/vod) | 🌐 | ✅ | 27 | 3 | 90.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞老色逼 | [Link](https://laosebizy8.com) | [Link](https://apilsbzy1.com/api.php/provide/vod) | 🌐 | ✅ | 27 | 3 | 90.0% | ✅✅✅✅✅✅✅ |
-| ✅ | 🎬大众 | [Link](https://dzzy.com) | [Link](https://cdn.dzzyapi.com/api.php/provide/vod) | 🌐 | ✅ | 26 | 4 | 86.7% | ✅✅✅❌❌❌✅ |
+| ✅ | 🎬大众 | [Link](https://dzzy.com) | [Link](https://cdn.dzzyapi.com/api.php/provide/vod) | 🌐 | ✅ | 26 | 4 | 86.7% | ✅✅❌❌❌✅✅ |
 | ✅ | 🎬百度云 | [Link](https://bdzy1.com) | [Link](https://api.apibdzy.com/api.php/provide/vod) | 🔄 | ✅ | 26 | 4 | 86.7% | ✅✅✅✅✅✅✅ |
+| ❌ | 🔞滴滴 | [Link](https://didiziyuan.com) | [Link](https://didiziyuan.com/api.php/provide/vod) | 🌐 | 验证码 | 26 | 4 | 86.7% | ✅✅✅✅✅❌❌ |
 | ✅ | 🎬艾旦 | [Link](https://lovedan.net) | [Link](https://lovedan.net/api.php/provide/vod) | 🔄 | ✅ | 25 | 5 | 83.3% | ✅✅✅✅✅✅✅ |
-| ✅ | 🔞鲨鱼 | [Link](https://shayuzy.com) | [Link](https://shayuzy.com/api.php/provide/vod) | 🌐 | ✅ | 24 | 6 | 80.0% | ✅✅✅✅✅❌✅ |
-| 🚨 | 🔞细胞网 | [Link](https://www.xxibaozyw.com) | [Link](https://www.xxibaozyw.com/api.php/provide/vod) | 🌐 | ❌ | 23 | 7 | 76.7% | ✅❌❌❌❌❌❌ |
-| 🚨 | 🔞香蕉 | [Link](https://www.xiangjiaozyw.com) | [Link](https://www.xiangjiaozyw.com/api.php/provide/vod) | 🌐 | ❌ | 23 | 7 | 76.7% | ✅❌❌❌❌❌❌ |
+| ✅ | 🔞鲨鱼 | [Link](https://shayuzy.com) | [Link](https://shayuzy.com/api.php/provide/vod) | 🌐 | ✅ | 24 | 6 | 80.0% | ✅✅✅✅❌✅✅ |
+| 🚨 | 🔞细胞网 | [Link](https://www.xxibaozyw.com) | [Link](https://www.xxibaozyw.com/api.php/provide/vod) | 🌐 | ❌ | 22 | 8 | 73.3% | ❌❌❌❌❌❌❌ |
+| 🚨 | 🔞香蕉 | [Link](https://www.xiangjiaozyw.com) | [Link](https://www.xiangjiaozyw.com/api.php/provide/vod) | 🌐 | ❌ | 22 | 8 | 73.3% | ❌❌❌❌❌❌❌ |
 <!-- API_TABLE_END -->
 
 ---
