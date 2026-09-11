@@ -206,10 +206,15 @@
       "api": "https://apilsbzy1.com/api.php/provide/vod",
       "detail": "https://laosebizy8.com"
     },
-    "hlzy.net": {
-      "name": "🔞红楼",
-      "api": "https://www.hlzy.store/api.php/provide/vod",
-      "detail": "https://www.hlzy.net"
+    "huosuzy.com": {
+      "name": "🔞火速",
+      "api": "https://api.huosuapi.cc/api.php/provide/vod",
+      "detail": "https://huosuzy.com"
+    },
+    "heiheizy.com": {
+      "name": "🔞嘿嘿",
+      "api": "https://api.heiapi.cc/api.php/provide/vod",
+      "detail": "https://heiheizy.com"
     }
   }
 }
