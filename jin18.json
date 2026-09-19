@@ -96,6 +96,11 @@
       "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
       "detail": "http://caiji.dyttzyapi.com"
     },
+    "juliang.app": {
+      "name": "🎬巨量",
+      "api": "https://api.juliang.live/api/provide/vod",
+      "detail": "https://juliang.app"
+    },
     "ffzyapi.com": {
       "name": "🎬非凡",
       "api": "https://api.ffzyapi.com/api.php/provide/vod",
