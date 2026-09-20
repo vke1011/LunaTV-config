@@ -125,16 +125,6 @@
       "name": "🎬量子",
       "api": "https://cj.lzcaiji.com/api.php/provide/vod",
       "detail": "https://lzizy.com"
-    },
-    "bdzy1.com": {
-      "name": "🎬百度云",
-      "api": "https://api.apibdzy.com/api.php/provide/vod",
-      "detail": "https://bdzy1.com"
-    },
-    "p2100.net": {
-      "name": "🎬飘零",
-      "api": "https://p2100.net/api.php/provide/vod",
-      "detail": "https://p2100.net"
     }
   }
 }
