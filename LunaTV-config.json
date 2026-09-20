@@ -286,7 +286,7 @@
     "hlzy.net": {
       "_comment": "不支持搜索",
       "name": "🔞红楼",
-      "api": "https://www.hlzy.store/api.php/provide/vod",
+      "api": "https://www.hlzyapi.vip/api.php/provide/vod",
       "detail": "https://www.hlzy.net"
     },
     "senlinzy1.com": {
