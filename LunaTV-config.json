@@ -126,16 +126,6 @@
       "api": "https://cj.lzcaiji.com/api.php/provide/vod",
       "detail": "https://lzizy.com"
     },
-    "bdzy1.com": {
-      "name": "🎬百度云",
-      "api": "https://api.apibdzy.com/api.php/provide/vod",
-      "detail": "https://bdzy1.com"
-    },
-    "p2100.net": {
-      "name": "🎬飘零",
-      "api": "https://p2100.net/api.php/provide/vod",
-      "detail": "https://p2100.net"
-    },
     "dbzy.tv": {
       "_comment": "不支持搜索",
       "name": "🎬豆瓣",
@@ -147,12 +137,6 @@
       "name": "🎬茅台",
       "api": "https://caiji.maotai999.vip/api.php/provide/vod",
       "detail": "https://mtzy.me"
-    },
-    "lovedan.net": {
-      "_comment": "有黄色",
-      "name": "🎬艾旦",
-      "api": "https://lovedan.net/api.php/provide/vod",
-      "detail": "https://lovedan.net"
     },
     "tyyszy.com": {
       "_comment": "不支持搜索",
