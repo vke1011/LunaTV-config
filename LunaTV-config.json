@@ -6,6 +6,11 @@
       "api": "https://cj.rycjapi.com/api.php/provide/vod",
       "detail": "https://www.ryzyw.com"
     },
+    "dyttzyapi.com": {
+      "name": "🎬电影天堂",
+      "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
+      "detail": "http://caiji.dyttzyapi.com"
+    },
     "iqiyizyapi.com": {
       "name": "🎬爱奇艺",
       "api": "https://iqiyizyapi.com/api.php/provide/vod",
@@ -90,11 +95,6 @@
       "name": "🎬大众",
       "api": "https://cdn.dzzyapi.com/api.php/provide/vod",
       "detail": "https://dzzy.com"
-    },
-    "dyttzyapi.com": {
-      "name": "🎬电影天堂",
-      "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
-      "detail": "http://caiji.dyttzyapi.com"
     },
     "juliang.app": {
       "name": "🎬巨量",
