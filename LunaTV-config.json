@@ -272,10 +272,45 @@
       "api": "https://apilsbzy1.com/api.php/provide/vod",
       "detail": "https://laosebizy8.com"
     },
+    "senlinzy1.com": {
+      "name": "🔞森林",
+      "api": "https://beiyong.slapibf.com/api.php/provide/vod",
+      "detail": "https://senlinzy1.com"
+    },
     "heiheizy.com": {
       "name": "🔞嘿嘿",
       "api": "https://api.heiapi.cc/api.php/provide/vod",
       "detail": "https://heiheizy.com"
+    },
+    "fhzy1.com": {
+      "name": "🔞番号",
+      "api": "http://fhapi9.com/api.php/provide/vod",
+      "detail": "http://fhzy1.com"
+    },
+    "91md.me": {
+      "name": "🔞麻豆",
+      "api": "https://91md.me/api.php/provide/vod",
+      "detail": "https://91md.me"
+    },
+    "www.sex8zy.com": {
+      "name": "🔞杏吧",
+      "api": "https://json.xingba222.com/api.php/provide/vod",
+      "detail": "http://www.sex8zy.com"
+    },
+    "lajiaozy.com": {
+      "name": "🔞辣椒",
+      "api": "https://apilj.com/api.php/provide/vod",
+      "detail": "https://lajiaozy.com"
+    },
+    "thzy1.me": {
+      "name": "🔞桃花",
+      "api": "https://thzy1.me/api.php/provide/vod",
+      "detail": "https://thzy1.me"
+    },
+    "shayuzy.com": {
+      "name": "🔞鲨鱼",
+      "api": "https://shayuzy.com/api.php/provide/vod",
+      "detail": "https://shayuzy.com"
     },
     "huosuzy.com": {
       "_comment": "不支持搜索",
@@ -289,68 +324,26 @@
       "api": "https://www.hlzyapi.vip/api.php/provide/vod",
       "detail": "https://www.hlzy.net"
     },
-    "senlinzy1.com": {
-      "_comment": "不支持搜索",
-      "name": "🔞森林",
-      "api": "https://beiyong.slapibf.com/api.php/provide/vod",
-      "detail": "https://senlinzy1.com"
-    },
     "aosikazy6.com": {
       "_comment": "不支持搜索",
       "name": "🔞奥斯卡",
       "api": "https://aosikazy6.com/api.php/provide/vod",
       "detail": "https://aosikazy6.com"
     },
-    "fhzy1.com": {
-      "_comment": "LunaTV无法使用",
-      "name": "🔞番号",
-      "api": "http://fhapi9.com/api.php/provide/vod",
-      "detail": "http://fhzy1.com"
-    },
-    "www.sex8zy.com": {
-      "_comment": "LunaTV无法使用",
-      "name": "🔞杏吧",
-      "api": "https://json.xingba222.com/api.php/provide/vod",
-      "detail": "http://www.sex8zy.com"
-    },
-    "91md.me": {
-      "_comment": "LunaTV无法使用",
-      "name": "🔞麻豆",
-      "api": "https://91md.me/api.php/provide/vod",
-      "detail": "https://91md.me"
-    },
     "lebozy.com": {
-      "_comment": "LunaTV无法使用",
+      "_comment": "部分封面无法显示",
       "name": "🔞乐播",
       "api": "https://lbapi9.com/api.php/provide/vod",
       "detail": "https://lebozy.com"
     },
-    "lajiaozy.com": {
-      "_comment": "LunaTV无法使用",
-      "name": "🔞辣椒",
-      "api": "https://apilj.com/api.php/provide/vod",
-      "detail": "https://lajiaozy.com"
-    },
-    "shayuzy.com": {
-      "_comment": "LunaTV无法使用",
-      "name": "🔞鲨鱼",
-      "api": "https://shayuzy.com/api.php/provide/vod",
-      "detail": "https://shayuzy.com"
-    },
-    "thzy1.me": {
-      "_comment": "LunaTV无法使用",
-      "name": "🔞桃花",
-      "api": "https://thzy1.me/api.php/provide/vod",
-      "detail": "https://thzy1.me"
-    },
     "dadizy.com": {
-      "_comment": "LunaTV无法使用",
+      "_comment": "MoonTV无法搜索",
       "name": "🔞大地",
       "api": "https://dadiapi.com/feifei",
       "detail": "https://dadizy.com"
     },
     "tmzyz.com": {
-      "_comment": "LunaTV无法使用",
+      "_comment": "MoonTV无法搜索",
       "name": "🔞天美",
       "api": "https://tmzyz.com/api.php/provide/vod",
       "detail": "https://tmzyz.com"
