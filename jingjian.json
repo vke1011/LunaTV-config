@@ -245,6 +245,11 @@
       "name": "🔞鲨鱼",
       "api": "https://shayuzy.com/api.php/provide/vod",
       "detail": "https://shayuzy.com"
+    },
+    "yuanlib.com": {
+      "name": "🔞免费",
+      "api": "https://yuanlib.com/api.php/provide/vod",
+      "detail": "https://yuanlib.com"
     }
   }
 }
