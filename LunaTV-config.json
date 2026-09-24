@@ -312,6 +312,11 @@
       "api": "https://shayuzy.com/api.php/provide/vod",
       "detail": "https://shayuzy.com"
     },
+    "yuanlib.com": {
+      "name": "🔞免费",
+      "api": "https://yuanlib.com/api.php/provide/vod",
+      "detail": "https://yuanlib.com"
+    },
     "huosuzy.com": {
       "_comment": "不支持搜索",
       "name": "🔞火速",
