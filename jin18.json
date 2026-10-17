@@ -6,11 +6,6 @@
       "api": "https://cj.rycjapi.com/api.php/provide/vod",
       "detail": "https://www.ryzyw.com"
     },
-    "dyttzyapi.com": {
-      "name": "🎬电影天堂",
-      "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
-      "detail": "http://caiji.dyttzyapi.com"
-    },
     "iqiyizyapi.com": {
       "name": "🎬爱奇艺",
       "api": "https://iqiyizyapi.com/api.php/provide/vod",
@@ -125,6 +120,11 @@
       "name": "🎬量子",
       "api": "https://cj.lzcaiji.com/api.php/provide/vod",
       "detail": "https://lzizy.com"
+    },
+    "dyttzyapi.com": {
+      "name": "🎬电影天堂",
+      "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
+      "detail": "http://caiji.dyttzyapi.com"
     }
   }
 }
