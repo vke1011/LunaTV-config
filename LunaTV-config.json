@@ -126,6 +126,11 @@
       "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
       "detail": "http://caiji.dyttzyapi.com"
     },
+    "mujiziyuan.com": {
+      "name": "🎬母鸡",
+      "api": "https://mujiziyuan00.com/api.php/provide/vod",
+      "detail": "https://mujiziyuan.com"
+    },
     "dbzy.tv": {
       "_comment": "不支持搜索",
       "name": "🎬豆瓣",
