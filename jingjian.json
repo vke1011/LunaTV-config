@@ -255,6 +255,11 @@
       "name": "🔞免费",
       "api": "https://yuanlib.com/api.php/provide/vod",
       "detail": "https://yuanlib.com"
+    },
+    "jp98.vip": {
+      "name": "🔞精品98",
+      "api": "https://jp98.vip/api.php/provide/vod",
+      "detail": "https://jp98.vip"
     }
   }
 }
