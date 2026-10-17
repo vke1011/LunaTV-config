@@ -125,6 +125,11 @@
       "name": "🎬电影天堂",
       "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
       "detail": "http://caiji.dyttzyapi.com"
+    },
+    "mujiziyuan.com": {
+      "name": "🎬母鸡",
+      "api": "https://mujiziyuan00.com/api.php/provide/vod",
+      "detail": "https://mujiziyuan.com"
     }
   }
 }
