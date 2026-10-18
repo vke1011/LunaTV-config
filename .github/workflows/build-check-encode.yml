@@ -2,7 +2,7 @@ name: JSON Build, API Check & Encoding
 
 on:
   schedule:
-    - cron: "0 17 * * *"  # 每天北京时间凌晨1点运行 (UTC 17点)
+    - cron: "0 19 * * *"  # 每天北京时间凌晨3点运行 (UTC 19点)
   push:
     paths:
       - 'LunaTV-config.json'
