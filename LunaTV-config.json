@@ -317,6 +317,11 @@
       "api": "https://shayuapi.com/api.php/provide/vod",
       "detail": "https://shayuzy.com"
     },
+    "dadizy.com": {
+      "name": "🔞大地",
+      "api": "https://dadiapi.com/api.php/provide/vod",
+      "detail": "https://dadizy.com"      
+    },
     "yuanlib.com": {
       "name": "🔞免费",
       "api": "https://yuanlib.com/api.php/provide/vod",
@@ -350,12 +355,6 @@
       "name": "🔞乐播",
       "api": "https://lbapi9.com/api.php/provide/vod",
       "detail": "https://lebozy.com"
-    },
-    "dadizy.com": {
-      "_comment": "MoonTV无法搜索",
-      "name": "🔞大地",
-      "api": "https://dadiapi.com/feifei",
-      "detail": "https://dadizy.com"
     },
     "tmzyz.com": {
       "_comment": "MoonTV无法搜索",
