@@ -251,6 +251,11 @@
       "api": "https://shayuapi.com/api.php/provide/vod",
       "detail": "https://shayuzy.com"
     },
+    "dadizy.com": {
+      "name": "🔞大地",
+      "api": "https://dadiapi.com/api.php/provide/vod",
+      "detail": "https://dadizy.com"
+    },
     "yuanlib.com": {
       "name": "🔞免费",
       "api": "https://yuanlib.com/api.php/provide/vod",
