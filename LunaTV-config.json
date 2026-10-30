@@ -330,6 +330,16 @@
       "api": "https://jp98.vip/api.php/provide/vod",
       "detail": "https://jp98.vip"
     },
+    "zy.f-1.cc": {
+      "name": "🔞看看",
+      "api": "https://f-1.cc/api.php/provide/vod",
+      "detail": "https://zy.f-1.cc"
+    },
+    "xyezy.com": {
+      "name": "🔞星夜",
+      "api": "https://xyezy.com/api.php/provide/vod",
+      "detail": "https://xyezy.com"
+    },
     "huosuzy.com": {
       "_comment": "不支持搜索",
       "name": "🔞火速",
