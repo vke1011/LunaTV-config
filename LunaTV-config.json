@@ -131,18 +131,6 @@
       "api": "https://mujiziyuan00.com/api.php/provide/vod",
       "detail": "https://mujiziyuan.com"
     },
-    "dbzy.tv": {
-      "_comment": "不支持搜索",
-      "name": "🎬豆瓣",
-      "api": "https://caiji.dbzy5.com/api.php/provide/vod",
-      "detail": "https://dbzy.tv"
-    },
-    "mtzy.me": {
-      "_comment": "不支持搜索",
-      "name": "🎬茅台",
-      "api": "https://caiji.maotai999.vip/api.php/provide/vod",
-      "detail": "https://mtzy.me"
-    },
     "tyyszy.com": {
       "_comment": "不支持搜索",
       "name": "🎬天涯",
