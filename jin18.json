@@ -130,6 +130,11 @@
       "name": "🎬母鸡",
       "api": "https://mujiziyuan00.com/api.php/provide/vod",
       "detail": "https://mujiziyuan.com"
+    },
+    "mgzy1.tv": {
+      "name": "🎬芒果",
+      "api": "https://caiji.mgzyapi.com/api.php/provide/vod",
+      "detail": "https://mgzy1.tv"
     }
   }
 }
