@@ -106,11 +106,6 @@
       "api": "https://api.yzzy-api.com/inc/apijson.php",
       "detail": "https://1080zyk4.com"
     },
-    "juliang.app": {
-      "name": "🎬巨量",
-      "api": "https://api.juliang.live/api/provide/vod",
-      "detail": "https://juliang.app"
-    },
     "ffzyapi.com": {
       "name": "🎬非凡",
       "api": "https://api.ffzyapi.com/api.php/provide/vod",
@@ -135,6 +130,11 @@
       "name": "🎬西瓜",
       "api": "https://caiji.xgzyapi.com/api.php/provide/vod",
       "detail": "https://xgzy1.tv"
+    },
+    "juliang.app": {
+      "name": "🎬巨量",
+      "api": "https://api.juliang.live/api/provide/vod",
+      "detail": "https://juliang.app"
     },
     "tyyszy.com": {
       "_comment": "不支持搜索",
