@@ -16,6 +16,11 @@
       "api": "https://mujiziyuan00.com/api.php/provide/vod",
       "detail": "https://mujiziyuan.com"
     },
+    "changzhang.tv": {
+      "name": "🎬厂长",
+      "api": "https://api.changzhang.tv/api.php/provide/vod",
+      "detail": "https://changzhang.tv"
+    },
     "iqiyizyapi.com": {
       "name": "🎬爱奇艺",
       "api": "https://iqiyizyapi.com/api.php/provide/vod",
