@@ -11,6 +11,11 @@
       "api": "https://caiji.mgzyapi.com/api.php/provide/vod",
       "detail": "https://mgzy1.tv"
     },
+    "mujiziyuan.com": {
+      "name": "🎬母鸡",
+      "api": "https://mujiziyuan00.com/api.php/provide/vod",
+      "detail": "https://mujiziyuan.com"
+    },
     "iqiyizyapi.com": {
       "name": "🎬爱奇艺",
       "api": "https://iqiyizyapi.com/api.php/provide/vod",
@@ -25,11 +30,6 @@
       "name": "🎬猫眼",
       "api": "https://api.maoyanapi.top/api.php/provide/vod",
       "detail": "https://www.maoyanzy.com"
-    },
-    "1080zyk4.com": {
-      "name": "🎬优质",
-      "api": "https://api.yzzy-api.com/inc/apijson.php",
-      "detail": "https://1080zyk4.com"
     },
     "360zy.com": {
       "name": "🎬360",
@@ -66,11 +66,6 @@
       "api": "https://jszyapi.com/api.php/provide/vod",
       "detail": "https://jszyapi.com"
     },
-    "xgzy1.tv": {
-      "name": "🎬西瓜",
-      "api": "https://caiji.xgzyapi.com/api.php/provide/vod",
-      "detail": "https://xgzy1.tv"
-    },
     "www.hongniuzy.com": {
       "name": "🎬红牛",
       "api": "https://www.hongniuzy2.com/api.php/provide/vod",
@@ -96,6 +91,21 @@
       "api": "https://cdn.dzzyapi.com/api.php/provide/vod",
       "detail": "https://dzzy.com"
     },
+    "www.haohuazy.com": {
+      "name": "🎬豪华",
+      "api": "https://hhzyapi.com/api.php/provide/vod",
+      "detail": "https://www.haohuazy.com"
+    },
+    "dyttzyapi.com": {
+      "name": "🎬电影天堂",
+      "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
+      "detail": "http://caiji.dyttzyapi.com"
+    },
+    "1080zyk4.com": {
+      "name": "🎬优质",
+      "api": "https://api.yzzy-api.com/inc/apijson.php",
+      "detail": "https://1080zyk4.com"
+    },
     "juliang.app": {
       "name": "🎬巨量",
       "api": "https://api.juliang.live/api/provide/vod",
@@ -116,25 +126,15 @@
       "api": "https://api.ukuapi88.com/api.php/provide/vod",
       "detail": "https://www.ukuzy.com"
     },
-    "www.haohuazy.com": {
-      "name": "🎬豪华",
-      "api": "https://hhzyapi.com/api.php/provide/vod",
-      "detail": "https://www.haohuazy.com"
-    },
     "lzizy.com": {
       "name": "🎬量子",
       "api": "https://cj.lzcaiji.com/api.php/provide/vod",
       "detail": "https://lzizy.com"
     },
-    "dyttzyapi.com": {
-      "name": "🎬电影天堂",
-      "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
-      "detail": "http://caiji.dyttzyapi.com"
-    },
-    "mujiziyuan.com": {
-      "name": "🎬母鸡",
-      "api": "https://mujiziyuan00.com/api.php/provide/vod",
-      "detail": "https://mujiziyuan.com"
+    "xgzy1.tv": {
+      "name": "🎬西瓜",
+      "api": "https://caiji.xgzyapi.com/api.php/provide/vod",
+      "detail": "https://xgzy1.tv"
     },
     "155zy2.com": {
       "name": "🔞155",
