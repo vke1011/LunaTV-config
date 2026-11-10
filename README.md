@@ -342,11 +342,11 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
   
 # API 健康报告（每日自动检测API状态）
 
-## API 状态（最近更新：2026-11-10 09:55 CST）
+## API 状态（最近更新：2026-11-11 07:55 CST）
 
 - 总 API 数量：71
-- 成功 API 数量：70
-- 失败 API 数量：1
+- 成功 API 数量：71
+- 失败 API 数量：0
 - 平均可用率：99.5%
 - 完美可用率（100%）：66 个
 - 高可用率（80%-99%）：5 个
@@ -364,7 +364,7 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
 | ✅ | 🎬优质 | [Link](https://1080zyk4.com) | [Link](https://api.yzzy-api.com/inc/apijson.php) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬光速 | [Link](https://guangsuzy.com) | [Link](https://api.guangsuapi.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬最大 | [Link](https://zuida.xyz) | [Link](https://api.zuidapi.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
-| ✅ | 🎬厂长 | [Link](https://changzhang.tv) | [Link](https://api.changzhang.tv/api.php/provide/vod) | 🌐 | ✅ | 13 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
+| ✅ | 🎬厂长 | [Link](https://changzhang.tv) | [Link](https://api.changzhang.tv/api.php/provide/vod) | 🌐 | ✅ | 14 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬大众 | [Link](https://dzzy.com) | [Link](https://cdn.dzzyapi.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬天涯 | [Link](https://tyyszy.com) | [Link](https://tyyszyapi.com/api.php/provide/vod) | 🌐 | 不支持 | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🎬如意 | [Link](https://www.ryzyw.com) | [Link](https://cj.rycjapi.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
@@ -400,12 +400,12 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
 | ✅ | 🔞乐播 | [Link](https://lebozy.com) | [Link](https://lbapi9.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞免费 | [Link](https://yuanlib.com) | [Link](https://yuanlib.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞嘿嘿 | [Link](https://heiheizy.com) | [Link](https://api.heiapi.cc/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
-| ✅ | 🔞大地 | [Link](https://dadizy.com) | [Link](https://dadiapi.com/api.php/provide/vod) | 🌐 | ✅ | 25 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
+| ✅ | 🔞大地 | [Link](https://dadizy.com) | [Link](https://dadiapi.com/api.php/provide/vod) | 🌐 | ✅ | 26 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞大奶子 | [Link](https://apidanaizi.com) | [Link](https://apidanaizi.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞天美 | [Link](https://tmzyz.com) | [Link](https://tmzyz.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
-| ✅ | 🔞小鸡 | [Link](https://xjzy1.xyz) | [Link](https://api.xjzyapi.com/provide/vod) | 🌐 | ✅ | 20 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
+| ✅ | 🔞小鸡 | [Link](https://xjzy1.xyz) | [Link](https://api.xjzyapi.com/provide/vod) | 🌐 | ✅ | 21 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞搜AV | [Link](https://souavzyw.com) | [Link](https://api.souavzyw.net/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
-| ✅ | 🔞星夜 | [Link](https://xyezy.com) | [Link](https://xyezy.com/api.php/provide/vod) | 🌐 | ✅ | 12 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
+| ✅ | 🔞星夜 | [Link](https://xyezy.com) | [Link](https://xyezy.com/api.php/provide/vod) | 🌐 | ✅ | 13 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞杏吧 | [Link](http://www.sex8zy.com) | [Link](https://json.xingba222.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞桃花 | [Link](https://thzy1.me) | [Link](https://thzy1.me/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞森林 | [Link](https://senlinzy1.com) | [Link](https://beiyong.slapibf.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
@@ -414,7 +414,7 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
 | ✅ | 🔞玉兔 | [Link](https://yutuzy.com) | [Link](https://apiyutu.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞番号 | [Link](http://fhzy1.com) | [Link](http://fhapi9.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞番茄 | [Link](https://fqzy.me) | [Link](https://fqzy.me//api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
-| ✅ | 🔞看看 | [Link](https://zy.f-1.cc) | [Link](https://f-1.cc/api.php/provide/vod) | 🌐 | 无结果 | 12 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
+| ✅ | 🔞看看 | [Link](https://zy.f-1.cc) | [Link](https://f-1.cc/api.php/provide/vod) | 🌐 | 无结果 | 13 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞精品 | [Link](https://jingpinx.com) | [Link](https://jingpinx.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞精品98 | [Link](https://jp98.vip) | [Link](https://jp98.vip/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞老色逼 | [Link](https://laosebizy8.com) | [Link](https://apilsbzy1.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
@@ -425,10 +425,10 @@ console.log(`Request from: ${request.headers.get('cf-connecting-ip')}`)
 | ✅ | 🔞黄色仓库 | [Link](https://hsckzy888.com) | [Link](https://hsckzy888.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞黑料 | [Link](https://heiliaozy.cc) | [Link](https://www.heiliaozyapi.com/api.php/provide/vod) | 🌐 | ✅ | 30 | 0 | 100.0% | ✅✅✅✅✅✅✅ |
 | ✅ | 🔞奥斯卡 | [Link](https://aosikazy6.com) | [Link](https://aosikazy6.com/api.php/provide/vod) | 🌐 | 不支持 | 29 | 1 | 96.7% | ✅✅✅✅✅✅✅ |
-| ❌ | 🔞奶香香 | [Link](https://Naixxzy.com) | [Link](https://Naixxzy.com/api.php/provide/vod) | 🌐 | ❌ | 29 | 1 | 96.7% | ✅✅✅✅✅✅❌ |
-| ✅ | 🔞红楼 | [Link](https://www.hlzy.net) | [Link](https://www.hlzyapi.vip/api.php/provide/vod) | 🌐 | 不支持 | 29 | 1 | 96.7% | ❌✅✅✅✅✅✅ |
-| ✅ | 🎬芒果 | [Link](https://mgzy1.tv) | [Link](https://caiji.mgzyapi.com/api.php/provide/vod) | 🌐 | ✅ | 16 | 1 | 94.1% | ❌✅✅✅✅✅✅ |
-| ✅ | 🔞极品 | [Link](https://jipinvip.com) | [Link](https://jipinvip1.com/api.php/provide/vod) | 🌐 | ✅ | 25 | 5 | 83.3% | ❌❌❌❌❌✅✅ |
+| ✅ | 🔞奶香香 | [Link](https://Naixxzy.com) | [Link](https://Naixxzy.com/api.php/provide/vod) | 🌐 | 不支持 | 29 | 1 | 96.7% | ✅✅✅✅✅❌✅ |
+| ✅ | 🔞红楼 | [Link](https://www.hlzy.net) | [Link](https://www.hlzyapi.vip/api.php/provide/vod) | 🌐 | 不支持 | 29 | 1 | 96.7% | ✅✅✅✅✅✅✅ |
+| ✅ | 🎬芒果 | [Link](https://mgzy1.tv) | [Link](https://caiji.mgzyapi.com/api.php/provide/vod) | 🌐 | ✅ | 17 | 1 | 94.4% | ✅✅✅✅✅✅✅ |
+| ✅ | 🔞极品 | [Link](https://jipinvip.com) | [Link](https://jipinvip1.com/api.php/provide/vod) | 🌐 | ✅ | 25 | 5 | 83.3% | ❌❌❌❌✅✅✅ |
 <!-- API_TABLE_END -->
 
 ---
