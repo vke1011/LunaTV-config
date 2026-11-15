@@ -1,15 +1,15 @@
 {
   "cache_time": 7200,
   "api_site": {
-    "www.ryzyw.com": {
-      "name": "🎬如意",
-      "api": "https://cj.rycjapi.com/api.php/provide/vod",
-      "detail": "https://www.ryzyw.com"
-    },
     "mgzy1.tv": {
       "name": "🎬芒果",
       "api": "https://caiji.mgzyapi.com/api.php/provide/vod",
       "detail": "https://mgzy1.tv"
+    },
+    "www.ryzyw.com": {
+      "name": "🎬如意",
+      "api": "https://cj.rycjapi.com/api.php/provide/vod",
+      "detail": "https://www.ryzyw.com"
     },
     "mujiziyuan.com": {
       "name": "🎬母鸡",
