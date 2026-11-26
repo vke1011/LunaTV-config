@@ -1,16 +1,6 @@
 {
   "cache_time": 7200,
   "api_site": {
-    "changzhang.tv": {
-      "name": "🎬厂长",
-      "api": "https://api.changzhang.tv/api.php/provide/vod",
-      "detail": "https://changzhang.tv"
-    },
-    "mgzy1.tv": {
-      "name": "🎬芒果",
-      "api": "https://caiji.mgzyapi.com/api.php/provide/vod",
-      "detail": "https://mgzy1.tv"
-    },
     "www.ryzyw.com": {
       "name": "🎬如意",
       "api": "https://cj.rycjapi.com/api.php/provide/vod",
@@ -20,6 +10,11 @@
       "name": "🎬母鸡",
       "api": "https://mujiziyuan00.com/api.php/provide/vod",
       "detail": "https://mujiziyuan.com"
+    },
+    "changzhang.tv": {
+      "name": "🎬厂长",
+      "api": "https://api.changzhang.tv/api.php/provide/vod",
+      "detail": "https://changzhang.tv"
     },
     "iqiyizyapi.com": {
       "name": "🎬爱奇艺",
@@ -140,6 +135,11 @@
       "name": "🎬巨量",
       "api": "https://api.juliang.live/api/provide/vod",
       "detail": "https://juliang.app"
+    },
+    "mgzy1.tv": {
+      "name": "🎬芒果",
+      "api": "https://caiji.mgzyapi.com/api.php/provide/vod",
+      "detail": "https://mgzy1.tv"
     },
     "tyyszy.com": {
       "_comment": "不支持搜索",
